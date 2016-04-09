@@ -1,0 +1,201 @@
+$color_backTop:#FCC422;
+$color_backBot:#FFBE00;
+$color_text:#FFFFFF;
+$color_backField: #424242;
+$radius:25px;
+
+
+@include keyframes(fadeIn) {
+  from {
+    @include linear-gradient(to top, #FFFFFF, #FFFFFF, $fallback: #FFFFFF);
+    opacity: 0;
+  }
+  to {
+    @include linear-gradient(to top, $color_backBot, $color_backBot);
+    color:whitesmoke;
+    opacity: 1;
+  }
+}
+
+/* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
+.btn:focus,.btn:active {
+  outline: none !important;
+}
+
+.btn {
+
+  /*
+background: #d9344a;
+
+background-image: -webkit-linear-gradient(top, #d9344a, #b82b47);
+background-image: -moz-linear-gradient(top, #d9344a, #b82b47);
+background-image: -ms-linear-gradient(top, #d9344a, #b82b47);
+background-image: -o-linear-gradient(top, #d9344a, #b82b47);
+background-image: linear-gradient(to bottom, #d9344a, #b82b47);
+*/
+  @include linear-gradient(to top, $color_backBot, $color_backTop, $fallback: $color_backBot);
+
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  -webkit-box-shadow: 0px 1px 3px darken($color_backBot,20%);
+  -moz-box-shadow: 0px 1px 3px darken($color_backBot,20%);
+  box-shadow: 0px 1px 3px darken($color_backBot,20%);
+  color: #ffffff;
+  border: solid $color_backBot 1px;
+  text-decoration: none;
+
+
+  &:hover{
+    /*
+  background: #fc3c3c;
+  background-image: -webkit-linear-gradient(top, #fc3c3c, #d93434);
+  background-image: -moz-linear-gradient(top, #fc3c3c, #d93434);
+  background-image: -ms-linear-gradient(top, #fc3c3c, #d93434);
+  background-image: -o-linear-gradient(top, #fc3c3c, #d93434);
+  background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
+  */
+  text-decoration: none;
+  @include linear-gradient(to top, lighten($color_backBot, 10%), lighten($color_backTop,20%), $fallback: lighten($color_backBot, 20%));
+}
+
+/* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
+  &:focus, &:active {
+    outline: none !important;
+  }
+
+  .stepwizard-row & {
+    -webkit-border-radius: 0 !important;
+    border-radius: 20px !important;
+    @include linear-gradient(to top, white, white);
+    color:$color_backBot;
+
+    &.active-step{
+      @include animation(fadeIn 0.3s ease-in-out);
+      @include linear-gradient(to top, $color_backBot, $color_backBot);
+      color:whitesmoke;
+    }
+
+
+  }
+
+
+  &.prop.hvr-icon-wobble-horizontal:before{
+    content: "\f060";
+    left:1em;
+    right: inherit;
+  }
+
+}
+
+.icon-prop-reg:before{
+  content: "\f090";
+}
+
+.icon-prop-log:before{
+  content: "\f044";
+}
+
+.input-icon{
+  position: relative;
+}
+
+.pro-input-btn-search {
+$search-input-padding-height:10;
+  width: 200px;
+  float: left;
+
+  i {
+    font-size: 20px;
+    margin: 0;
+    top: #{$search-input-padding-height};
+    right: 12px;
+    color: #ffffff;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  input {
+    padding: #{$search-input-padding-height}px 30px !important;
+    height: 100%;
+    border: 0 !important;
+    border-radius: 0;
+    background: #{$color_backField};
+
+    &:focus{
+      background-color: lighten($color_backField,70%);
+      color:black !important;
+    }
+
+  }
+
+
+
+  .input-icon {
+    position: relative;
+  }
+  .input-icon input {
+    padding-left: 33px !important;
+    color: #999999;
+  }
+  .input-icon i {
+    color: #999999;
+    display: block;
+    position: absolute;
+    margin: 10px 2px 4px 10px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .input-icon.right input {
+    padding-left: 12px !important;
+    padding-right: 33px !important;
+  }
+  .input-icon.right i {
+    right: 8px;
+    float: right;
+  }
+
+}
+
+.top-nav>li>form {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #999;
+}
+
+
+.btn-group  {
+  margin:{
+    top:10px;
+    bottom: 10px;
+  }
+  & > .btn{
+    margin:0px;
+  }
+
+}
+
+
+.btn-group.btn-radio-group > .btn-radio-checked {
+  border: 2px solid #0a3c59;
+  background: #0c6bab;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0d6cab), to(#0c6bab));
+  background: -webkit-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -moz-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -ms-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -o-linear-gradient(top, #0d6cab, #0c6bab);
+  background-image: -ms-linear-gradient(top, #0d6cab 0%, #0c6bab 100%);
+  z-index: 10;
+
+  -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+  text-shadow: #7ea4bd 0 1px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: helvetica, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}

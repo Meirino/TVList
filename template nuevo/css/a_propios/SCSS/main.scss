@@ -1,0 +1,46 @@
+@import "vendor/bourbon/bourbon";
+@import "Clasico/partials/_botones";
+
+.pro-vcenter {
+  display: inline-block;
+  vertical-align: middle !important;
+  float: none;
+}
+
+
+
+
+
+
+.pro-menu-icon  {
+  .badge{
+    font-size: 11px !important;
+    font-weight: 300;
+    height: 18px;
+    padding: 3px 6px 3px 6px;
+    -webkit-border-radius: 12px !important;
+    -moz-border-radius: 12px !important;
+    border-radius: 12px !important;
+    text-shadow: none !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #bcbcbc;
+    position: relative;
+    bottom:10px;
+  }
+
+  .badge-yellow,
+  .label-yellow {
+    background-color: #f2994b;
+  }
+
+  .badge-green,
+  .label-green {
+    background-color: #1CB94E;
+
+  }
+
+  .fa {
+    font-size: 20px ;
+  }
+}
