@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon_TvList/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon_TvList/favicon.ico">
     <title>Detalles de Libro</title>
 
 
@@ -79,7 +79,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-offset-3">
-                                                <button type="button"  id="login-form-btn-sent" class="form-control btn btn-primary mytemplate-btn-circle hvr-icon-pop icon-prop-reg">Conectarse</button>
+                                                <button type="button"  id="login-form-btn-sent" class="form-control btn pro-btn btn-primary mytemplate-btn-circle hvr-icon-pop icon-prop-reg">Conectarse</button>
                                             </div>
                                         </div>
                                     </div>
@@ -100,11 +100,11 @@
 
                                         <div class="stepwizard-row">
                                             <div class="stepwizard-step col-xs-6">
-                                                <a class="btn btn-default btn-circle active-step" disabled="disabled" href="#step-1" data-toggle="tab" onclick="stepnext(1)" >1</a>
+                                                <a class="btn pro-btn btn-default btn-circle active-step" disabled="disabled" href="#step-1" data-toggle="tab" onclick="stepnext(1)" >1</a>
                                                 <p>Datos de Usuario</p>
                                             </div>
                                             <div class="stepwizard-step col-xs-6">
-                                                <a class="btn btn-default btn-circle" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
+                                                <a class="btn pro-btn btn-default btn-circle" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
                                                 <p>Password</p>
                                             </div>
                                         </div>
@@ -122,7 +122,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <button class="btn btn-xs col-xs-6 hvr-icon-wobble-horizontal pull-right" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Siguiente</button>
+                                                        <button class="btn pro-btn btn-xs col-xs-6 hvr-icon-wobble-horizontal pull-right" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Siguiente</button>
                                                     </div>
                                                 </div>
 
@@ -134,8 +134,8 @@
                                                         <input type="password" name="confirm-password" id="confirm-password"  class="form-control" placeholder="Confirm Password">
                                                     </div>
                                                     <div class="row">
-                                                        <button class="btn btn-xs col-xs-6 prop hvr-icon-wobble-horizontal" onclick="stepnext(1);" type="button">Anterior</button>
-                                                        <button id="register-form-btn-sent " type="button" class="btn btn-xs col-xs-6 hvr-icon-pop icon-prop-reg" >Registrarse</button>
+                                                        <button class="btn pro-btn btn-xs col-xs-6 prop hvr-icon-wobble-horizontal" onclick="stepnext(1);" type="button">Anterior</button>
+                                                        <button id="register-form-btn-sent " type="button" class="btn pro-btn btn-xs col-xs-6 hvr-icon-pop icon-prop-reg" >Registrarse</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,96 +349,97 @@
                 </div>
                 <div class="row">
                 <!-- AQUI EL CONTENIDO -->
-                <div class="row">
-                        <div class="btn-group btn-group-justified btn-radio-group " role="group">
-                            <a type="button" class="btn btn-default btn-secondary animated ">Todos los tipos</a>
-                            <a type="button" class="btn btn-default btn-secondary animated ">Series</a>
-                            <a type="button" class="btn btn-default btn-secondary animated ">Películas</a>
+                <div class="col-xs-12">
+                    <div class="row">
+                            <div class="btn-group btn-group-justified btn-radio-group " role="group">
+                                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
+                                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
+                                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" value="" placeholder="Filtrar por título"  class="form-control"/>
+                            </div>
                         </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" value="" placeholder="Filtrar por título"  class="form-control"/></div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" value="" placeholder="Filtrar por director" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" value="" placeholder="Filtrar por actor" class="form-control"/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xs-4">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" value="" placeholder="Filtrar por director" class="form-control"/></div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                            <input type="text" value="" placeholder="Filtrar por actor" class="form-control"/></div>
-                    </div>
-                </div>
 
-
-
-                </div>
-                <div class="row">
-                    <!-- item  Lista libro -->
-                    <table class="table">
-                        <!-- Libro -->
-                        <tr>
-                            <td class="col-xs-3">
-                            <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
-                            </td>
-                            <td class="col-xs-9 pro-vcenter">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h3>Architecture</h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <button class="btn add_book">Añadir al carro</button>
-                                        <button class="btn" href="Libro.html">Más detalles</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <!-- Fin Libro -->
-                        <tr>
-                            <td class="col-xs-3">
+                    <div class="row">
+                        <!-- item  Lista libro -->
+                        <table class="table">
+                            <!-- Libro -->
+                            <tr>
+                                <td class="col-xs-3">
                                 <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
-                            </td>
-                            <td class="col-xs-9 pro-vcenter">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h3>Architecture</h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <button class="btn add_book">Añadir al carro</button>
-                                            <button class="btn" href="Libro.html">Más detalles</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- FIN Lista item libro -->
+                                </td>
+                                <td class="col-xs-9 pro-vcenter">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>Architecture</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            <button class="btn pro-btn add_book">Añadir al carro</button>
+                                            <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <!-- Fin Libro -->
+                            <tr>
+                                <td class="col-xs-3">
+                                    <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                </td>
+                                <td class="col-xs-9 pro-vcenter">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>Architecture</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button class="btn pro-btn add_book">Añadir al carro</button>
+                                                <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- FIN Lista item libro -->
+
+                    </div>
+
 
                 </div>
-
-
-
             </div>
             <!-- Fin contenedor cuerpo pagina -->
 

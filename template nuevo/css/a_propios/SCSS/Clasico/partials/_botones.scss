@@ -18,11 +18,11 @@ $radius:25px;
 }
 
 /* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
-.btn:focus,.btn:active {
+.pro-btn:focus,.pro-btn:active {
   outline: none !important;
 }
 
-.btn {
+.pro-btn {
 
   /*
 background: #d9344a;
@@ -198,4 +198,8 @@ $search-input-padding-height:10;
   font-family: helvetica, serif;
   text-decoration: none;
   vertical-align: middle;
+}
+
+.pro-yellow-stars .glyphicon-star,.glyphicon-star-empty{
+  color: #ffdf00;
 }

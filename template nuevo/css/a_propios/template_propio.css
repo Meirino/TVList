@@ -35,10 +35,10 @@
     color: whitesmoke;
     opacity: 1; } }
 /* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
-.btn:focus, .btn:active {
+.pro-btn:focus, .pro-btn:active {
   outline: none !important; }
 
-.btn {
+.pro-btn {
   /*
 background: #d9344a;
 
@@ -61,7 +61,7 @@ background-image: linear-gradient(to bottom, #d9344a, #b82b47);
   border: solid #FFBE00 1px;
   text-decoration: none;
   /* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */ }
-  .btn:hover {
+  .pro-btn:hover {
   /*
 background: #fc3c3c;
 background-image: -webkit-linear-gradient(top, #fc3c3c, #d93434);
@@ -74,16 +74,16 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
     background-color: #ffd866;
     background-image: -webkit-linear-gradient(bottom, #ffcb33, #fddf87);
     background-image: linear-gradient(to top,#ffcb33, #fddf87); }
-  .btn:focus, .btn:active {
+  .pro-btn:focus, .pro-btn:active {
     outline: none !important; }
-  .stepwizard-row .btn {
+  .stepwizard-row .pro-btn {
     -webkit-border-radius: 0 !important;
     border-radius: 20px !important;
     background-color: white;
     background-image: -webkit-linear-gradient(bottom, white, white);
     background-image: linear-gradient(to top,white, white);
     color: #FFBE00; }
-    .stepwizard-row .btn.active-step {
+    .stepwizard-row .pro-btn.active-step {
       -webkit-animation: fadeIn 0.3s ease-in-out;
       -moz-animation: fadeIn 0.3s ease-in-out;
       animation: fadeIn 0.3s ease-in-out;
@@ -91,7 +91,7 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
       background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
       background-image: linear-gradient(to top,#FFBE00, #FFBE00);
       color: whitesmoke; }
-  .btn.prop.hvr-icon-wobble-horizontal:before {
+  .pro-btn.prop.hvr-icon-wobble-horizontal:before {
     content: "\f060";
     left: 1em;
     right: inherit; }
@@ -178,12 +178,15 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
   text-decoration: none;
   vertical-align: middle; }
 
+.pro-yellow-stars .glyphicon-star, .glyphicon-star-empty {
+  color: #ffdf00; }
+
 .pro-vcenter {
   display: inline-block;
   vertical-align: middle !important;
   float: none; }
 
-.pro-menu-icon .badge {
+* .pro-uppper-badge {
   font-size: 11px !important;
   font-weight: 300;
   height: 18px;
@@ -197,18 +200,14 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
   background-color: #bcbcbc;
   position: relative;
   bottom: 10px; }
-.pro-menu-icon .badge-yellow,
-.pro-menu-icon .label-yellow {
+* .badge-yellow,
+* .label-yellow {
   background-color: #f2994b; }
-.pro-menu-icon .badge-green,
-.pro-menu-icon .label-green {
+* .badge-green,
+* .label-green {
   background-color: #1CB94E; }
-.pro-menu-icon .fa {
+* .fa {
   font-size: 20px; }
-
-.pro-com-container {
-  max-height: 100px;
-  overflow-y: scroll; }
 
 img.pro-img-mini-circle {
   width: 50px;

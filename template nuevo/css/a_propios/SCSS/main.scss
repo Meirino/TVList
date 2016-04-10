@@ -14,8 +14,8 @@ $xs_img_width:50px;
 
 
 
-.pro-menu-icon  {
-  .badge{
+*  {
+  .pro-uppper-badge{
     font-size: 11px !important;
     font-weight: 300;
     height: 18px;
@@ -50,15 +50,12 @@ $xs_img_width:50px;
 
 // Valoraciones
 
-.pro-com-container{
-  max-height: 100px;
-  overflow-y: scroll;
 
-}
 
 img.pro-img-mini-circle {
   width: $xs_img_width;
   height: $xs_img_height;
 }
 
+.row
 
