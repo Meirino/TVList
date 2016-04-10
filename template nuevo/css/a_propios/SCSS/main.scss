@@ -1,5 +1,7 @@
 @import "vendor/bourbon/bourbon";
 @import "Clasico/partials/_botones";
+$xs_img_height:50px;
+$xs_img_width:50px;
 
 .pro-vcenter {
   display: inline-block;
@@ -44,3 +46,19 @@
     font-size: 20px ;
   }
 }
+
+
+// Valoraciones
+
+.pro-com-container{
+  max-height: 100px;
+  overflow-y: scroll;
+
+}
+
+img.pro-img-mini-circle {
+  width: $xs_img_width;
+  height: $xs_img_height;
+}
+
+

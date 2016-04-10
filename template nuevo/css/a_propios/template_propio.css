@@ -206,4 +206,12 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
 .pro-menu-icon .fa {
   font-size: 20px; }
 
+.pro-com-container {
+  max-height: 100px;
+  overflow-y: scroll; }
+
+img.pro-img-mini-circle {
+  width: 50px;
+  height: 50px; }
+
 /*# sourceMappingURL=template_propio.css.map */
