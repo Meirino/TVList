@@ -25,6 +25,8 @@
     <link href="css/a_propios/StepWizardComponent.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
 
+    <link href="css/a_propios/topComponent.css" rel="stylesheet">
+
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
@@ -35,6 +37,129 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+
+        .pro-carousel{
+
+        }
+
+
+        /* Carousel Styles */
+        .carousel-indicators .active {
+            background-color: #2980b9;
+        }
+
+        .carousel-indicators li {
+            border: 1px solid #424242;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            max-height: 460px
+        }
+
+
+        .carousel-inner .item p {
+            overflow: hidden;
+        }
+
+        .carousel-inner .item.pro-item{
+            height: 400px;
+        }
+
+        .carousel-inner .item .sub-item{
+            margin: 5px;
+            -webkit-box-sizing:content-box;
+        }
+
+        .carousel-inner .item .sub-item img{
+            max-width: 150px;
+            max-height: 100px;
+        }
+
+
+        .carousel-control {
+            width: 0;
+        }
+
+        .carousel-control.left,
+        .carousel-control.right {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            background-image: none;
+            background-repeat: no-repeat;
+            text-shadow: none;
+        }
+
+        .carousel-control.left span {
+
+        }
+
+        .carousel-control.right span {
+
+        }
+
+        .carousel-control .glyphicon-chevron-left,
+        .carousel-control .glyphicon-chevron-right,
+        .carousel-control .icon-prev,
+        .carousel-control .icon-next {
+            position: absolute;
+            top: 45%;
+            z-index: 5;
+            display: inline-block;
+        }
+
+        .carousel-control .glyphicon-chevron-left,
+        .carousel-control .icon-prev {
+            left: 0;
+        }
+
+        .carousel-control .glyphicon-chevron-right,
+        .carousel-control .icon-next {
+            right: 0;
+        }
+
+        .carousel-control.left span,
+        .carousel-control.right span {
+            color: #0c6bab;
+        }
+
+        .carousel-control.left span:hover,
+        .carousel-control.right span:hover {
+            opacity: .7;
+            filter: alpha(opacity=70);
+        }
+
+        /* Carousel Header Styles */
+        .header-text {
+            position: absolute;
+            top: 0%;
+            left: 1.8%;
+            right: auto;
+            width: 96.66666666666666%;
+        }
+
+        .btn-min-block {
+            min-width: 170px;
+            line-height: 26px;
+        }
+
+        .btn-theme {
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-right: 15px;
+        }
+
+        .btn-theme:hover {
+            color: #000;
+            background-color: #fff;
+            border-color: #fff;
+        }
+    </style>
+
+
 
 </head>
 
@@ -351,6 +476,270 @@
                 <!-- AQUI EL CONTENIDO -->
                 <div class="col-xs-12">
                     <div class="row">
+                        <div class="col-xs-12">
+
+
+                        <div id="carousel-top" class="carousel slide pro-carousel" data-ride="carousel">
+
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-top" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-top" data-slide-to="1"></li>
+                                <li data-target="#carousel-top" data-slide-to="2"></li>
+                            </ol>
+
+                            <div class="carousel-inner">
+                                <div class="item active pro-item">
+
+                                    <div class="header-text" >
+                                        <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <h2>
+                                                <span>Ultimas Peliculas Agregadas</span>
+                                            </h2>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 1
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 2
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 3
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 4
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 5
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 6
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 7
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Pelicula 8
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Pelicula 9
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Pelicula 10
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                </div>
+                                <div class="item pro-item">
+
+                                    <div class="header-text" >
+                                        <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                                <h2>
+                                                    <span>Ultimos Capitulos Agregados</span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 1
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 2
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 3
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 4
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 5
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 6
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 7
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Capitulo 8
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Capitulo 9
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Capitulo 10
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item pro-item">
+
+                                    <div class="header-text" >
+                                        <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                                <h2>
+                                                    <span>Ultimas Series Agregadas</span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 1
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 2
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 3
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 4
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 5
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 6
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 7
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item">
+                                                <p>
+                                                    Serie 8
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Serie 9
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                            <div class="col-xs-2 text-center btn btn-warning sub-item hidden-xs hidden-sm hidden-sm">
+                                                <p>
+                                                    Serie 10
+                                                </p>
+                                                <img class="center-block img-responsive" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <a class="left carousel-control" href="#carousel-top" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-top" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                    </div>
+                    <div class="row">
                             <div class="btn-group btn-group-justified btn-radio-group " role="group">
                                 <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
                                 <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
@@ -439,7 +828,7 @@
                     </div>
 
 
-                </div>
+
             </div>
             <!-- Fin contenedor cuerpo pagina -->
 
