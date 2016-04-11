@@ -213,4 +213,13 @@ img.pro-img-mini-circle {
   width: 50px;
   height: 50px; }
 
+.pro-pills a {
+  background-color: #FCC422;
+  background-image: -webkit-linear-gradient(bottom, #FCC422, #FFBE00);
+  background-image: linear-gradient(to top,#FCC422, #FFBE00); }
+.pro-pills li.active a {
+  background-color: #2299d1;
+  background-image: -webkit-linear-gradient(bottom, #2299d1, #71c2e8);
+  background-image: linear-gradient(to top,#2299d1, #71c2e8); }
+
 /*# sourceMappingURL=template_propio.css.map */

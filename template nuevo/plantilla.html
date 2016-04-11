@@ -99,11 +99,11 @@
 
                                         <div class="stepwizard-row">
                                             <div class="stepwizard-step col-xs-6">
-                                                <a class="btn pro-btn btn-default btn-circle active-step" disabled="disabled" href="#step-1" data-toggle="tab" onclick="stepnext(1)" >1</a>
+                                                <a class="btn pro-btn btn-default btn-circle active-step disabled" disabled="disabled" href="#step-1" data-toggle="tab" onclick="stepnext(1)" >1</a>
                                                 <p>Datos de Usuario</p>
                                             </div>
                                             <div class="stepwizard-step col-xs-6">
-                                                <a class="btn pro-btn btn-default btn-circle" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
+                                                <a class="btn pro-btn btn-default btn-circle disabled" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
                                                 <p>Password</p>
                                             </div>
                                         </div>
@@ -197,51 +197,6 @@
 
 
                 </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown"><span class="badge badge-green" id="book_amnt">1</span><i class="fa fa-book"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="book-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://lightbourne.com/lb_live/wp-content/uploads/2012/10/LB_Cover_Template_12_600.jpg" alt="" width="20px">
-                                    </span>
-                                    <div class="pro-vcenter">
-                                        <h5><strong>->Nombre Libro 1<-</strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="book-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://lightbourne.com/lb_live/wp-content/uploads/2012/10/LB_Cover_Template_12_600.jpg" alt="" width="20px">
-                                    </span>
-                                    <div class="pro-vcenter">
-                                        <h5><strong>->Nombre Libro 1<-</strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="book-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://lightbourne.com/lb_live/wp-content/uploads/2012/10/LB_Cover_Template_12_600.jpg" alt="" width="20px">
-                                    </span>
-                                    <div class="pro-vcenter">
-                                        <h5><strong>->Nombre Libro 1<-</strong>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown"><i class="fa fa-user"></i> ->Nombre Usuario<- <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -250,12 +205,6 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Multas</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Opciones</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -268,7 +217,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="#" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
+                        <a href="index.html" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
@@ -297,6 +246,14 @@
                     <li>
                         <a href="#" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
                     </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li><a href="adminElementos.html" class="hvr-underline-from-left"><span class="menu-title">Elementos</span></a></li>
+                            <li><a href="adminAutores.html" class="hvr-underline-from-left"><span class="menu-title">Autores</span></a></li>
+                            <li><a href="adminUsuarios.html" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- Menu lateral -->
@@ -316,7 +273,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-book"></i> Aqui poner BreadCump Pagina
+                                <i class="fa fa-home"></i> Aqui poner BreadCump Pagina
                             </li>
                         </ol>
                     </div>

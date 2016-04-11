@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.ico">
+    <title>Detalles de Libro</title>
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/hover-min.css" rel="stylesheet">
+
+    <link href="css/fileinput.min.css" rel="stylesheet">
+
+
+    <!-- Estilos propios -->
+    <link href="css/a_propios/template_propio.css" rel="stylesheet">
+    <link href="css/a_propios/loginComponent.css" rel="stylesheet">
+    <link href="css/a_propios/StepWizardComponent.css" rel="stylesheet">
+    <link href="css/a_propios/profileComponent.css" rel="stylesheet">
+
+    <link href="css/a_propios/customTemplateRed.css" rel="stylesheet">
+
+
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="icomoon/style.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="modal modal-transparent fade" id="modal-transparent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row" class="">
+                            <div class="col-xs-6">
+                                <a href="#" class="active hvr-underline-from-right" id="login-form-link">Conectarse</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" class="hvr-underline-from-left" id="register-form-link" class="">Registrarse</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" style="display: block;">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="login-form-username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="login-form-password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <span>
+                                            <input type="checkbox" tabindex="3" name="login-form-remember" id="login-form-remember">
+                                        </span>
+                                        <label for="login-form-remember"> Recuerdame</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <button type="button"  id="login-form-btn-sent" class="form-control btn pro-btn btn-primary mytemplate-btn-circle hvr-icon-pop icon-prop-reg">Conectarse</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="" tabindex="5" class="forgot-password">He olvidado la contraseña</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <form id="register-form"  style="display: none;">
+
+                                    <div class="stepwizard">
+
+                                        <div class="stepwizard-row">
+                                            <div class="stepwizard-step col-xs-6">
+                                                <a class="btn pro-btn btn-default btn-circle active-step disabled" disabled="disabled" href="#step-1" data-toggle="tab" onclick="stepnext(1)" >1</a>
+                                                <p>Datos de Usuario</p>
+                                            </div>
+                                            <div class="stepwizard-step col-xs-6">
+                                                <a class="btn pro-btn btn-default btn-circle disabled" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
+                                                <p>Password</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="rate-updates">
+
+                                            <div class="tab-content margintop0" style="border:none !important;">
+                                                <div class="tab-pane fade padding20 " id="step-1">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="email" name="email" id="email"  class="form-control" placeholder="Email Address" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <button class="btn pro-btn btn-xs col-xs-6 hvr-icon-wobble-horizontal pull-right" onclick="stepnext(2);" type="button"><i class="icon-next"></i> Siguiente</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tab-pane fade padding20 " id="step-2" >
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password"  class="form-control" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="confirm-password" id="confirm-password"  class="form-control" placeholder="Confirm Password">
+                                                    </div>
+                                                    <div class="row">
+                                                        <button class="btn pro-btn btn-xs col-xs-6 prop hvr-icon-wobble-horizontal" onclick="stepnext(1);" type="button">Anterior</button>
+                                                        <button id="register-form-btn-sent " type="button" class="btn pro-btn btn-xs col-xs-6 hvr-icon-pop icon-prop-reg" >Registrarse</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <div id="wrapper">
+
+        <!-- Menus de navegacion -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Logo y Toggle -->
+            <div class="navbar-header">
+                <div class="container-fluid">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style="padding-top: 0px">
+                    <img alt="Brand" src="images/TVList_Logo.svg" width="200px" height="50x" class="">
+                </a>
+                </div>
+            </div>
+            <!-- Items del menu superior -->
+            <ul class="nav navbar-right top-nav pro-menu-icon ">
+                <li class="pro-vcenter item hidden-xs ">
+
+                    <form action="" method="" class="pro-input-btn-search">
+                        <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Busca algo aquí..." class="form-control text-white"></div>
+
+                    </form>
+
+                </li>
+
+                <li class="pro-vcenter item hidden-lg hidden-sm hidden-md dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li>
+                            <form action="" method="" class="pro-input-btn-search">
+                                <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Busca algo aquí..." class="form-control text-white"></div>
+                            </form>
+                        </li>
+                    </ul>
+
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown"><i class="fa fa-user"></i> ->Nombre Usuario<- <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"  data-toggle="modal" data-target="#modal-transparent"><i class="fa fa-fw fa-user"></i> Login</a>
+                        </li>
+                        <li>
+                            <a href="perfil.html"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Desconectar </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Menu Lateral -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="movies" class="collapse">
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#shows" class="hvr-bounce-to-right"><i class="icon-tv"></i> Series <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="shows" class="collapse">
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li><a href="adminElementos.html" class="hvr-underline-from-left"><span class="menu-title">Elementos</span></a></li>
+                            <li><a href="adminAutores.html" class="hvr-underline-from-left"><span class="menu-title">Autores</span></a></li>
+                            <li><a href="adminUsuarios.html" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Menu lateral -->
+        </nav>
+
+        <!-- Aqui el cuerpo de la pagina, donde se debe cargar la info -->
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- CABECERA Y Bread CUMP -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Mi Perfil
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html"><i class="fa fa-home"></i> Inicio </a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-user"></i> Perfil
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                <!-- AQUI EL CONTENIDO -->
+                    <div class="card hovercard">
+                        <div class="card-background">
+                            <img src="http://lorempixel.com/100/100/people/9/" alt="" class="card-bkimg">
+                            <!-- http://lorempixel.com/850/280/people/9/ -->
+                        </div>
+                        <div class="useravatar">
+                            <img src="http://lorempixel.com/100/100/people/4/" alt="">
+                        </div>
+                        <div class="card-info"> <span class="card-title"> -> Nombre de Usuario <- </span>
+
+                        </div>
+                    </div>
+                    <ul class="nav nav-pills pro-pills nav-justified nav-tabs-justified">
+                        <li class="active"><a href="#profile_Data" class="hvr-overline-reveal" data-toggle="tab">Datos Personales</a></li>
+                        <li><a href="#movie_List" class="hvr-overline-reveal" data-toggle="tab">Mis Peliculas</a></li>
+                        <li><a href="#chapter_List" class="hvr-overline-reveal" data-toggle="tab">Mis Series</a></li>
+                        <li><a href="#comments_List" class="hvr-overline-reveal" data-toggle="tab">Mis valoraciones</a></li>
+                    </ul>
+                    <div id="my-tab-content" class="tab-content">
+                        <div class="tab-pane active" id="profile_Data">
+                            <h1>Datos Personales</h1>
+                            <form>
+                                <div class="form-group col-xs-6">
+                                    <label for="profile_name">Nombre:</label>
+                                    <input type="text" class="form-control" id="profile_name">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="profile_firstname">Apellidos:</label>
+                                    <input type="text" class="form-control" id="profile_firstname">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="pro_password">Contraseña:</label>
+                                    <input type="text" class="form-control" id="pro_password">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 40%">
+                                            <span class="sr-only">35% Complete (success)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 40%">
+                                            <span class="sr-only">20% Complete (warning)</span>
+                                        </div>
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 20%">
+                                            <span class="sr-only">10% Complete (danger)</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="pro_passwordRep">Repita Contraseña:</label>
+                                    <input type="text" class="form-control" id="pro_passwordRep">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-6">
+                                    <label for="profile_email">Correo:</label>
+                                    <input type="email" class="form-control" id="profile_email">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="profile_emailRep">Repita Correo:</label>
+                                    <input type="email" class="form-control" id="profile_emailRep">
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label class="control-label">Buscar archivo</label>
+                                    <input id="input-1" type="file" class="file">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="movie_List">
+                            <h1>Mis Peliculas</h1>
+                            <table class="table">
+                                <!-- Libro -->
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                    </td>
+                                    <td class="col-xs-9 pro-vcenter">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h3>Architecture</h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-block btn-info dropdown-toggle" data-toggle="dropdown">Viendo <span class="caret"></span></button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Viendo</a></li>
+                                                            <li><a href="#">Completo</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="btn btn-danger" href="Libro.html">Eliminar de la lista</button>
+                                                    <a href="itemDetails.html">
+                                                        <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- Fin Libro -->
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                    </td>
+                                    <td class="col-xs-9 pro-vcenter">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h3>Architecture</h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown">Completo <span class="caret"></span></button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Viendo</a></li>
+                                                            <li><a href="#">Completo</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="btn btn-danger" href="Libro.html">Eliminar de la lista</button>
+                                                    <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="chapter_List">
+                            <h1>Mis Series</h1>
+                            <table class="table">
+                                <!-- Libro -->
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                    </td>
+                                    <td class="col-xs-9 pro-vcenter">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h3>Architecture</h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-block btn-info dropdown-toggle" data-toggle="dropdown">Viendo <span class="caret"></span></button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Viendo</a></li>
+                                                            <li><a href="#">Completo</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="btn btn-danger" href="Libro.html">Eliminar de la lista</button>
+                                                    <a href="itemDetails.html">
+                                                        <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" >
+                                        <a href="javascript:;" data-toggle="collapse" data-target="#sshows" class="form-control col-xs-12"><i class="icon-tv"></i> Temporadas <i class="fa fa-fw fa-caret-down"></i></a>
+                                        <ul id="sshows" class="collapse">
+                                            <li>
+                                                <a href="javascript:;" data-toggle="collapse" data-target="#season_1" class="form-control col-xs-12"><i class="icon-tv"></i> Temporada 1 <i class="fa fa-fw fa-caret-down"></i></a>
+                                                <ul id="season_1" class="collapse">
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" data-toggle="collapse" data-target="#season_2" class="form-control col-xs-12"><i class="icon-tv"></i> Temporada 2 <i class="fa fa-fw fa-caret-down"></i></a>
+                                                <ul id="season_2" class="collapse">
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                    <li><a href="itemDetails.html">1</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+
+                                </tr>
+                                <!-- Fin Libro -->
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                                    </td>
+                                    <td class="col-xs-9 pro-vcenter">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <h3>Architecture</h3>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown">Completo <span class="caret"></span></button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Viendo</a></li>
+                                                            <li><a href="#">Completo</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="btn btn-danger" href="Libro.html">Eliminar de la lista</button>
+                                                    <button class="btn pro-btn" href="Libro.html">Más detalles</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="comments_List">
+                            <h1>Mis Comentarios</h1>
+                            <div class="col-xs-12">
+                                <div class="row">
+
+                                    <div class="col-xs-2 pro-vcenter">
+                                        <img src="http://lorempixel.com/400/200/people/1" class="img-responsive img-circle pro-img-mini-circle center-block">
+                                    </div>
+                                    <div class="col-xs-9 pro-vcenter">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4><a href="itemDetails.html"> Nombre Pelicula Comentada </a></h4>
+                                            </div>
+                                            <div class="col-xs-6 col">
+                                                <h4>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h4>Titulo Valoracion</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xs-2">
+                                    </div>
+                                    <div class=" col-xs-9">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit mi, consectetur eget metus vitae, vulputate molestie orci. Ut pretium mollis molestie. Duis ac enim dapibus, imperdiet odio id, interdum diam. Quisque pharetra tortor non quam finibus porta. Maecenas et tellus lectus. Vivamus iaculis vitae sapien quis pulvinar. Aliquam tellus neque, sodales eget facilisis sed, gravida a velit.
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-2 pro-vcenter">
+                                        <img src="http://lorempixel.com/400/200/people/2" class="img-responsive img-circle pro-img-mini-circle center-block">
+                                    </div>
+                                    <div class="col-xs-9 pro-vcenter">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4><a href="itemDetails.html"> Nombre Pelicula Comentada </a></h4>
+                                            </div>
+                                            <div class="col-xs-6 col">
+                                                <h4 class="pro-yellow-stars">
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <h4>Titulo Valoracion</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xs-2">
+                                    </div>
+                                    <div class=" col-xs-9">
+                                        Donec sed purus id lorem sollicitudin dapibus feugiat eget diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse quis purus nec massa tincidunt faucibus sit amet ut dui. Sed dignissim velit eu lorem porttitor, eget commodo ipsum sodales. Praesent pharetra pretium leo nec cursus. Quisque sagittis felis augue, non ultrices magna egestas id. Pellentesque convallis a felis ultrices auctor. Nunc sed ultricies dolor. Aliquam et tincidunt massa.
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!-- Fin contenedor cuerpo pagina -->
+
+        </div>
+        <!-- Fin de la pagina -->
+
+    </div>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap  JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Javascript Propios -->
+    <script src="js/a_propios/modalWinJS.js"></script>
+    <script src="js/a_propios/StepWizardComponent.js"></script>
+    <script src="js/fileinput.min.js"></script>
+</body>
+
+</html>
