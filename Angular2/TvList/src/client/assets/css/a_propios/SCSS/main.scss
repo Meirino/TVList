@@ -1,0 +1,71 @@
+@import "vendor/bourbon/bourbon";
+@import "Clasico/partials/_botones";
+$xs_img_height:50px;
+$xs_img_width:50px;
+$color_pro-pill_backTop:#FCC422;
+$color_pro-pill_backBot:#FFBE00;
+$color_pro-pill_backBot-selected: #2299d1;
+
+.pro-vcenter {
+  display: inline-block;
+  vertical-align: middle !important;
+  float: none;
+}
+
+
+
+
+
+
+*  {
+  .pro-uppper-badge{
+    font-size: 11px !important;
+    font-weight: 300;
+    height: 18px;
+    padding: 3px 6px 3px 6px;
+    -webkit-border-radius: 12px !important;
+    -moz-border-radius: 12px !important;
+    border-radius: 12px !important;
+    text-shadow: none !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #bcbcbc;
+    position: relative;
+    bottom:10px;
+  }
+
+  .badge-yellow,
+  .label-yellow {
+    background-color: #f2994b;
+  }
+
+  .badge-green,
+  .label-green {
+    background-color: #1CB94E;
+
+  }
+
+  .fa {
+    font-size: 20px ;
+  }
+}
+
+
+// Valoraciones
+
+
+
+img.pro-img-mini-circle  {
+  width: $xs_img_width;
+  height: $xs_img_height;
+}
+
+.pro-pills {
+  a {
+    @include linear-gradient(to top, $color_pro-pill_backTop, $color_pro-pill_backBot);
+  }
+  li.active a{
+    @include linear-gradient(to top, $color_pro-pill_backBot-selected, lighten($color_pro-pill_backBot-selected,20%));
+  }
+}
+

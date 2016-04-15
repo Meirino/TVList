@@ -1,4 +1,5 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {TvListApp} from './app/tv-list';
+import {MainApp} from './app/main';
+import {ROUTER_PROVIDERS} from 'angular2/router';
 
-bootstrap(TvListApp, []);
+bootstrap(MainApp, [ROUTER_PROVIDERS]);

@@ -2,11 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TvList</title>
+  <title>Main</title>
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/sb-admin.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="assets/css/a_propios/template_propio.css">
+  <link rel="stylesheet" href="assets/css/hover-min.css">
+
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
        Only enable service workers in production.
@@ -20,7 +26,7 @@
   -->
 </head>
 <body>
-  <tv-list-app>Loading...</tv-list-app>
+  <main-app>Loading...</main-app>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/systemjs/dist/system-polyfills.js"></script>
@@ -43,5 +49,13 @@
     });
     System.import('app.js').then(null, console.error.bind(console));
   </script>
+  <!-- jQuery -->
+  <script src="vendor/js/jquery.js"></script>
+
+  <!-- Bootstrap  JavaScript -->
+  <script src="vendor/js/bootstrap.js"></script>
+
+
+
 </body>
 </html>

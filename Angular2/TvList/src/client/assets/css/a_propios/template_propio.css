@@ -1,0 +1,225 @@
+@-webkit-keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+/* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
+.pro-btn:focus, .pro-btn:active {
+  outline: none !important; }
+
+.pro-btn {
+  /*
+background: #d9344a;
+
+background-image: -webkit-linear-gradient(top, #d9344a, #b82b47);
+background-image: -moz-linear-gradient(top, #d9344a, #b82b47);
+background-image: -ms-linear-gradient(top, #d9344a, #b82b47);
+background-image: -o-linear-gradient(top, #d9344a, #b82b47);
+background-image: linear-gradient(to bottom, #d9344a, #b82b47);
+*/
+  background-color: #FFBE00;
+  background-image: -webkit-linear-gradient(bottom, #FFBE00, #FCC422);
+  background-image: linear-gradient(to top,#FFBE00, #FCC422);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  -webkit-box-shadow: 0px 1px 3px #997200;
+  -moz-box-shadow: 0px 1px 3px #997200;
+  box-shadow: 0px 1px 3px #997200;
+  color: #ffffff;
+  border: solid #FFBE00 1px;
+  text-decoration: none;
+  /* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */ }
+  .pro-btn:hover {
+  /*
+background: #fc3c3c;
+background-image: -webkit-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -moz-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -ms-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -o-linear-gradient(top, #fc3c3c, #d93434);
+background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
+*/
+    text-decoration: none;
+    background-color: #ffd866;
+    background-image: -webkit-linear-gradient(bottom, #ffcb33, #fddf87);
+    background-image: linear-gradient(to top,#ffcb33, #fddf87); }
+  .pro-btn:focus, .pro-btn:active {
+    outline: none !important; }
+  .stepwizard-row .pro-btn {
+    -webkit-border-radius: 0 !important;
+    border-radius: 20px !important;
+    background-color: white;
+    background-image: -webkit-linear-gradient(bottom, white, white);
+    background-image: linear-gradient(to top,white, white);
+    color: #FFBE00; }
+    .stepwizard-row .pro-btn.active-step {
+      -webkit-animation: fadeIn 0.3s ease-in-out;
+      -moz-animation: fadeIn 0.3s ease-in-out;
+      animation: fadeIn 0.3s ease-in-out;
+      background-color: #FFBE00;
+      background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+      background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+      color: whitesmoke; }
+  .pro-btn.prop.hvr-icon-wobble-horizontal:before {
+    content: "\f060";
+    left: 1em;
+    right: inherit; }
+
+.icon-prop-reg:before {
+  content: "\f090"; }
+
+.icon-prop-log:before {
+  content: "\f044"; }
+
+.input-icon {
+  position: relative; }
+
+.pro-input-btn-search {
+  width: 200px;
+  float: left; }
+  .pro-input-btn-search i {
+    font-size: 20px;
+    margin: 0;
+    top: 10;
+    right: 12px;
+    color: #ffffff;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+  .pro-input-btn-search input {
+    padding: 10px 30px !important;
+    height: 100%;
+    border: 0 !important;
+    border-radius: 0;
+    background: #424242; }
+    .pro-input-btn-search input:focus {
+      background-color: whitesmoke;
+      color: black !important; }
+  .pro-input-btn-search .input-icon {
+    position: relative; }
+  .pro-input-btn-search .input-icon input {
+    padding-left: 33px !important;
+    color: #999999; }
+  .pro-input-btn-search .input-icon i {
+    color: #999999;
+    display: block;
+    position: absolute;
+    margin: 10px 2px 4px 10px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center; }
+  .pro-input-btn-search .input-icon.right input {
+    padding-left: 12px !important;
+    padding-right: 33px !important; }
+  .pro-input-btn-search .input-icon.right i {
+    right: 8px;
+    float: right; }
+
+.top-nav > li > form {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #999; }
+
+.btn-group {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .btn-group > .btn {
+    margin: 0px; }
+
+.btn-group.btn-radio-group > .btn-radio-checked {
+  border: 2px solid #0a3c59;
+  background: #0c6bab;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0d6cab), to(#0c6bab));
+  background: -webkit-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -moz-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -ms-linear-gradient(top, #0d6cab, #0c6bab);
+  background: -o-linear-gradient(top, #0d6cab, #0c6bab);
+  background-image: -ms-linear-gradient(top, #0d6cab 0%, #0c6bab 100%);
+  z-index: 10;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  text-shadow: #7ea4bd 0 1px 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: helvetica, serif;
+  text-decoration: none;
+  vertical-align: middle; }
+
+.pro-yellow-stars .glyphicon-star, .glyphicon-star-empty {
+  color: #ffdf00; }
+
+.pro-vcenter {
+  display: inline-block;
+  vertical-align: middle !important;
+  float: none; }
+
+* .pro-uppper-badge {
+  font-size: 11px !important;
+  font-weight: 300;
+  height: 18px;
+  padding: 3px 6px 3px 6px;
+  -webkit-border-radius: 12px !important;
+  -moz-border-radius: 12px !important;
+  border-radius: 12px !important;
+  text-shadow: none !important;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #bcbcbc;
+  position: relative;
+  bottom: 10px; }
+* .badge-yellow,
+* .label-yellow {
+  background-color: #f2994b; }
+* .badge-green,
+* .label-green {
+  background-color: #1CB94E; }
+* .fa {
+  font-size: 20px; }
+
+img.pro-img-mini-circle {
+  width: 50px;
+  height: 50px; }
+
+.pro-pills a {
+  background-color: #FCC422;
+  background-image: -webkit-linear-gradient(bottom, #FCC422, #FFBE00);
+  background-image: linear-gradient(to top,#FCC422, #FFBE00); }
+.pro-pills li.active a {
+  background-color: #2299d1;
+  background-image: -webkit-linear-gradient(bottom, #2299d1, #71c2e8);
+  background-image: linear-gradient(to top,#2299d1, #71c2e8); }
+
+/*# sourceMappingURL=template_propio.css.map */

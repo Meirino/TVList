@@ -1,0 +1,105 @@
+@-webkit-keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF, #FFFFFF);
+    background-image: linear-gradient(to top,#FFFFFF, #FFFFFF);
+    opacity: 0; }
+  to {
+    background-color: #FFBE00;
+    background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+    background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+    color: whitesmoke;
+    opacity: 1; } }
+/* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
+.btn:focus, .btn:active {
+  outline: none !important; }
+
+.btn {
+  /*
+background: #d9344a;
+
+background-image: -webkit-linear-gradient(top, #d9344a, #b82b47);
+background-image: -moz-linear-gradient(top, #d9344a, #b82b47);
+background-image: -ms-linear-gradient(top, #d9344a, #b82b47);
+background-image: -o-linear-gradient(top, #d9344a, #b82b47);
+background-image: linear-gradient(to bottom, #d9344a, #b82b47);
+*/
+  background-color: #FFBE00;
+  background-image: -webkit-linear-gradient(bottom, #FFBE00, #FCC422);
+  background-image: linear-gradient(to top,#FFBE00, #FCC422);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  -webkit-box-shadow: 0px 1px 3px #997200;
+  -moz-box-shadow: 0px 1px 3px #997200;
+  box-shadow: 0px 1px 3px #997200;
+  color: #ffffff;
+  border: solid #FFBE00 1px;
+  text-decoration: none;
+  /* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */ }
+  .btn:hover {
+  /*
+background: #fc3c3c;
+background-image: -webkit-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -moz-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -ms-linear-gradient(top, #fc3c3c, #d93434);
+background-image: -o-linear-gradient(top, #fc3c3c, #d93434);
+background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
+*/
+    text-decoration: none;
+    background-color: #ffd866;
+    background-image: -webkit-linear-gradient(bottom, #ffcb33, #fddf87);
+    background-image: linear-gradient(to top,#ffcb33, #fddf87); }
+  .btn:focus, .btn:active {
+    outline: none !important; }
+  .stepwizard-row .btn {
+    -webkit-border-radius: 0 !important;
+    border-radius: 20px !important;
+    background-color: white;
+    background-image: -webkit-linear-gradient(bottom, white, white);
+    background-image: linear-gradient(to top,white, white);
+    color: #FFBE00; }
+    .stepwizard-row .btn.active-step {
+      -webkit-animation: fadeIn 0.3s ease-in-out;
+      -moz-animation: fadeIn 0.3s ease-in-out;
+      animation: fadeIn 0.3s ease-in-out;
+      background-color: #FFBE00;
+      background-image: -webkit-linear-gradient(bottom, #FFBE00, #FFBE00);
+      background-image: linear-gradient(to top,#FFBE00, #FFBE00);
+      color: whitesmoke; }
+  .btn.prop.hvr-icon-wobble-horizontal:before {
+    content: "\f060";
+    left: 1em;
+    right: inherit; }
+
+.icon-prop-reg:before {
+  content: "\f090"; }
+
+.icon-prop-log:before {
+  content: "\f044"; }
+
+/*# sourceMappingURL=template_propio.css.map */
