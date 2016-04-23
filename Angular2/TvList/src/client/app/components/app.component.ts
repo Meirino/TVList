@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {seriesService} from './series.service';
+import {itemDetailComponent} from './itemDetail/itemDetail.component'
 
 @Component({
   selector: 'app',
@@ -11,6 +12,6 @@ import {seriesService} from './series.service';
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  //{path: '/series', name: 'Series', component: BookListComponent, useAsDefault: true}
+  {path: '/series', name: 'Series', component: itemDetailComponent, useAsDefault: true}
 ])
 export class AppComponent { }

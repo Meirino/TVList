@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './series.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './series.service', './itemDetail/itemDetail.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './series.service'], functi
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, series_service_1;
+    var core_1, router_1, series_service_1, itemDetail_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', './series.service'], functi
             },
             function (series_service_1_1) {
                 series_service_1 = series_service_1_1;
+            },
+            function (itemDetail_component_1_1) {
+                itemDetail_component_1 = itemDetail_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -34,7 +37,9 @@ System.register(['angular2/core', 'angular2/router', './series.service'], functi
                         providers: [series_service_1.seriesService],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }),
-                    router_1.RouteConfig([]),
+                    router_1.RouteConfig([
+                        { path: '/series', name: 'Series', component: itemDetail_component_1.itemDetailComponent, useAsDefault: true }
+                    ]),
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
