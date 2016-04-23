@@ -16,16 +16,20 @@ export class Serie {
        new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
     ];
 
+  addSerie(serie:Serie) {
+    this.series.push(serie);
+  }
+
   getSeries() {
     return withObserver(this.series);
   }
 
-  getSerie(id:number | string) {
+  getSeriebyID(id:number | string) {
     let elem = this.series.filter(h => h.id === +id)[0]
     return withObserver(new Serie(elem.id, elem.titulo, elem.sinopsis, elem.esSerie, elem.temporadas, elem.capitulos, elem.rutaIMG, elem.categorias, elem.personal));
   }
 
-  getSeriesCategorias(cat:string) {
+  getSeriesbyCategorias(cat:string) {
     let elem = this.series.filter(h => h.categorias.indexOf(cat) > -1)[0]
     return elem;
   }

@@ -25,7 +25,9 @@
     "app/components/series-detalle.component.ts",
     "app/components/itemDetail/itemDetail.Component.ts",
     "app/components/series.service.ts",
+    "app/components/comentario.service.ts",
     "app/components/personal.service.ts",
+    "app/components/admin/admin.component.ts",
     "core.d.ts"
   ]
 }

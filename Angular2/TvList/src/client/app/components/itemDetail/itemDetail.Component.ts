@@ -12,7 +12,7 @@ export class itemDetailComponent {
 
   constructor(private router: Router, routeParams: RouteParams, private service: seriesService) {
       let id = routeParams.get('id');
-      service.getSerie(id).subscribe(
+      service.getSeriebyID(id).subscribe(
           serie => this.serie = serie,
           error => console.error(error)
       );
