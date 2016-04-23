@@ -17,8 +17,8 @@ export class SerieDetallesComponent {
         );
     }
 
-    removeBook() {
-        let okResponse = window.confirm("Do you want to remove this book?");
+    removeSerie() {
+        let okResponse = window.confirm("¿De verdad quiere borrar este elemento?");
         if (okResponse) {
             this.service.removeSerie(this.serie).subscribe(
                 _ => this.router.navigate(['Series']),
@@ -27,11 +27,11 @@ export class SerieDetallesComponent {
         }
     }
 
-    editBook() {
+    editSerie() {
         this.router.navigate(['SeriesEdit', { id: this.serie.id }]);
     }
 
-    gotoBooks() {
+    gotoSeries() {
         this.router.navigate(['Series']);
     }
 }

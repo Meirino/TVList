@@ -1,0 +1,1 @@
+{"version":3,"file":"app.js","sourceRoot":"","sources":["app.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;YAIA,mBAAS,CAAC,cAAO,EAAE,CAAC,yBAAgB,CAAC,CAAC,CAAC","sourcesContent":["import {bootstrap} from 'angular2/platform/browser';\r\nimport {MainApp} from './app/main';\r\nimport {ROUTER_PROVIDERS} from 'angular2/router';\r\n\r\nbootstrap(MainApp, [ROUTER_PROVIDERS]);\r\n"]}

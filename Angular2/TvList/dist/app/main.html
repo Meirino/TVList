@@ -1,0 +1,138 @@
+    <div id="wrapper">
+        <!-- Menus de navegacion -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Logo y Toggle -->
+            <div class="navbar-header">
+                <div class="container-fluid">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" [routerLink]="['/Index']" style="padding-top: 0px">
+                    <img alt="Brand" src="assets/images/TVList_Logo.svg" width="200px" height="50x" class="">
+                </a>
+                </div>
+            </div>
+            <!-- Items del menu superior -->
+            <ul class="nav navbar-right top-nav pro-menu-icon ">
+                <li class="pro-vcenter item hidden-xs ">
+
+                    <form action="" method="" class="pro-input-btn-search">
+                        <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Busca algo aquí..." class="form-control text-white"></div>
+
+                    </form>
+
+                </li>
+
+                <li class="pro-vcenter item hidden-lg hidden-sm hidden-md dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li>
+                            <form action="" method="" class="pro-input-btn-search">
+                                <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Busca algo aquí..." class="form-control text-white"></div>
+                            </form>
+                        </li>
+                    </ul>
+
+
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown"><i class="fa fa-user"></i> ->Nombre Usuario<- <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"  data-toggle="modal" data-target="#modal-transparent"><i class="fa fa-fw fa-user"></i> Login</a>
+                        </li>
+                        <li>
+                            <a  [routerLink]="['/Perfil']" ><i class="fa fa-fw fa-user"></i> Perfil</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Desconectar </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Menu Lateral -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a [routerLink]="['/Index']" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="movies" class="collapse">
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#shows" class="hvr-bounce-to-right"><i class="icon-tv"></i> Series <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="shows" class="collapse">
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li><a [routerLink]="['/Admin/AdminIndex']" class="hvr-underline-from-left"><span class="menu-title">Inicio</span></a></li>
+                            <li><a [routerLink]="['/Admin/Elementos']" class="hvr-underline-from-left"><span class="menu-title">Elementos</span></a></li>
+                            <li><a href="adminAutores.html" class="hvr-underline-from-left"><span class="menu-title">Autores</span></a></li>
+                            <li><a href="adminUsuarios.html" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Menu lateral -->
+        </nav>
+
+        <!-- Aqui el cuerpo de la pagina, donde se debe cargar la info -->
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- CABECERA Y Bread CUMP -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Aqui Poner el Nombre de la Página
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i> Aqui poner BreadCump Pagina
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                <!-- AQUI EL CONTENIDO -->
+                  <div class="col-xs-12">
+                    <router-outlet></router-outlet>
+                  </div>
+                </div>
+
+
+
+            </div>
+            <!-- Fin contenedor cuerpo pagina -->
+
+        </div>
+        <!-- Fin de la pagina -->
+
+    </div>
