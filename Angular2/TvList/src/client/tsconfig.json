@@ -18,6 +18,14 @@
 
   "files": [
     "app.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "series-detalle.component.ts",
+    "app/main.ts",
+    "app/components/series.service.ts",
+    "app/components/series-detalle.component.ts",
+    "app/components/itemDetail/itemDetail.Component.ts",
+    "app/components/series.service.ts",
+    "app/components/personal.service.ts",
+    "core.d.ts"
   ]
 }

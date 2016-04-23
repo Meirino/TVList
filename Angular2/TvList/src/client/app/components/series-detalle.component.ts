@@ -3,7 +3,8 @@ import {RouteParams, Router} from 'angular2/router';
 import {Serie, seriesService}   from './series.service';
 
 @Component({
-    templateURL: series-detalle.component.html
+    selector: 'serieDetalle',
+    templateURL: './app/components/series-detalle.component.html'
 })
 export class SerieDetallesComponent {
 
