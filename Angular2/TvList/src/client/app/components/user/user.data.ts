@@ -9,6 +9,7 @@ export class user{
         public user_Email?:string,
         public isAdmin?:boolean,
         public name?:string,
-        public surname?:string
+        public surname?:string,
+        public avatar?:string
     ){}
 }

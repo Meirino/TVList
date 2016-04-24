@@ -10,10 +10,19 @@ export class userService{
     public userLogged=null;
 
     private listaUsuarios:user[]=[
-    new user(0,"admin","pass","admin@tvlist.com",true,"Pepito","Piscinas"),
-    new user(1,"david","pass","david@gmail.com",false,"David","D"),
-    new user(2,"jose","pass","jose@gmail.com",false,"Jose","J")
+        new user(0,"admin","pass","admin@tvlist.com",true,"Pepito","Piscinas","avatar1.png"),
+        new user(1,"david","pass","david@gmail.com",false,"David","D","avatar2.jpg"),
+        new user(2,"jose","pass","jose@gmail.com",false,"Jose","J","avatar3.png")
     ];
+    
+    private _autoid=3;
+    
+    private _ponerUsuario(usr:user){
+        usr.isAdmin=false;
+        usr.id=this._autoid;
+        this.listaUsuarios.push(usr);
+        this._autoid++;
+    }
 
     private _loginSucces = new Subject<boolean>();
 
@@ -89,11 +98,18 @@ export class userService{
     }
 
     getAllUser():user[] {
-        return undefined;
+        return this.listaUsuarios;
     }
 
-    createUser(userOb:user):user {
-        return undefined;
+    createUser(userOb:user):Observable<user> {
+        let usuarioCreado=Observable.create((obs)=>{
+            this._ponerUsuario(userOb);
+            this.loginUserInApp(userOb);
+            obs.next(userOb);
+            obs.complete();
+        }
+    );
+        return usuarioCreado;
     }
 
     setUserByID(id:number, userOb:user):user {
