@@ -1,10 +1,20 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 6d30b0a84404b9d84f8af099e43229cf0163b19b
+# sw.version: 49f8c3debea47c6cc27e1caf332ad550af346f6a
 # sw.file.hash: 3c5b044a6a4a9e1b268ee65cc8cc4fab6565f46e
 \app.js
 # sw.file.hash: 4367fb8794929a217b58d57bdaa5f41a82fc01ce
 \app.js.map
+# sw.file.hash: 9207206538318f24a526554a16ae0d9f492d8c94
+\app\components\PersonaDetails.component.js
+# sw.file.hash: 9b3181413e638ba0299a8797edb315fa02f0f318
+\app\components\PersonaDetails.component.js.map
+# sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+\app\components\PersonaList.component.html
+# sw.file.hash: 05c97b1883ce5e4bc534cb1b5f61ecd5e15a97fb
+\app\components\PersonaList.component.js
+# sw.file.hash: bf29a8e1c8917ecbf6ac612e8f7dd0cde092ce06
+\app\components\PersonaList.component.js.map
 # sw.file.hash: e3c17d988332ff880e521da03890526cb4450a5d
 \app\components\admin\admin.Component.js
 # sw.file.hash: 19363abcce8156ea9115507f62999b3ba82621b2
@@ -23,13 +33,13 @@ CACHE MANIFEST
 \app\components\admin\adminIndex\adminIndex.component.js.map
 # sw.file.hash: 6c1583d7e451d9060bd99f3fb2aecb0f6e46af24
 \app\components\admin\adminIndex\adminIndex.template.html
-# sw.file.hash: 163726f93198e1fa41130aa45ed20b0db45d69c3
+# sw.file.hash: 86d6636ffdda88aed0a1c951ef7cf899a8c5ed68
 \app\components\app.component.js
-# sw.file.hash: 2752cf046e49be46377ce39c215eadb2f75f9147
+# sw.file.hash: db28d233dfdace1b426c5f56de285c3893a31189
 \app\components\app.component.js.map
 # sw.file.hash: 6bea9c967891f400c6807eaea147f37239b22811
 \app\components\comentario.service.js
-# sw.file.hash: 26df00108b87c04976f65ef2bf6be2fc03973cd6
+# sw.file.hash: 354ef5edc754c170de33bfca061a71e968d1acf4
 \app\components\comentario.service.js.map
 # sw.file.hash: ce700c470df20acccca418e7323b1fb0887b3a1d
 \app\components\index\index.component.js
@@ -39,12 +49,14 @@ CACHE MANIFEST
 \app\components\index\index.template.html
 # sw.file.hash: feb59e3ced358adc7450652eb6a42e3ecbf2ccca
 \app\components\index\topCarrouselComponent.Style.css
-# sw.file.hash: 20ee1868f60601565b289f1b5bf789f58eb9ca53
+# sw.file.hash: 8738e99acc492e756076c52003f9daae09da7d51
 \app\components\itemDetail\itemDetail.Component.js
-# sw.file.hash: 982c74b3aab800d36bd942fa1fcffaea4fa9dc70
+# sw.file.hash: b54a21b65ed35b12c1c7f75c8c3a588f9e82a85a
 \app\components\itemDetail\itemDetail.Component.js.map
-# sw.file.hash: b4c6884ad823f24398cff1eb622de45ba2472d45
+# sw.file.hash: 92f961e36dd04ed7a1450030f5ffdb99eaa1163f
 \app\components\itemDetail\itemDetail.Template.html
+# sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+\app\components\itemList.component.html
 # sw.file.hash: 1d7e01ddc35d628acb40360d68d0a0e93f54b07d
 \app\components\perfil\perfil.Component.js
 # sw.file.hash: f70d20525a35a477ea9f526fcdbdd13158f0f67f
@@ -53,15 +65,17 @@ CACHE MANIFEST
 \app\components\perfil\perfil.Style.css
 # sw.file.hash: f2813675c7afbf46a2d75d07e45604943afd3b39
 \app\components\perfil\perfil.Template.html
-# sw.file.hash: dfc666b7813a7eade1ded810c1b4b02c68214619
+# sw.file.hash: 3c6a50fe695ab92554f4435c207d08bb6be45339
 \app\components\personal.service.js
-# sw.file.hash: bb51ecf9f2a2c58e95c3b110250ea91571f40f49
+# sw.file.hash: b17ad9c3575d5b72991528f790b2aa8a0e063f74
 \app\components\personal.service.js.map
-# sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
-\app\components\series-detalle.component.html
-# sw.file.hash: 5a01d5a73eef5f7a3b0a55546bbf7bc9c1d5e943
+# sw.file.hash: 281cfb3091939e71d24e9d4e7cf914351deccb0f
+\app\components\series-detalle.component.js
+# sw.file.hash: 041d13e889504d3852d91cedd0976a1c34a6e0df
+\app\components\series-detalle.component.js.map
+# sw.file.hash: 97da64565e222ea8d35648c0e749c21f31518ee9
 \app\components\series.service.js
-# sw.file.hash: 3beb220686506375fc76e40c07cc47001d1b15e3
+# sw.file.hash: 8e4730ce1ce13c1ea39d73b302a90fec1f6533e9
 \app\components\series.service.js.map
 # sw.file.hash: f236a8505e97c7a421c2f033de903d59042c9647
 \app\components\usuarios.service.js
@@ -159,7 +173,7 @@ CACHE MANIFEST
 \favicon.ico
 # sw.file.hash: 84ae2b481564601a1a88ad9f8544d8634665b195
 \index.html
-# sw.file.hash: a8b81f81281cb6b684384df2454ee0aab1105d6a
+# sw.file.hash: b78283f0ac2a65a2a882711f7c677832acde95a5
 \tsconfig.json
 # sw.file.hash: be771bd0a4170c04abff753212def2a2376a408e
 \vendor\angular2\bundles\angular2-polyfills.js
