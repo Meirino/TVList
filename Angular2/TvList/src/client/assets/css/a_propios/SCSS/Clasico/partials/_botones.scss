@@ -89,7 +89,7 @@ background-image: linear-gradient(to bottom, #d9344a, #b82b47);
 }
 
 .icon-prop-reg:before{
-  content: "\f090";
+  content: "\f090" !important;
 }
 
 .icon-prop-log:before{
