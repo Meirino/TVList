@@ -22,7 +22,7 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
             }],
         execute: function() {
             Serie = (function () {
-                function Serie(id, titulo, sinopsis, esSerie, temporadas, capitulos, rutaIMG, categorias) {
+                function Serie(id, titulo, sinopsis, esSerie, temporadas, capitulos, rutaIMG, categorias, personal) {
                     this.id = id;
                     this.titulo = titulo;
                     this.sinopsis = sinopsis;
@@ -31,6 +31,7 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
                     this.capitulos = capitulos;
                     this.rutaIMG = rutaIMG;
                     this.categorias = categorias;
+                    this.personal = personal;
                 }
                 return Serie;
             }());
@@ -38,16 +39,33 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
             seriesService = (function () {
                 function seriesService() {
                     this.series = [
-                        new Serie(1, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción']),
-                        new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'])
+                        new Serie(1, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
+                        new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
                     ];
                 }
+                seriesService.prototype.addSerie = function (serie) {
+                    this.series.push(serie);
+                };
                 seriesService.prototype.getSeries = function () {
                     return utils_1.withObserver(this.series);
                 };
-                seriesService.prototype.getSerie = function (id) {
+                seriesService.prototype.getSeriebyID = function (id) {
                     var elem = this.series.filter(function (h) { return h.id === +id; })[0];
-                    return utils_1.withObserver(new Serie(elem.id, elem.titulo, elem.sinopsis, elem.esSerie, elem.temporadas, elem.capitulos, elem.rutaIMG, elem.categorias));
+                    return utils_1.withObserver(new Serie(elem.id, elem.titulo, elem.sinopsis, elem.esSerie, elem.temporadas, elem.capitulos, elem.rutaIMG, elem.categorias, elem.personal));
+                };
+                seriesService.prototype.getSeriesbyCategorias = function (cat) {
+                    var elem = this.series.filter(function (h) { return h.categorias.indexOf(cat) > -1; });
+                    var elem2 = elem.filter(function (h) { return h.esSerie == true; });
+                    return elem2;
+                };
+                seriesService.prototype.getPeliculasbyCategorias = function (cat) {
+                    var elem = this.series.filter(function (h) { return h.categorias.indexOf(cat) > -1; });
+                    var elem2 = elem.filter(function (h) { return h.esSerie == false; });
+                    return elem2;
+                };
+                seriesService.prototype.getSeriesbyTipo = function (tipo) {
+                    var elem = this.series.filter(function (h) { return h.esSerie == tipo; });
+                    return elem;
                 };
                 seriesService.prototype.removeSerie = function (serie) {
                     for (var i = 0; i < this.series.length; i++) {
@@ -68,6 +86,7 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
                         oldSerie.capitulos = serie.capitulos;
                         oldSerie.rutaIMG = serie.rutaIMG;
                         oldSerie.categorias = serie.categorias;
+                        oldSerie.personal = serie.personal;
                     }
                     else {
                         serie.id = this.series.length + 1;

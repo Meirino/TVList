@@ -4,7 +4,7 @@ import {Serie, seriesService}   from './series.service';
 
 @Component({
     selector: 'itemList',
-    template: './series-detalle.component.html'
+    templateURL: './components/itemList.component.html'
 })
 
 export class itemList {
