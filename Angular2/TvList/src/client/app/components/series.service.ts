@@ -30,7 +30,19 @@ export class Serie {
   }
 
   getSeriesbyCategorias(cat:string) {
-    let elem = this.series.filter(h => h.categorias.indexOf(cat) > -1)[0]
+    let elem = this.series.filter(h => h.categorias.indexOf(cat) > -1)
+    let elem2 = elem.filter(h => h.esSerie == true);
+    return elem2;
+  }
+
+  getPeliculasbyCategorias(cat:string) {
+    let elem = this.series.filter(h => h.categorias.indexOf(cat) > -1)
+    let elem2 = elem.filter(h => h.esSerie == false);
+    return elem2;
+  }
+
+  getSeriesbyTipo(tipo:boolean) {
+    let elem = this.series.filter(h => h.esSerie == tipo);
     return elem;
   }
 

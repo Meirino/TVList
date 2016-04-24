@@ -4,7 +4,7 @@ import {Serie, seriesService}   from './series.service';
 
 @Component({
     selector: 'serieDetalle',
-    templateURL: './app/components/series-detalle.component.html'
+    templateURL: './app/components/admin/admin.template.html'
 })
 export class SerieDetallesComponent {
 
@@ -12,7 +12,7 @@ export class SerieDetallesComponent {
 
     constructor(private router: Router, routeParams: RouteParams, private service: seriesService) {
         let id = routeParams.get('id');
-        service.getSerie(id).subscribe(
+        service.getSeriebyID(id).subscribe(
             serie => this.serie = serie,
             error => console.error(error)
         );
