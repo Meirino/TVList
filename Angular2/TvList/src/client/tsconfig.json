@@ -30,6 +30,8 @@
     "app/components/app.component.ts",
     "app/components/admin/admin.component.ts",
     "core.d.ts",
-    "app/components/itemList.component.ts"
+    "app/components/itemList.component.ts",
+    "app/components/PersonaList.component.ts",
+    "app/components/PersonaDetails.component.ts"
   ]
 }

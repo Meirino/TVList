@@ -23,7 +23,12 @@ export class itemList {
     this.elem = this.service.getSeriesbyCategorias(cat);
   }
 
-  listSeriesbyTipo(routeParams: RouteParams) {
+  listPeliculasbyCat(routeParams: RouteParams) {
+    let cat = routeParams.get('cat');
+    this.elem = this.service.getPeliculasbyCategorias(cat);
+  }
+
+  listElementosbyTipo(routeParams: RouteParams) {
     let tipo = routeParams.get('tipo');
     if(tipo == "series") {
       this.elem = this.service.getSeriesbyTipo(true);
