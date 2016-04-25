@@ -5,7 +5,7 @@
         </div>
         <div class="btn-group btn-group-justified btn-radio-group " role="group">
             <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
+            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">series</a>
             <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
         </div>
     </div>
@@ -36,14 +36,14 @@
                     <h4 class="modal-title">Añadir elemento</h4>
                 </div>
                 <div class="modal-body">
-                    <p><label>Título:</label> <input type="text"></p>
+                    <p><label>Título:</label> <input [(value)]="elem.titulo" type="text"></p>
                     <p><label>Imagen:</label> <input type="file"></p>
-                    <p><label>Descripción: </label></p> <p><input [(value)]="serie.sinopsis" type="text"></p>
+                    <p><label>Descripción: </label></p> <p><input [(value)]="elem.sinopsis" type="text"></p>
                     <p><label>Tipo:</label></p>
-                    <p><input type="checkbox" [(value)]="serie.esSerie"> <label>Serie</label></p>
-                    <p><label>Nº de temporadas: </label> <input [(value)]="serie.temporadas" type="number"></p>
-                    <p><label>Nº de capítulos en total: </label> <input type="number" [(value)]="serie.capitulos"></p>
-                    <p><input type="submit"></p>
+                    <p><input type="checkbox" [(value)]="elem.esSerie"> <label>Serie</label></p>
+                    <p><label>Nº de temporadas: </label> <input [(value)]="elem.temporadas" type="number"></p>
+                    <p><label>Nº de capítulos en total: </label> <input type="number" [(value)]="elem.capitulos"></p>
+                    <p><button [onclick]="anadirElemento"></button></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn  btn-default" data-dismiss="modal">Close</button>
@@ -56,7 +56,7 @@
                         <!-- item  Lista libro -->
                         <table class="table">
                             <!-- Libro -->
-                            <tr>
+                            <tr *ngFor="#serie of elems; #i = index">
                                 <td class="col-xs-3">
                                 <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
                                 </td>
@@ -64,12 +64,12 @@
                                     <table>
                                         <tr>
                                             <td>
-                                                <h3>Architecture</h3>
+                                                <h3>{{serie.titulo}}</h3>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
+                                                <p class="desc">{{serie.sinpsis}}</p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -91,37 +91,6 @@
                                 </td>
                             </tr>
                             <!-- Fin Libro -->
-                            <tr>
-                                <td class="col-xs-3">
-                                    <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
-                                </td>
-                                <td class="col-xs-9 pro-vcenter">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <h3>Architecture</h3>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="#">Viendo</a></li>
-                                                        <li><a href="#">Completo</a></li>
-                                                    </ul>
-                                                </div>
-                                                <button class="btn pro-btn" href="Libro.html">Más detalles</button>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
                         </table>
                         <!-- FIN Lista item libro -->
 

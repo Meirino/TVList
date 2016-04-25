@@ -4,18 +4,23 @@ import {Serie, seriesService}   from './series.service';
 
 @Component({
     selector: 'itemList',
-    templateURL: './components/itemList.component.html'
+    templateURL: './app/components/itemList.component.html'
 })
 
 export class itemList {
+  private elem:Serie;
   private elems: Serie[];
   private service: seriesService;
 
   constructor(private router: Router, routeParams: RouteParams) {
       this.service.getSeries().subscribe(
-          series => this.elem = series,
+          series => this.elems = series,
           error => console.error(error)
       );
+  }
+
+  anadirElemento() {
+    this.service.saveSerie(this.elem);
   }
 
   listSeriesbyCat(routeParams: RouteParams) {
