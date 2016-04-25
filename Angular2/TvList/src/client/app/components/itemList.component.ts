@@ -8,7 +8,7 @@ import {Serie, seriesService}   from './series.service';
 })
 
 export class itemList {
-  private elem: Serie[];
+  private elems: Serie[];
   private service: seriesService;
 
   constructor(private router: Router, routeParams: RouteParams) {
@@ -20,20 +20,20 @@ export class itemList {
 
   listSeriesbyCat(routeParams: RouteParams) {
     let cat = routeParams.get('cat');
-    this.elem = this.service.getSeriesbyCategorias(cat);
+    this.elems = this.service.getSeriesbyCategorias(cat);
   }
 
   listPeliculasbyCat(routeParams: RouteParams) {
     let cat = routeParams.get('cat');
-    this.elem = this.service.getPeliculasbyCategorias(cat);
+    this.elems = this.service.getPeliculasbyCategorias(cat);
   }
 
   listElementosbyTipo(routeParams: RouteParams) {
     let tipo = routeParams.get('tipo');
     if(tipo == "series") {
-      this.elem = this.service.getSeriesbyTipo(true);
+      this.elems = this.service.getSeriesbyTipo(true);
     } else {
-      this.elem = this.service.getSeriesbyTipo(false);
+      this.elems = this.service.getSeriesbyTipo(false);
     } //ifelse
   }
 }

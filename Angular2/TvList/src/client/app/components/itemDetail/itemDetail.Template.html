@@ -12,7 +12,7 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-                <img src="http://lorempixel.com/800/1200/sports" class="img-responsive center-block">
+                <img src="{{serie.rutaIMG}}" class="img-responsive center-block">
             </div>
         </div>
         <div class="row">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div *ngif="serie.esSerie == true"><div class="col-md-3">
                 <h4>Serie</h4>
             </div>
             <div class="col-md-4">
@@ -30,7 +30,10 @@
             </div>
             <div class="col-md-5">
                 <h4>{{series.temporadas}} Temporadas</h4>
-            </div>
+            </div></div>
+            <div *ngif="serie.esSerie == false"><div class="col-md-3">
+                <h4>Serie</h4>
+            </div></div>
             <hr>
         </div>
     </div>
