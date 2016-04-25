@@ -3,7 +3,7 @@ import {userService} from '../../components/user/user.service';
 import {user} from '../../components/user/user.data';
 import {Router,RouteConfig, RouterOutlet, RouteParams,RouterLink,CanActivate,ComponentInstruction,OnActivate} from 'angular2/router';
 import {isLoggedIn} from '../user/loginAuth';
-import {messageListComponent} from '../messages/messageList.component';
+import {misValoracionesComponent} from './misValoraciones/misValoraciones.component';
 
 import {profileDataComponent} from './profileData/profileData.Component';
 
@@ -23,7 +23,7 @@ import {profileDataComponent} from './profileData/profileData.Component';
   {
     path: '/comentarios',
     name: 'Comentarios',
-    component: messageListComponent
+    component: misValoracionesComponent
   }
 ])
 

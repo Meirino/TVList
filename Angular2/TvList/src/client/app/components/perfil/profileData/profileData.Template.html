@@ -1,4 +1,4 @@
-
+<div class="animated bounceInRight">
         <h1>Datos Personales</h1>
         <form (ngSubmit)="updateUser()" [ngFormModel]="form" #updForm="ngForm" >
             <div class="form-group col-xs-12">
@@ -73,3 +73,4 @@
             <button type="submit" class="btn pro-btn col-xs-4 text-center hvr-icon-spin" [disabled]="!updForm.valid" >Actualizar</button>
             <div class="col-xs-4"></div>
         </form>
+</div>

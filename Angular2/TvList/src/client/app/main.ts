@@ -10,7 +10,6 @@ import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.c
 import {userService} from './components/user/user.service';
 
 
-
 @Component({
   selector: 'main-app',
   templateUrl: 'app/main.html',
@@ -91,7 +90,7 @@ export class MainApp implements CanDeactivate  {
   }
 
   private _desconectarUsuario(){
-
+    this._router.navigate(['/Index']);
     this._servicioUsuarios.userLogged=null;
   }
 
