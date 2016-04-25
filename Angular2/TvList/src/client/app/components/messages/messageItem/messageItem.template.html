@@ -1,25 +1,25 @@
 <div class="animated bounceInRight row">
         <div class="col-xs-2 pro-vcenter">
-            <img src="http://lorempixel.com/400/200/people/1" class="img-responsive img-circle pro-img-mini-circle center-block">
+            <img [src]="'/assets/images/profile/'+message.usuario.avatar" class="img-responsive img-circle pro-img-mini-circle center-block">
         </div>
         <div class="col-xs-9 pro-vcenter">
             <div class="row">
                 <div class="col-xs-6">
-                    <h4> -> Nombre Usuario <- </h4>
+                    <h4> {{message.usuario.user_Name}} </h4>
                 </div>
                 <div class="col-xs-6 col">
                     <h4 class="pro-yellow-stars">
-                        <span [ngClass]="message.score>0?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
-                        <span [ngClass]="message.score>1?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
-                        <span [ngClass]="message.score>2?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
-                        <span [ngClass]="message.score>3?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
-                        <span [ngClass]="message.score>4?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>0?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>1?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>2?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>3?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>4?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
                     </h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>Titulo Valoracion</h4>
+                    <h4>{{message.comentario.title}}</h4>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="col-xs-2">
         </div>
         <div class=" col-xs-9">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit mi, consectetur eget metus vitae, vulputate molestie orci. Ut pretium mollis molestie. Duis ac enim dapibus, imperdiet odio id, interdum diam. Quisque pharetra tortor non quam finibus porta. Maecenas et tellus lectus. Vivamus iaculis vitae sapien quis pulvinar. Aliquam tellus neque, sodales eget facilisis sed, gravida a velit.
+            {{message.comentario.text}}
         </div>
 
 </div>

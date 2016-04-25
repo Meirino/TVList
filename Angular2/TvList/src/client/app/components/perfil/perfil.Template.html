@@ -16,5 +16,4 @@
     <li (click)="activeTab=2" [ngClass]="activeTab==2?'active animated bounce':''"><a class="hvr-overline-reveal">Mis Series</a></li>
     <li (click)="activeTab=3" [ngClass]="activeTab==3?'active animated bounce':''"><a [routerLink]="['./Comentarios']" class="hvr-overline-reveal" >Mis valoraciones</a></li>
 </ul>
-{{activeTab}} {{activeTab==0?'active':'nada'}}
 <router-outlet></router-outlet>

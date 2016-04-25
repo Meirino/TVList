@@ -1,18 +1,19 @@
 import {Injectable} from 'angular2/core';
 import {Message} from './message.data';
 import {Observable} from 'rxjs/Rx';
+import {userService} from '../user/user.service'
 
 @Injectable()
 export class messageService{
 
 
     private _listaComentarios:Message[]=[
-        new Message(0,4,'Muy Buena, divertida fascinante'),
-        new Message(1,2,'Un poco aburrida'),
-        new Message(2,5,'Lo mejor que se ha hecho nunca'),
-        new Message(3,3,'Entretiene'),
-        new Message(4,0,'Ni de gratis'),
-        new Message(5,1,'Me dormi')
+        new Message(0,4,'Muy Buena, divertida fascinante','Muy buena'),
+        new Message(1,2,'Un poco aburrida','Del monton'),
+        new Message(2,5,'Lo mejor que se ha hecho nunca','WOWOWW'),
+        new Message(3,3,'Entretiene','No esta mal'),
+        new Message(4,0,'Ni de gratis','AARGh'),
+        new Message(5,1,'Me dormi','Zzzz')
     ];
 
     private _listaComentarios_Usuarios:number[][]=[
@@ -25,7 +26,7 @@ export class messageService{
     ];
 
 
-    constructor(){}
+    constructor(private _userService:userService){}
 
     public getMesFromUserID(userID:number){
         let listadoValoracionesYUsuarios=Observable. fromArray(this._listaComentarios_Usuarios);
@@ -41,7 +42,11 @@ export class messageService{
             })
         })
 
-        return comentarios;
+        let userinfo=this._userService.getUserByID(userID);
+        let comentarioConUserInfo=comentarios.flatMap(x=>{
+        return userinfo.map(y=>{return({comentario:x,usuario:y})});
+    });
+        return comentarioConUserInfo;
 
     }
     

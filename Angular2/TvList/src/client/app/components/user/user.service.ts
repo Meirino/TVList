@@ -93,8 +93,8 @@ export class userService{
     
     
 
-    getUserByID(id:number):user {
-        return undefined;
+    getUserByID(id:number):Observable<user> {
+        return Observable.fromArray(this.listaUsuarios).filter(x=>x.id ==id)
     }
 
     getAllUser():user[] {
@@ -112,8 +112,18 @@ export class userService{
         return usuarioCreado;
     }
 
-    setUserByID(id:number, userOb:user):user {
-        return undefined;
+    setUserByID(luserOb:user):Observable<user> {
+       let usuarioActualizado=Observable.create(x=>{
+           for (let userOb  in this.listaUsuarios){
+               if (this.listaUsuarios[userOb].id==luserOb.id){
+                   this.listaUsuarios[userOb]=luserOb;
+                   x.next(luserOb);
+               }
+           }
+           x.error(false)
+       })
+        
+        return usuarioActualizado;
     }
 
     deleteUserByID(id:number):user {

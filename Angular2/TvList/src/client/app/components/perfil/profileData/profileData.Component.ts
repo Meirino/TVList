@@ -21,6 +21,8 @@ export class profileDataComponent implements OnInit{
 
   private userToCreate:user=new user();
 
+  private succesLabel:boolean=false;
+
   form: ControlGroup;
 
   ngOnInit():any {
@@ -35,8 +37,20 @@ export class profileDataComponent implements OnInit{
     this.loadProfileData();
   }
 
+  private updateUser(){
+    this.succesLabel=false;
+    let userLap=this._servicioUsuario.setUserByID(this.userToCreate);
+    userLap.subscribe(x=>{
+      this._servicioUsuario.userLogged=x;
+      setTimeout((a)=>{
+        this.succesLabel=true;
+
+      },0)
+    });
+  }
+
   private loadProfileData(){
-    this.userToCreate=this._servicioUsuario.userLogged;
+    this.userToCreate=JSON.parse(JSON.stringify(this._servicioUsuario.userLogged));
     this.userToCreate.user_Password='';
   }
   constructor(private _servicioUsuario:userService,private ref:ElementRef,private fb: FormBuilder){}
