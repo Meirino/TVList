@@ -7,7 +7,7 @@ import {Personal, PersonalService}   from './personal.service';
     template: './PersonaList.component.html'
 })
 
-export class itemList {
+export class PersonaList {
   private persona: Personal;
   private elems: Personal[];
   private service: PersonalService;
