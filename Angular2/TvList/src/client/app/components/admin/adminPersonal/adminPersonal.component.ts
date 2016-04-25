@@ -7,7 +7,7 @@ import {Personal, PersonalService}   from './personal.service';
     templateURL: './adminPersona.template.html'
 })
 
-export class AdminPersonaList {
+export class adminPersonalComponent {
   private persona: Personal;
   private elems: Personal[];
   private service: PersonalService;

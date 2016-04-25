@@ -1,13 +1,13 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
-import {Serie, seriesService}   from './series.service';
+import {Serie, seriesService}   from '../../series.service';
 
 @Component({
     selector: 'itemList',
-    templateURL: './app/components/itemList.component.html'
+    templateUrl: './app/components/itemList.component.html'
 })
 
-export class itemList {
+export class adminElementsComponent {
   private elem:Serie;
   private elems: Serie[];
   private service: seriesService;

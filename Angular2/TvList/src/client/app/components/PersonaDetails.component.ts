@@ -4,10 +4,10 @@ import {Personal, PersonalService}   from './personal.service';
 
 @Component({
     selector: 'personaList',
-    templateURL: './app/component/PersonaDetails.template.html'
+    templateUrl: './app/component/PersonaDetails.template.html'
 })
 
-export class PersonalDetailsComponent {
+export class PersonaDetailsComponent {
   private persona: Personal;
   private service: PersonalService;
 
