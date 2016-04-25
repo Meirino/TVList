@@ -1,7 +1,7 @@
 import {Component,ViewChild} from 'angular2/core';
-import {Router,RouteConfig,  ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router,RouteConfig,  ROUTER_DIRECTIVES,CanDeactivate ,ComponentInstruction} from 'angular2/router';
 import {Utilities} from './utilities';
-
+import {Injector} from 'angular2/core';
 import {modalComponent} from "./components/modal/modal.component";
 import {indexComponent} from './components/index/index.component';
 import {perfilComponent} from './components/perfil/perfil.Component';
@@ -14,8 +14,7 @@ import {userService} from './components/user/user.service';
 @Component({
   selector: 'main-app',
   templateUrl: 'app/main.html',
-  directives: [ROUTER_DIRECTIVES,modalComponent],
-  providers: [userService]
+  directives: [ROUTER_DIRECTIVES,modalComponent]
 })
 @RouteConfig([
   {
@@ -25,7 +24,7 @@ import {userService} from './components/user/user.service';
     useAsDefault: true
   },
   {
-    path: '/perfil',
+    path: '/perfil/...',
     name: 'Perfil',
     component: perfilComponent
   },
@@ -36,12 +35,19 @@ import {userService} from './components/user/user.service';
   }
 ])
 
-export class MainApp{
+export class MainApp implements CanDeactivate  {
+
+  routerCanDeactivate(nextInstruction:ComponentInstruction, prevInstruction:ComponentInstruction):boolean|Promise<boolean> {
+    return false;
+  }
 
   private _componenteACargar = centroUsuarioComponent;
   @ViewChild('modal') private modal:modalComponent;
 
   constructor(private _router: Router,private _servicioUsuarios:userService) {
+
+
+
 
 /*
     V1
@@ -61,6 +67,9 @@ export class MainApp{
       }
     });
   }
+
+
+
 
 
 
