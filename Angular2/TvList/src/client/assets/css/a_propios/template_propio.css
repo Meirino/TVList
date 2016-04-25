@@ -97,7 +97,7 @@ background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
     right: inherit; }
 
 .icon-prop-reg:before {
-  content: "\f090"; }
+  content: "\f090" !important; }
 
 .icon-prop-log:before {
   content: "\f044"; }
@@ -221,5 +221,18 @@ img.pro-img-mini-circle {
   background-color: #2299d1;
   background-image: -webkit-linear-gradient(bottom, #2299d1, #71c2e8);
   background-image: linear-gradient(to top,#2299d1, #71c2e8); }
+
+.pro-input-group.input-group .glyphicon {
+  top: 0px; }
+.pro-input-group.input-group .ng-touched.ng-valid[required] {
+  border-left: 5px solid #42A948;
+  /* green */
+  border-right: 5px solid #42A948;
+  /* green */ }
+.pro-input-group.input-group .ng-touched.ng-invalid {
+  border-left: 5px solid #a94442;
+  /* red */
+  border-right: 5px solid #a94442;
+  /* red */ }
 
 /*# sourceMappingURL=template_propio.css.map */

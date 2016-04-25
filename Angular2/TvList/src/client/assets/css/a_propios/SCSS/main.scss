@@ -12,11 +12,6 @@ $color_pro-pill_backBot-selected: #2299d1;
   float: none;
 }
 
-
-
-
-
-
 *  {
   .pro-uppper-badge{
     font-size: 11px !important;
@@ -66,6 +61,33 @@ img.pro-img-mini-circle  {
   }
   li.active a{
     @include linear-gradient(to top, $color_pro-pill_backBot-selected, lighten($color_pro-pill_backBot-selected,20%));
+  }
+}
+
+
+
+.pro-input-group.input-group{
+
+  & .glyphicon{
+    top:0px;
+  }
+
+  .ng-touched{
+    &.ng-valid {
+      &[required]{
+        border:{
+          left: 5px solid #42A948; /* green */
+          right: 5px solid #42A948; /* green */
+        }
+      }
+    }
+    &.ng-invalid {
+      border:{
+        left:  5px solid #a94442; /* red */
+        right:  5px solid #a94442; /* red */
+      }
+    }
+
   }
 }
 
