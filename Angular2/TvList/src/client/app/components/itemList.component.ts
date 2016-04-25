@@ -23,6 +23,10 @@ export class itemList {
     this.service.saveSerie(this.elem);
   }
 
+  listEverything() {
+    this.service.getSeries();
+  }
+
   listSeriesbyCat(routeParams: RouteParams) {
     let cat = routeParams.get('cat');
     this.elems = this.service.getSeriesbyCategorias(cat);
@@ -33,12 +37,11 @@ export class itemList {
     this.elems = this.service.getPeliculasbyCategorias(cat);
   }
 
-  listElementosbyTipo(routeParams: RouteParams) {
-    let tipo = routeParams.get('tipo');
-    if(tipo == "series") {
-      this.elems = this.service.getSeriesbyTipo(true);
-    } else {
-      this.elems = this.service.getSeriesbyTipo(false);
-    } //ifelse
+  listElementosbyTipo(tipo:boolean) {
+    this.elems = this.service.getSeriesbyTipo(tipo);
+  }
+
+  listEliminarElemento(elim:Serie) {
+    this.service.removeSerie(elim);
   }
 }

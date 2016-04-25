@@ -12,42 +12,20 @@
         <br>
         <div class="row">
             <div class="col-md-12">
-                <img [src]="serie.rutaIMG" class="img-responsive center-block">
+                <img [src]="persona.rutaIMG" class="img-responsive center-block">
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 style="text-align:center">{{serie.titulo}}</h3>
-                <hr>
+                <h3 style="text-align:center">{{persona.nombre}}</h3>
             </div>
-        </div>
-        <div class="row">
-            <div *ngif="serie.esSerie == true"><div class="col-md-3">
-                <h4>Serie</h4>
-            </div>
-            <div class="col-md-4">
-                <h4>{{series.capitulos}} capítulos</h4>
-            </div>
-            <div class="col-md-5">
-                <h4>{{series.temporadas}} Temporadas</h4>
-            </div></div>
-            <div *ngif="serie.esSerie == false"><div class="col-md-3">
-                <h4>Pelicula</h4>
-            </div></div>
-            <hr>
         </div>
     </div>
 </div>
 <div class="col-md-9">
-    <h3>Sinopsis:</h3>
+    <h3>Descripcion:</h3>
     <hr>
-    <p>{{serie.sinopsis}}</p>
-    <br>
-    <h3>Personal:</h3>
-    <hr>
-    <p *ngfor="#pers of serie.personal">{{pers}}</p>
-    <!-- <h4>Director: <a href="personal.html">Ejemplo de director</a></h4>
-    <h4>Actores: <a href="personal.html">Ejemplo de actor</a>, <a href="personal.html">Ejemplo de actor</a>, <a href="personal.html">Ejemplo de actor</a>, <a href="personal.html">Ejemplo de actor</a>, <a href="personal.html">Ejemplo de actor</a></h4>-->
+    <p>{{persona.descripcion}}</p>
 </div>
 
 

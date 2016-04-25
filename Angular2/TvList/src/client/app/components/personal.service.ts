@@ -22,6 +22,10 @@ export class PersonalService {
     this.Personales.push(persona)
   }
 
+  getLongitud() {
+    return this.Personales.length;
+  }
+
   getPersonales() {
     return withObserver(this.Personales);
   }
@@ -49,5 +53,11 @@ export class PersonalService {
         }
     }
     return withObserver(undefined);
+  }
+
+  savePersona(persona: Personal){
+    persona.id = this.Personales.length+1;
+    this.Personales.push(persona);
+    return withObserver(persona);
   }
 }

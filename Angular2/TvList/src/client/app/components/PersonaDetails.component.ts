@@ -4,7 +4,7 @@ import {Personal, PersonalService}   from './personal.service';
 
 @Component({
     selector: 'personaList',
-    template: ''
+    templateURL: './app/component/PersonaDetails.template.html'
 })
 
 export class PersonalDetailsComponent {
@@ -17,9 +17,5 @@ export class PersonalDetailsComponent {
         personal => this.persona = personal,
         error => console.error(error)
     );
-  }
-
-  eliminarPersona() {
-    this.service.removePersona(this.persona);
   }
 }

@@ -1,29 +1,24 @@
 <div class="col-xs-12">
     <div class="row">
         <div class="col-md-12">
-            <button type="button" class="btn pro-btn btn-lg btn-block" data-toggle="modal" data-target="#AddModal">Añadir elemento</button>
+            <!--  <button type="button" class="btn pro-btn btn-lg btn-block" data-toggle="modal" data-target="#AddModal">Añadir elemento</button>  -->
         </div>
-        <div class="btn-group btn-group-justified btn-radio-group " role="group">
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">series</a>
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
+        <div class="btn-group btn-group-justified btn-radio-group" role="group">
+            <a type="button" (click)="listEverything()" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
+            <a type="button" (click)="listElementosbyTipo(true)" class="btn pro-btn btn-default btn-secondary animated ">series</a>
+            <a type="button" (click)="listElementosbyTipo(false)" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por título"  class="form-control"/></div>
+                <input type="text" [(value)]="busq" placeholder="Filtrar por título"  class="form-control"/></div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por director" class="form-control"/></div>
-        </div>
-        <div class="col-xs-4">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por actor" class="form-control"/></div>
+                <input type="text" [(value)]="busq" placeholder="Filtrar por director" class="form-control"/></div>
         </div>
     </div>
 
@@ -37,13 +32,13 @@
                 </div>
                 <div class="modal-body">
                     <p><label>Título:</label> <input [(value)]="elem.titulo" type="text"></p>
-                    <p><label>Imagen:</label> <input type="file"></p>
+                    <p><label>Imagen:</label> <input [(value)]="elem.rutaIMG" type="text"></p>
                     <p><label>Descripción: </label></p> <p><input [(value)]="elem.sinopsis" type="text"></p>
                     <p><label>Tipo:</label></p>
                     <p><input type="checkbox" [(value)]="elem.esSerie"> <label>Serie</label></p>
                     <p><label>Nº de temporadas: </label> <input [(value)]="elem.temporadas" type="number"></p>
                     <p><label>Nº de capítulos en total: </label> <input type="number" [(value)]="elem.capitulos"></p>
-                    <p><button [onclick]="anadirElemento"></button></p>
+                    <p><button (click)="anadirElemento(elem)"></button></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn  btn-default" data-dismiss="modal">Close</button>
@@ -52,7 +47,7 @@
         </div>
     </div>
 
-   <div class="row">
+                    <div class="row">
                         <!-- item  Lista libro -->
                         <table class="table">
                             <!-- Libro -->
@@ -74,7 +69,6 @@
                                         </tr>
                                         <tr>
                                             <td>
-
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
                                                     <ul class="dropdown-menu" role="menu">
@@ -85,6 +79,7 @@
                                                 <a href="itemDetails.html">
                                                   <button class="btn pro-btn" href="Libro.html">Más detalles</button>
                                                 </a>
+                                                <!-- <button (click)="listEliminarElemento(serie)" class="btn pro-btn">Eliminar</button> -->
                                             </td>
                                         </tr>
                                     </table>
