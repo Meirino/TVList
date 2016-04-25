@@ -43,15 +43,7 @@ export class registerComponent{
 
 
     ngOnInit() {
-/*       this.form = this.fb.group({
-           // password: ['', Validators.pattern('[0-9]{5}')],
-            'passwordsGroup': new ControlGroup({
-                'password': new Control(''),
-                'passwordRep': new Control('')
-            }, {}, this.passwordRepetValidator),
-            password: ['', this.passwordStreValidator]
-        });*/
-
+        
         this.form = this.fb.group({
             passwordsGroup: this.fb.group({
                 password: ["", Validators.compose([Validators.required,this.passwordStreValidator])],

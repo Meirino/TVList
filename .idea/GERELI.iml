@@ -2,6 +2,9 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Angular2/TvList/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/Angular2/TvList/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/Angular2/TvList/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/Angular2/main/dist" />
       <excludeFolder url="file://$MODULE_DIR$/Angular2/main/tmp" />
     </content>
