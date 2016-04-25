@@ -11,10 +11,10 @@
     </div>
 </div>
 <ul class="nav nav-pills pro-pills nav-justified nav-tabs-justified">
-    <li class="active"><a href="#" [routerLink]="['./Usuario']" class="hvr-overline-reveal">Datos Personales</a></li>
-    <li><a  href="#" class="hvr-overline-reveal" data-toggle="tab">Mis Peliculas</a></li>
-    <li><a href="#" class="hvr-overline-reveal" data-toggle="tab">Mis Series</a></li>
-    <li><a href="#" class="hvr-overline-reveal" data-toggle="tab">Mis valoraciones</a></li>
+    <li (click)="activeTab=0" [ngClass]="activeTab==0?'active animated bounce':''"><a href="#" [routerLink]="['./Usuario']" class="hvr-overline-reveal">Datos Personales</a></li>
+    <li (click)="activeTab=1" [ngClass]="activeTab==1?'active animated bounce':''"><a  class="hvr-overline-reveal">Mis Peliculas</a></li>
+    <li (click)="activeTab=2" [ngClass]="activeTab==2?'active animated bounce':''"><a class="hvr-overline-reveal">Mis Series</a></li>
+    <li (click)="activeTab=3" [ngClass]="activeTab==3?'active animated bounce':''"><a [routerLink]="['./Comentarios']" class="hvr-overline-reveal" >Mis valoraciones</a></li>
 </ul>
-
+{{activeTab}} {{activeTab==0?'active':'nada'}}
 <router-outlet></router-outlet>

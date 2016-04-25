@@ -3,6 +3,7 @@ import {userService} from '../../components/user/user.service';
 import {user} from '../../components/user/user.data';
 import {Router,RouteConfig, RouterOutlet, RouteParams,RouterLink,CanActivate,ComponentInstruction,OnActivate} from 'angular2/router';
 import {isLoggedIn} from '../user/loginAuth';
+import {messageListComponent} from '../messages/messageList.component';
 
 import {profileDataComponent} from './profileData/profileData.Component';
 
@@ -18,6 +19,11 @@ import {profileDataComponent} from './profileData/profileData.Component';
     name: 'Usuario',
     component: profileDataComponent,
     useAsDefault: true
+  },
+  {
+    path: '/comentarios',
+    name: 'Comentarios',
+    component: messageListComponent
   }
 ])
 
@@ -26,26 +32,15 @@ import {profileDataComponent} from './profileData/profileData.Component';
   return isLoggedIn(next, previous);
 })
 export class perfilComponent implements OnInit{
-
-
-/*
-  routerOnActivate(next: ComponentInstruction, prev: ComponentInstruction) {
-    let a = `Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`;
-    console.log(a);
-  }
-  */
-  private userToCreate:user=new user();
-
- 
   ngOnInit():any {
-    // (<user>this._servicioUsuario.userLogged).name;
-
+    console.log(this.activeTab);
   }
 
-  private loadProfileData(){
+  private activeTab:number=0;
+ 
 
-  }
   constructor(private _servicioUsuario:userService){}
-  
+
+
 
 }
