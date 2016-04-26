@@ -1,4 +1,4 @@
-import {Component,ViewChild} from 'angular2/core';
+import {Component,ViewChild,OnInit} from 'angular2/core';
 import {Router,RouteConfig,  ROUTER_DIRECTIVES,CanDeactivate ,ComponentInstruction} from 'angular2/router';
 import {Utilities} from './utilities';
 import {Injector} from 'angular2/core';
@@ -8,6 +8,7 @@ import {perfilComponent} from './components/perfil/perfil.Component';
 import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
+import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
 
 
 @Component({
@@ -34,7 +35,10 @@ import {userService} from './components/user/user.service';
   }
 ])
 
-export class MainApp implements CanDeactivate  {
+export class MainApp implements OnInit{
+  ngOnInit():any {
+    this._breadCrumbService.host=window.location.origin;
+  }
 
   routerCanDeactivate(nextInstruction:ComponentInstruction, prevInstruction:ComponentInstruction):boolean|Promise<boolean> {
     return false;
@@ -43,8 +47,15 @@ export class MainApp implements CanDeactivate  {
   private _componenteACargar = centroUsuarioComponent;
   @ViewChild('modal') private modal:modalComponent;
 
-  constructor(private _router: Router,private _servicioUsuarios:userService) {
+  constructor(private _router: Router,private _servicioUsuarios:userService,private _breadCrumbService:breadCrumbService) {
 
+
+    _router.subscribe((val) => {
+      _router.recognize(val).then(x=>{
+        console.log(x)})
+      let abrir_modal_login=window.location;
+      _breadCrumbService.generateBreadCrumb(val);
+    });
 
 
 
@@ -68,6 +79,9 @@ export class MainApp implements CanDeactivate  {
   }
 
 
+  private navigateByUrl(url:string){
+    this._router.navigateByUrl(url).then(x=>{return true});
+  }
 
 
 
