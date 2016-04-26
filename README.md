@@ -70,3 +70,6 @@ Página de administración
 
 
 # Fase 3
+
+En la fase 3 hemos desarrollado el frontEnd de la aplicación TVList, el presente enlace muestra un esquema de los componentes así como su jerarquía
+[Imgur](http://i.imgur.com/fahJPt3.jpg)
