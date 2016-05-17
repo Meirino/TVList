@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
+                        <a [routerLink]="['/Autores']" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
                     </li>
                     <li *ngIf="_servicioUsuarios.userLogged?.isAdmin">
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right animated bounceInLeft"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
