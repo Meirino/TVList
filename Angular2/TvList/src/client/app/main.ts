@@ -9,6 +9,7 @@ import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
 import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
+import {PersonaListComponent} from "./components/AutorList/PersonaList.component";
 
 
 @Component({
@@ -32,6 +33,11 @@ import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
     path: '/admin/...',
     name: 'Admin',
     component: adminComponent
+  },
+  {
+    path: '/autores',
+    name: 'Autores',
+    component: PersonaListComponent
   }
 ])
 
