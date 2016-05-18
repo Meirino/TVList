@@ -7,7 +7,7 @@ import {Actor, ActoresService} from "../actores.service";
 
 @Component({
     selector: 'ActorList',
-    template: '<div>Testerino</div>',
+    template: '<div>Test</div>',
     providers: [ActoresService]
 })
 export class ActorListComponent {
