@@ -3,20 +3,17 @@
  */
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
-import {Actor, ActoresService}   from '../actores.service.ts';
+import {Actor, ActoresService} from "../actores.service";
 
 @Component({
-    selector: 'ActoresList',
-    templateUrl: './components/ActorList/ActorList.component.html'
+    selector: 'ActorList',
+    template: '<div>Testerino</div>',
+    providers: [ActoresService]
 })
 export class ActorListComponent {
     public lista:Actor[];
-    public service:ActoresService;
+    public service: ActoresService;
 
-    constructor(private router: Router, routeParams: RouteParams) {
-        this.service.getDatos().subscribe(
-            Actor => this.lista = Actor,
-            Error => console.log(Error)
-        );
+    constructor(public router: Router, public routeParams: RouteParams) {
     }
 }

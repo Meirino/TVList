@@ -9,14 +9,12 @@ import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
 import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
-import {ActorListComponent} from './components/ActorList/ActorList.component';
-import {ActoresService} from "./components/actores.service";
+import {ActorListComponent} from './components/ActorList/ActorList.component.ts';
 
 
 @Component({
   selector: 'main-app',
   templateUrl: 'app/main.html',
-  providers: [ActoresService],
   directives: [ROUTER_DIRECTIVES,modalComponent]
 })
 @RouteConfig([
