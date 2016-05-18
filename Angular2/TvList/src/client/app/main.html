@@ -88,14 +88,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a [routerLink]="['/Autores']" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
+                        <a [routerLink]="['/Actores']" class="hvr-bounce-to-right"><i class="icon-user-tie"></i> Actores</a>
                     </li>
                     <li *ngIf="_servicioUsuarios.userLogged?.isAdmin">
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right animated bounceInLeft"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li><a [routerLink]="['/Admin/AdminIndex']" class="hvr-underline-from-left"><span class="menu-title">Inicio</span></a></li>
                             <li><a [routerLink]="['/Admin/Elementos']" class="hvr-underline-from-left"><span class="menu-title">Elementos</span></a></li>
-                            <li><a [routerLink]="['/Autores']" href="adminAutores.html" class="hvr-underline-from-left"><span class="menu-title">Autores</span></a></li>
+                            <li><a [routerLink]="['/Actores']" class="hvr-underline-from-left"><span class="menu-title">Actores</span></a></li>
                             <li><a href="adminUsuarios.html" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
                         </ul>
                     </li>
