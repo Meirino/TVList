@@ -74,14 +74,7 @@ export class registerComponent{
     }
 
     private reg_step3(){
-        let userCreated:Observable<user>=this.servicioUsuarios.createUser(this.userToCreate);
-        userCreated.subscribe((suc)=>{
-            console.log(this.servicioUsuarios.getAllUser());
-        },
-        (error)=>{
-
-        });
-
+        let userCreated=this.servicioUsuarios.createUser(this.userToCreate);
     }
 
 

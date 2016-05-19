@@ -1,7 +1,7 @@
 System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var user;
+    var user, userSpring;
     return {
         setters:[],
         execute: function() {
@@ -23,6 +23,21 @@ System.register([], function(exports_1, context_1) {
                 return user;
             }());
             exports_1("user", user);
+            userSpring = (function () {
+                function userSpring(usuario) {
+                    this.id = usuario.id;
+                    this.name = usuario.user_Name;
+                    this.passwordHash = usuario.user_Password;
+                    this.mail = usuario.user_Email;
+                    this.isAdmin = usuario.isAdmin;
+                    this.rname = usuario.name;
+                    this.surname = usuario.surname;
+                    this.avatar = usuario.avatar;
+                    this.roles = usuario.roles;
+                }
+                return userSpring;
+            }());
+            exports_1("userSpring", userSpring);
         }
     }
 });

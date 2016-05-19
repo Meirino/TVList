@@ -2,7 +2,7 @@
  * Created by david on 19/04/2016.
  */
 import {Injectable,OnInit} from 'angular2/core';
-import {user} from './user.data';
+import {user,userSpring} from './user.data';
 import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
@@ -91,41 +91,6 @@ export class userService{
         userStream.connect();
 
         return userAcceptedStream;
-
-        /*
-        var userStream = Observable.create((observer:any) => {
-            let userToReturn=null;
-            for (let userOb of this.listaUsuarios){
-                if (userOb.user_Name==userName && userOb.user_Password==userPassword){
-                    userToReturn=userOb;
-                    observer.next(userToReturn);
-                    observer.complete();
-                }
-            }
-            observer.error('Usuario o Contraseña incorrecto');
-        }).publishReplay(1);;
-
-        var userAcceptedStream = userStream.map(x => {
-            if (x==0)
-                return false;
-            else
-                return true;
-        });
-
-        userStream.subscribe(
-            usr => {
-                this.loginUserInApp(usr);
-            },
-            error => {
-                console.log('BOOM');
-            }
-        );
-        userStream.connect();
-
-        return userAcceptedStream;
-         */
-
-
     }
 
 
@@ -164,7 +129,23 @@ export class userService{
         return this.listaUsuarios;
     }
 
-    createUser(userOb:user):Observable<user> {
+    createUser(userOb:user){
+        let userS = new userSpring(userOb);
+        let body = JSON.stringify(userS);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.post("/registerUser", body, options)
+            .map(response => response.json())
+            .catch(error => error).subscribe(next=>{
+/*                this._ponerUsuario(next);
+                this.loginUserInApp(next);*/
+                this.getUserByUser_And_Pass(userOb.user_Name,userOb.user_Password);
+            });
+        /*
         let usuarioCreado=Observable.create((obs)=>{
             this._ponerUsuario(userOb);
             this.loginUserInApp(userOb);
@@ -173,6 +154,7 @@ export class userService{
         }
     );
         return usuarioCreado;
+        */
     }
 
     setUserByID(luserOb:user):Observable<user> {

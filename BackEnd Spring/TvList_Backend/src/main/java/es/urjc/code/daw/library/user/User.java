@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 /**
  * This is the entity to store in database user information. It contains the
@@ -43,7 +45,7 @@ public class User {
 
 	private String name;
 	
-	@JsonIgnore
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String passwordHash;
 
 	private String mail;
@@ -83,10 +85,12 @@ public class User {
 		this.name = name;
 	}
 
+	
 	public String getPasswordHash() {
 		return passwordHash;
 	}
-
+	
+	
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}

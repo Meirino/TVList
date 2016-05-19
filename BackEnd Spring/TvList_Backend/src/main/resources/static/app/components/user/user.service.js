@@ -88,38 +88,6 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], fu
                     });
                     userStream.connect();
                     return userAcceptedStream;
-                    /*
-                    var userStream = Observable.create((observer:any) => {
-                        let userToReturn=null;
-                        for (let userOb of this.listaUsuarios){
-                            if (userOb.user_Name==userName && userOb.user_Password==userPassword){
-                                userToReturn=userOb;
-                                observer.next(userToReturn);
-                                observer.complete();
-                            }
-                        }
-                        observer.error('Usuario o Contraseña incorrecto');
-                    }).publishReplay(1);;
-            
-                    var userAcceptedStream = userStream.map(x => {
-                        if (x==0)
-                            return false;
-                        else
-                            return true;
-                    });
-            
-                    userStream.subscribe(
-                        usr => {
-                            this.loginUserInApp(usr);
-                        },
-                        error => {
-                            console.log('BOOM');
-                        }
-                    );
-                    userStream.connect();
-            
-                    return userAcceptedStream;
-                     */
                 };
                 userService.prototype.checkIf_UserName_AND_Email_Free = function (userName, userMail) {
                     var _this = this;
@@ -154,13 +122,30 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], fu
                 };
                 userService.prototype.createUser = function (userOb) {
                     var _this = this;
-                    var usuarioCreado = Rx_1.Observable.create(function (obs) {
-                        _this._ponerUsuario(userOb);
-                        _this.loginUserInApp(userOb);
+                    var userS = new user_data_1.userSpring(userOb);
+                    var body = JSON.stringify(userS);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.post("/registerUser", body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return error; }).subscribe(function (next) {
+                        /*                this._ponerUsuario(next);
+                                        this.loginUserInApp(next);*/
+                        _this.getUserByUser_And_Pass(userOb.user_Name, userOb.user_Password);
+                    });
+                    /*
+                    let usuarioCreado=Observable.create((obs)=>{
+                        this._ponerUsuario(userOb);
+                        this.loginUserInApp(userOb);
                         obs.next(userOb);
                         obs.complete();
-                    });
+                    }
+                );
                     return usuarioCreado;
+                    */
                 };
                 userService.prototype.setUserByID = function (luserOb) {
                     var _this = this;

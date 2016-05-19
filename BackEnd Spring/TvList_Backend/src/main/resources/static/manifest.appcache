@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: ab5c640792abcf6a2fbcdb916f997a1be018264c
+# sw.version: de134a04cb7c4115058e40be37ecf97630ee4f08
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
 # sw.file.hash: 1d575a0871f76a3e8b0624b3007f13e93133e9bf
@@ -45,9 +45,9 @@ CACHE MANIFEST
 \app\components\centroUsuario\login\login.component.js.map
 # sw.file.hash: 2bc8040f3b605b7cdd8e550b54f1842db787e0b9
 \app\components\centroUsuario\login\login.template.html
-# sw.file.hash: 87e31353a04ce173a2e07d96c1a5aa8033bab6fe
+# sw.file.hash: 50ccd3c7815568e42254539a8c5fb1229820d293
 \app\components\centroUsuario\register\register.component.js
-# sw.file.hash: 9fe1e4b5edfbe38c62d7cc0ab302acb15f2afb32
+# sw.file.hash: 010e6cd4702595567af78f1977e1fdfc446be309
 \app\components\centroUsuario\register\register.component.js.map
 # sw.file.hash: bef236bf19b20c7fc930be9240e3058359e378a3
 \app\components\centroUsuario\register\register.style.css
@@ -119,13 +119,13 @@ CACHE MANIFEST
 \app\components\user\loginAuth.js
 # sw.file.hash: 21b937577a93b1e40add1ffc15886194e70ea28f
 \app\components\user\loginAuth.js.map
-# sw.file.hash: 6ba4243b408d8abeb55c151d9c5df1151e470395
+# sw.file.hash: 00e613e0ab6e9d24e40530768b60c84bd2b1f49e
 \app\components\user\user.data.js
-# sw.file.hash: 6aaa7a45bffddd31f3c8da44dd2c75b81a2117f3
+# sw.file.hash: 2296114c92a9fdde83dba3d0ae27962a49aeab3c
 \app\components\user\user.data.js.map
-# sw.file.hash: 0e3f6a80245feef8f009741a1181033d7422c713
+# sw.file.hash: b9943377faea86dcea627bbce842759174138aaf
 \app\components\user\user.service.js
-# sw.file.hash: e84a0f93b6d5e1aa85e645d8759b43e8a0740331
+# sw.file.hash: 1ef9c6bddbae5190aec7a8598ca09bf816f163cc
 \app\components\user\user.service.js.map
 # sw.file.hash: 35c2f785425ca72d0984c119df78c0bd62657a41
 \app\main.html

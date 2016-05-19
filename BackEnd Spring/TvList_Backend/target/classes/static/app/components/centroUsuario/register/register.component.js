@@ -65,12 +65,7 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                     this.currentStep = 3;
                 };
                 registerComponent.prototype.reg_step3 = function () {
-                    var _this = this;
                     var userCreated = this.servicioUsuarios.createUser(this.userToCreate);
-                    userCreated.subscribe(function (suc) {
-                        console.log(_this.servicioUsuarios.getAllUser());
-                    }, function (error) {
-                    });
                 };
                 registerComponent.prototype.back = function (num) {
                     switch (num) {
