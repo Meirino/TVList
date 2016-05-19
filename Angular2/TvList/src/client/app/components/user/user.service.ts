@@ -1,13 +1,18 @@
 /**
  * Created by david on 19/04/2016.
  */
-import {Injectable} from 'angular2/core';
+import {Injectable,OnInit} from 'angular2/core';
 import {user} from './user.data';
 import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
+import { Http, RequestOptions, Headers } from 'angular2/http';
+import 'rxjs/Rx';
+
 @Injectable()
 export class userService{
 
     public userLogged=null;
+    public usuario;
+
 
     private listaUsuarios:user[]=[
         new user(0,"admin","pass","admin@tvlist.com",true,"Pepito","Piscinas","avatar1.png"),
@@ -16,7 +21,11 @@ export class userService{
     ];
     
     private _autoid=3;
-    
+
+    constructor(private http: Http){
+        this.reqIsLogged();
+    }
+
     private _ponerUsuario(usr:user){
         usr.isAdmin=false;
         usr.id=this._autoid;
@@ -34,7 +43,56 @@ export class userService{
         this._loginSucces.next(true);
     }
 
-    getUserByUser_And_Pass(userName:string, userPassword:string):ConnectableObservable<any> {
+    public logOut(){
+        return this.http.get('logOut').map(
+            response => {
+                this.userLogged=null;
+                return response;
+            }
+        );
+    }
+
+    getUserByUser_And_Pass(userName:string, userPassword:string){
+
+
+        let userPass = userName + ":" + userPassword;
+
+        let headers = new Headers({
+            'Authorization': 'Basic '+utf8_to_b64(userPass),
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        let options = new RequestOptions({headers});
+
+        var userStream= this.http.get('logIn', options).map(
+            response => {
+                this.processLogInResponse(response);
+                return this.usuario;
+            }
+        ).publishReplay(1);
+
+
+        var userAcceptedStream = userStream.map(x => {
+            if (x==null)
+                return false;
+            else
+                return true;
+        });
+
+        userStream.subscribe(
+            usr => {
+                this.loginUserInApp(usr);
+            },
+            error => {
+                console.log('BOOM');
+            }
+        );
+
+        userStream.connect();
+
+        return userAcceptedStream;
+
+        /*
         var userStream = Observable.create((observer:any) => {
             let userToReturn=null;
             for (let userOb of this.listaUsuarios){
@@ -63,9 +121,14 @@ export class userService{
             }
         );
         userStream.connect();
+
         return userAcceptedStream;
+         */
+
+
     }
-    
+
+
     
     checkIf_UserName_AND_Email_Free(userName:string,userMail:string):Observable<boolean>{
         var doesThisUserExist = Observable.create((obs) => {
@@ -129,7 +192,37 @@ export class userService{
     deleteUserByID(id:number):user {
         return undefined;
     }
-    
-    
 
+    private processLogInResponse(response){
+        this.userLogged = true;
+        let userdata = response.json();
+        this.usuario = new user(userdata.id,userdata.name,null,userdata.mail,userdata.admin,userdata.rname,userdata.surname,userdata.avatar,userdata.roles);
+        this.userLogged=this.usuario;
+    }
+
+    reqIsLogged(){
+
+        let headers = new Headers({
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        let options = new RequestOptions({headers});
+
+        this.http.get('logIn', options).subscribe(
+            response => this.processLogInResponse(response),
+            error => {
+                if(error.status != 401){
+                    console.error("Error when asking if logged: "+
+                        JSON.stringify(error));
+                }
+            }
+        );
+    }
+
+}
+
+function utf8_to_b64(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode(<any>'0x' + p1);
+    }));
 }

@@ -1,0 +1,120 @@
+<div *ngIf="showmessage">
+    <ul class="alert alert-danger animated shake text-center">
+        <li  *ngFor="#errorI of errors">{{errorI}}</li>
+    </ul>
+</div>
+
+    <div class="stepwizard">
+        <div #wizardLinks class="stepwizard-row">
+            <div class="stepwizard-step col-xs-4">
+                <a #link_Step1 class="btn pro-btn btn-default btn-circle disabled" [class.active-step]="currentStep==1" disabled="disabled" href="#step-1" data-toggle="tab" >1</a>
+                <p>Datos de Usuario</p>
+            </div>
+            <div class="stepwizard-step col-xs-4">
+                <a #link_Step2 class="btn pro-btn btn-default btn-circle disabled" [class.active-step]="currentStep==2" disabled="disabled" href="#step-2" data-toggle="tab">2</a>
+                <p>Password</p>
+            </div>
+            <div class="stepwizard-step col-xs-4">
+                <a #link_Step3 class="btn pro-btn btn-default btn-circle disabled" [class.active-step]="currentStep==3" disabled="disabled" href="#step-3" data-toggle="tab">3</a>
+                <p>Datos Personales</p>
+            </div>
+        </div>
+        <div class="rate-updates">
+            <div class="tab-content margintop0" style="border:none !important;">
+                <div class="tab-pane padding20 active" id="step-1">
+
+                    <form  (ngSubmit)="reg_step1()" #regForm_Step1="ngForm" >
+                        <div class="form-group">
+                            <div class="pro-input-group input-group">
+                                <span [ngClass]="!userName.touched && userName.pristine?'input-group-addon label-info': userName.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Usuario</span>
+                                <input [(ngModel)]="userToCreate.user_Name" type="text" class="form-control" ngControl="userName" required #userName="ngForm">
+                                <span [ngClass]="!userName.touched && userName.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userName.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                            </div>
+                            <div [hidden]="userName.valid || !userName.touched" class="alert alert-danger">
+                                Rellene campo Usuario
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pro-input-group input-group">
+                                <span [ngClass]="!userMail.touched && userMail.pristine?'input-group-addon label-info': userMail.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">E-Mail</span>
+                                <input [(ngModel)]="userToCreate.user_Email" type="email" class="form-control" ngControl="userMail" required #userMail="ngForm">
+                                <span [ngClass]="!userMail.touched  && userMail.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userMail.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                            </div>
+                            <div [hidden]="userMail.valid || !userMail.touched" class="alert alert-danger">
+                                Direccion de correo incorrecta
+                            </div>
+                        </div>
+                        <button type="submit" class="btn pro-btn tn-xs col-xs-6 hvr-icon-wobble-horizontal pull-right ">Siguiente</button>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade padding20 " id="step-2" >
+                    <form  (ngSubmit)="reg_step2()" [ngFormModel]="form" #regForm_Step2="ngForm" >
+                        <div  ngControlGroup="passwordsGroup">
+                            <div class="form-group">
+                                <div class="pro-input-group input-group">
+                                    <span [ngClass]="userPass.touched === null || userPass.pristine === null ?  'input-group-addon label-info' :  !userPass.touched && userPass.pristine?'input-group-addon label-info': userPass.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Contraseña</span>
+                                    <input [(ngModel)]="userToCreate.user_Password" (ngModelChange)="UpdateBar($event)" type="password" class="form-control" ngControl="password" #userPass="ngForm">
+                                    <span [ngClass]="!userPass.touched && userPass.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userPass.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                                </div>
+
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: {{redVal}}%">
+                                        <span class="sr-only">50% Complete (danger)</span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: {{yellowVal}}%">
+                                        <span class="sr-only">25% Complete (warning)</span>
+                                    </div>
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: {{greenVal}}%">
+                                        <span class="sr-only">20% Complete (success)</span>
+                                    </div>
+                                </div>
+                                <div [hidden]="userPass.valid || !userPass.touched" class="alert alert-danger">
+                                    Contraseña Insegura
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="pro-input-group input-group">
+                                    <span [ngClass]="passRep.touched === null || passRep.pristine === null ?  'input-group-addon label-info' :  !userPass.touched && userPass.pristine?'input-group-addon label-info': !form.hasError('passwordNotEqual', 'passwordsGroup') ? 'input-group-addon label-success': 'input-group-addon label-danger'">Repita Contraseña</span>
+                                    <input type="password" class="form-control" ngControl="passwordRep" #passRep="ngForm" >
+                                    <span [ngClass]="!userPass.touched && userPass.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': !form.hasError('passwordNotEqual', 'passwordsGroup')  ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                                </div>
+                                <div [hidden]="!form.hasError('passwordNotEqual', 'passwordsGroup')" class="alert alert-danger">
+                                    Contraseñas no coinciden
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn pro-btn col-xs-6 prop hvr-icon-wobble-horizontal" (click)="back(1)" >Atras</button>
+                        <button type="submit" class="btn pro-btn col-xs-6 hvr-icon-wobble-horizontal pull-right" [disabled]="!regForm_Step2.valid" >Siguiente</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade padding20 " id="step-3" >
+                    <form  (ngSubmit)="reg_step3()" #regForm_Step3="ngForm" >
+                        <div class="form-group">
+                            <div class="pro-input-group input-group">
+                                <span [ngClass]="!name.touched && name.pristine?'input-group-addon label-info': name.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Nombre</span>
+                                <input [(ngModel)]="userToCreate.name" type="text" class="form-control" required #name="ngForm">
+                                <span [ngClass]="!name.touched && name.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': name.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                            </div>
+                            <div [hidden]="name.valid || !name.touched" class="alert alert-danger">
+                                Rellene Nombre
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pro-input-group input-group">
+                                <span [ngClass]="!surname.touched && surname.pristine?'input-group-addon label-info': surname.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Apellido</span>
+                                <input [(ngModel)]="userToCreate.surname" type="text" class="form-control" required #surname="ngForm">
+                                <span [ngClass]="!surname.touched && surname.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': surname.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                            </div>
+                            <div [hidden]="surname.valid || !surname.touched" class="alert alert-danger">
+                                Rellene Apellido
+                            </div>
+                        </div>
+                        <button type="button" class="btn pro-btn col-xs-6 prop hvr-icon-wobble-horizontal" (click)="back(2)" >Atras</button>
+                        <button type="submit" class="btn pro-btn col-xs-6 hvr-icon-pop icon-prop-reg" [disabled]="!regForm_Step3.valid" >Siguiente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>

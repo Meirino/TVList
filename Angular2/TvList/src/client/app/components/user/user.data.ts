@@ -10,6 +10,7 @@ export class user{
         public isAdmin?:boolean,
         public name?:string,
         public surname?:string,
-        public avatar?:string
+        public avatar?:string,
+        public roles?:string[]
     ){}
 }

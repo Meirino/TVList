@@ -1,0 +1,77 @@
+<div class="animated bounceInRight">
+    <div *ngIf="succesLabel" class="alert alert-success text-center animated flash">Datos Actualizados</div>
+        <h1>Datos Personales</h1>
+        <form (ngSubmit)="updateUser()" [ngFormModel]="form" #updForm="ngForm" >
+            <div class="form-group col-xs-12">
+                <div class="pro-input-group input-group">
+                    <span [ngClass]="userPass.touched === null || userPass.pristine === null ?  'input-group-addon label-info' :!userMail.touched && userMail.pristine?'input-group-addon label-info': userMail.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">E-Mail</span>
+                    <input [(ngModel)]="userToCreate.user_Email" type="email" class="form-control" ngControl="userMail" required #userMail="ngForm">
+                    <span [ngClass]="!userMail.touched  && userMail.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userMail.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                </div>
+                <div [hidden]="userMail.valid || !userMail.touched" class="alert alert-danger">
+                    Direccion de correo incorrecta
+                </div>
+            </div>
+            <div class="form-group col-xs-6">
+                <div class="pro-input-group input-group">
+                    <span [ngClass]="!name.touched && name.pristine?'input-group-addon label-info': name.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Nombre</span>
+                    <input [(ngModel)]="userToCreate.name" type="text" class="form-control" required #name="ngForm">
+                    <span [ngClass]="!name.touched && name.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': name.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                </div>
+                <div [hidden]="name.valid || !name.touched" class="alert alert-danger">
+                    Rellene Nombre
+                </div>
+            </div>
+            <div class="form-group col-xs-6">
+                <div class="pro-input-group input-group">
+                    <span [ngClass]="!surname.touched && surname.pristine?'input-group-addon label-info': surname.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Apellido</span>
+                    <input [(ngModel)]="userToCreate.surname" type="text" class="form-control" required #surname="ngForm">
+                    <span [ngClass]="!surname.touched && surname.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': surname.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                </div>
+                <div [hidden]="surname.valid || !surname.touched" class="alert alert-danger">
+                    Rellene Apellido
+                </div>
+            </div>
+            <div class="clearfix"></div>
+                <div  ngControlGroup="passwordsGroup">
+                    <div class="form-group col-xs-6">
+                        <div class="pro-input-group input-group">
+                            <span [ngClass]="userPass.touched === null || userPass.pristine === null ?  'input-group-addon label-info' :  !userPass.touched && userPass.pristine?'input-group-addon label-info': userPass.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Contraseña</span>
+                            <input [(ngModel)]="userToCreate.user_Password" (ngModelChange)="UpdateBar($event)" type="password" class="form-control" ngControl="password" #userPass="ngForm">
+                            <span [ngClass]="!userPass.touched && userPass.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userPass.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                        </div>
+                        <div [hidden]="userPass.valid || !userPass.touched" class="alert alert-danger">
+                            Contraseña Insegura
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <div class="pro-input-group input-group">
+                            <span [ngClass]="passRep.touched === null || passRep.pristine === null ?  'input-group-addon label-info' :  !userPass.touched && userPass.pristine?'input-group-addon label-info': !form.hasError('passwordNotEqual', 'passwordsGroup') ? 'input-group-addon label-success': 'input-group-addon label-danger'">Repita Contraseña</span>
+                            <input type="password" class="form-control" ngControl="passwordRep" #passRep="ngForm" >
+                            <span [ngClass]="!userPass.touched && userPass.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': !form.hasError('passwordNotEqual', 'passwordsGroup')  ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+                        </div>
+                        <div [hidden]="!form.hasError('passwordNotEqual', 'passwordsGroup')" class="alert alert-danger">
+                            Contraseñas no coinciden
+                        </div>
+                    </div>
+                </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: {{redVal}}%">
+                        <span class="sr-only">50% Complete (danger)</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning progress-bar-striped active" style="width: {{yellowVal}}%">
+                        <span class="sr-only">25% Complete (warning)</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: {{greenVal}}%">
+                        <span class="sr-only">20% Complete (success)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-4"></div>
+            <button type="submit" class="btn pro-btn col-xs-4 text-center hvr-icon-spin" [disabled]="!updForm.valid" >Actualizar</button>
+            <div class="col-xs-4"></div>
+        </form>
+</div>

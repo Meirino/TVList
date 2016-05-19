@@ -105,7 +105,7 @@ export class MainApp implements OnInit{
 
   private _desconectarUsuario(){
     this._router.navigate(['/Index']);
-    this._servicioUsuarios.userLogged=null;
+    this._servicioUsuarios.logOut().subscribe();
   }
 
 

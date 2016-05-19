@@ -1,0 +1,34 @@
+<div class="animated bounceInRight row">
+        <div class="col-xs-2 pro-vcenter">
+            <img [src]="'/assets/images/profile/'+message.usuario.avatar" class="img-responsive img-circle pro-img-mini-circle center-block">
+        </div>
+        <div class="col-xs-9 pro-vcenter">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h4> {{message.usuario.user_Name}} </h4>
+                </div>
+                <div class="col-xs-6 col">
+                    <h4 class="pro-yellow-stars">
+                        <span [ngClass]="message.comentario.score>0?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>1?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>2?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>3?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                        <span [ngClass]="message.comentario.score>4?'glyphicon-star':'glyphicon-star-empty'" class="glyphicon"></span>
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>{{message.comentario.title}}</h4>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-2">
+        </div>
+        <div class=" col-xs-9">
+            {{message.comentario.text}}
+        </div>
+
+</div>
