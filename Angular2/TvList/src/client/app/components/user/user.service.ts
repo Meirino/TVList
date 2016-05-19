@@ -141,20 +141,8 @@ export class userService{
         return this.http.post("/registerUser", body, options)
             .map(response => response.json())
             .catch(error => error).subscribe(next=>{
-/*                this._ponerUsuario(next);
-                this.loginUserInApp(next);*/
                 this.getUserByUser_And_Pass(userOb.user_Name,userOb.user_Password);
             });
-        /*
-        let usuarioCreado=Observable.create((obs)=>{
-            this._ponerUsuario(userOb);
-            this.loginUserInApp(userOb);
-            obs.next(userOb);
-            obs.complete();
-        }
-    );
-        return usuarioCreado;
-        */
     }
 
     setUserByID(luserOb:user):Observable<user> {
