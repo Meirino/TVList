@@ -2,33 +2,32 @@
     <!-- item  Lista libro -->
     <table class="table">
         <!-- Libro -->
-        <tr template="ngFor #actor of lista; #i = index">
+        <tr template="ngFor #serie of lista; #i = index"><div template="ngIf serie.esSerie == true">
             <td class="col-xs-3">
-                <img class="center-block" [src]="IMG" alt="ImagenDelActor" title=""/>
+                <img class="center-block img-responsive" src="#" alt="ImagenDeLaSerie"/>
             </td>
             <td class="col-xs-9 pro-vcenter">
                 <table>
                     <tr>
                         <td>
-                            <h3>{{actor.nombre}}</h3>
+                            <h3>{{serie.titulo}}</h3>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="desc">{{actor.descrip}}</p>
+                            <p class="desc">{{serie.sinopsis}}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <button class="btn">Más detalles</button>
-                            <!-- <button (click)="" class="btn">Eliminar</button> -->
+                            <!-- <button class="btn">Eliminar</button> -->
                         </td>
                     </tr>
                 </table>
-            </td>
+            </td></div>
         </tr>
         <!-- Fin Libro -->
     </table>
     <!-- FIN Lista item libro -->
-
 </div>

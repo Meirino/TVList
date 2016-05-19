@@ -4,7 +4,7 @@
         <!-- Libro -->
         <tr template="ngFor #actor of lista; #i = index">
             <td class="col-xs-3">
-                <img class="center-block" [src]="IMG" alt="ImagenDelActor" title=""/>
+                <img class="center-block img-responsive" src="{{actor.img}}" alt="ImagenDelActor"/>
             </td>
             <td class="col-xs-9 pro-vcenter">
                 <table>
@@ -21,7 +21,7 @@
                     <tr>
                         <td>
                             <button class="btn">Más detalles</button>
-                            <!-- <button (click)="" class="btn">Eliminar</button> -->
+                            <!-- <button class="btn">Eliminar</button> -->
                         </td>
                     </tr>
                 </table>
@@ -30,5 +30,4 @@
         <!-- Fin Libro -->
     </table>
     <!-- FIN Lista item libro -->
-
 </div>

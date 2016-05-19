@@ -14,7 +14,11 @@ export class Actor {
 
 @Injectable()
 export class ActoresService {
-    
+
+    lista:Actor[] = [
+        new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive'])
+    ];
+
     /*removePersona(actor: Actor){
         for(let i=0; i<this.datos.length; i++){
             if(this.datos[i].id === actor.id){
@@ -25,9 +29,7 @@ export class ActoresService {
     }*/
 
     getDatos() {
-        return withObserver([
-            new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive'])
-        ]);
+        return this.lista;
     }
 
     /*getAutoresByID(id: number) {

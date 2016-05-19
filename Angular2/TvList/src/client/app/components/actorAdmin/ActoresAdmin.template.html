@@ -1,10 +1,10 @@
 <div class="row">
-    <!-- item  Lista libro -->
+    <!-- item  Lista Actores -->
     <table class="table">
-        <!-- Libro -->
+        <!-- Actor -->
         <tr template="ngFor #actor of lista; #i = index">
             <td class="col-xs-3">
-                <img class="center-block" [src]="IMG" alt="ImagenDelActor" title=""/>
+                <img class="center-block img-responsive" [src]="IMG" alt="ImagenDelActor" title=""/>
             </td>
             <td class="col-xs-9 pro-vcenter">
                 <table>
@@ -21,14 +21,13 @@
                     <tr>
                         <td>
                             <button class="btn">Más detalles</button>
-                            <!-- <button (click)="" class="btn">Eliminar</button> -->
+                            <!-- <button class="btn">Eliminar</button> -->
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <!-- Fin Libro -->
+        <!-- Fin Actor -->
     </table>
-    <!-- FIN Lista item libro -->
-
+    <!-- FIN Lista item Actor -->
 </div>

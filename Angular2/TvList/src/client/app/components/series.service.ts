@@ -3,10 +3,14 @@ import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 
 export class Serie {
-  constructor(public id:number, public titulo: string,
-    public sinopsis:string, public esSerie:boolean,
-    public temporadas:number, public capitulos:number,
-    public rutaIMG:string, public categorias:String[], public personal:String[]) {}
+  constructor(public id:number, 
+              public titulo: string,
+              public sinopsis:string, 
+              public esSerie:boolean,
+              public temporadas:number, 
+              public capitulos:number,
+              public rutaIMG:string, public categorias:String[], 
+              public personal:String[]) {}
 }
 
   @Injectable()

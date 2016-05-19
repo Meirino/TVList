@@ -8,8 +8,11 @@ import {perfilComponent} from './components/perfil/perfil.Component';
 import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
-import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
-import {ActorListComponent} from './components/ActorList/ActorList.component.ts';
+import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
+import {ActoresListComponent} from "./components/ActorList/ActoresList.component";
+import {ActoresAdminComponent} from "./components/actorAdmin/ActoresAdmin.component";
+import {SeriesComponent} from "./components/SeriesList/Series.component";
+
 
 
 @Component({
@@ -35,9 +38,19 @@ import {ActorListComponent} from './components/ActorList/ActorList.component.ts'
     component: adminComponent
   },
   {
-    path: '/actores',
+    path: '/Actores',
     name: 'Actores',
-    component: ActorListComponent
+    component: ActoresListComponent
+  },
+    {
+        path: '/ActoresAdmin',
+        name:'ActoresAdmin',
+        component: ActoresAdminComponent
+    },
+  {
+    path: '/Series',
+    name: 'Series',
+    component: SeriesComponent
   }
 ])
 
