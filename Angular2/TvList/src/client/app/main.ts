@@ -10,8 +10,8 @@ import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.c
 import {userService} from './components/user/user.service';
 import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
 import {ActoresListComponent} from "./components/ActorList/ActoresList.component";
-import {ActoresAdminComponent} from "./components/actorAdmin/ActoresAdmin.component";
 import {SeriesComponent} from "./components/SeriesList/Series.component";
+import {ActorDetalleComponent} from "./components/ActorDetalle/ActorDetalle.component";
 
 
 
@@ -37,11 +37,16 @@ import {SeriesComponent} from "./components/SeriesList/Series.component";
     name: 'Admin',
     component: adminComponent
   },
-  {
-    path: '/Actores',
-    name: 'Actores',
-    component: ActoresListComponent
-  },
+    {
+        path: '/Actores',
+        name: 'Actores',
+        component: ActoresListComponent
+    },
+    {
+        path: '/Detalles',
+        name: 'Detalles',
+        component: ActorDetalleComponent
+    },
   {
     path: '/Series',
     name: 'Series',

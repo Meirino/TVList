@@ -2,8 +2,9 @@
  * Created by Javi on 18/05/2016.
  */
 import {Component}  from 'angular2/core';
-import {RouteParams, Router} from 'angular2/router';
+import {RouteConfig, Router, RouterOutlet, RouteParams,CanActivate,ComponentInstruction} from 'angular2/router';
 import {Actor, ActoresService} from "../actores.service";
+import {ActorDetalleComponent} from "../ActorDetalle/ActorDetalle.component";
 
 @Component({
     selector: 'ActoresList',
@@ -16,6 +17,6 @@ export class ActoresListComponent {
     ];
     public service: ActoresService;
 
-    constructor() {
+    constructor(public router:Router) {
     }
 }

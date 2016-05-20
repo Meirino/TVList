@@ -4,12 +4,10 @@
 import {Component}  from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Serie, seriesService} from "../series.service";
-import {SerieService} from "../Serie.service";
 
 @Component({
     selector: 'SeriesList',
-    templateUrl: './app/components/SeriesList/Series.template.html',
-    providers: [SerieService]
+    templateUrl: './app/components/SeriesList/Series.template.html'
 })
 
 export class SeriesComponent {
