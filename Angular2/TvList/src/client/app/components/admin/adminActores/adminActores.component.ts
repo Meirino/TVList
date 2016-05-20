@@ -20,9 +20,9 @@ export class adminActoresComponent {
     }
 
     anadirActor() {
-        this.nuevoActor.id = this.lista.length;
+        var id = this.lista.length;
         this.nuevoActor.IMG = "#";
-        this.lista.push(this.nuevoActor);
+        this.lista.push(new Actor(id, this.nuevoActor.nombre, this.nuevoActor.descrip, '#', this.nuevoActor.obras));
     }
 
     eliminarActor(actor:Actor) {
