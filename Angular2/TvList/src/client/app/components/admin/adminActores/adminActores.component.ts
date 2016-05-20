@@ -26,6 +26,9 @@ export class adminActoresComponent {
     }
 
     eliminarActor(actor:Actor) {
-
+        var index = this.lista.indexOf(actor);
+        if (index > -1) {
+            this.lista.splice(index, 1);
+        }
     }
 }
