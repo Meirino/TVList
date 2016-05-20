@@ -110,8 +110,18 @@
                                 Rellene Apellido
                             </div>
                         </div>
+                        <div class="useravatar alert alert-info ">
+                            <h2 class="center-block label-success"><span class="label label-success center-block">Avatar</span></h2>
+                            <span [hidden]="!imagenPrev">
+                             <canvas  #imgPrev width="400" height="300" id="canvas" class="center-block"></canvas>
+                            </span>
+                            <span [hidden]="imagenPrev">
+                                <img   [src]="'/assets/images/profile/noAvatar.png'" class="center-block">
+                            </span>
+                                <input type="file" (change)="selectFile($event)" class="btn btn-info center-block">
+                        </div>
                         <button type="button" class="btn pro-btn col-xs-6 prop hvr-icon-wobble-horizontal" (click)="back(2)" >Atras</button>
-                        <button type="submit" class="btn pro-btn col-xs-6 hvr-icon-pop icon-prop-reg" [disabled]="!regForm_Step3.valid" >Siguiente</button>
+                        <button type="submit" class="btn pro-btn col-xs-6 hvr-icon-pop icon-prop-reg" [disabled]="!regForm_Step3.valid" >Registrarse</button>
                     </form>
                 </div>
             </div>

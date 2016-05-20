@@ -6,6 +6,8 @@ import {user,userSpring} from './user.data';
 import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
+import {MultipartItem} from "./multipart-upload/multipart-item";
+import {MultipartUploader} from "./multipart-upload/multipart-uploader";
 
 @Injectable()
 export class userService{
@@ -144,6 +146,28 @@ export class userService{
                 this.getUserByUser_And_Pass(userOb.user_Name,userOb.user_Password);
             });
     }
+
+    upload(archivo:File) {
+
+        console.debug("Uploading file...");
+
+        if (archivo == null){
+            console.error("You have to select a file and set a description.");
+            return;
+        }
+
+        let formData = new FormData();
+
+        //formData.append("description", this.description);
+        formData.append("file",  archivo);
+
+        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload'}));
+
+        multipartItem.formData = formData;
+
+        return multipartItem;
+    }
+    
 
     setUserByID(luserOb:user):Observable<user> {
        let usuarioActualizado=Observable.create(x=>{

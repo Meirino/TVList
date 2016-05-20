@@ -1,4 +1,4 @@
-System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], function(exports_1, context_1) {
+System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http', "./multipart-upload/multipart-item", "./multipart-upload/multipart-uploader"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], fu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, user_data_1, Rx_1, http_1;
+    var core_1, user_data_1, Rx_1, http_1, multipart_item_1, multipart_uploader_1;
     var userService;
     function utf8_to_b64(str) {
         return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
@@ -30,6 +30,12 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], fu
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (multipart_item_1_1) {
+                multipart_item_1 = multipart_item_1_1;
+            },
+            function (multipart_uploader_1_1) {
+                multipart_uploader_1 = multipart_uploader_1_1;
             }],
         execute: function() {
             userService = (function () {
@@ -132,20 +138,21 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http'], fu
                     return this.http.post("/registerUser", body, options)
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return error; }).subscribe(function (next) {
-                        /*                this._ponerUsuario(next);
-                                        this.loginUserInApp(next);*/
                         _this.getUserByUser_And_Pass(userOb.user_Name, userOb.user_Password);
                     });
-                    /*
-                    let usuarioCreado=Observable.create((obs)=>{
-                        this._ponerUsuario(userOb);
-                        this.loginUserInApp(userOb);
-                        obs.next(userOb);
-                        obs.complete();
+                };
+                userService.prototype.upload = function (archivo) {
+                    console.debug("Uploading file...");
+                    if (archivo == null) {
+                        console.error("You have to select a file and set a description.");
+                        return;
                     }
-                );
-                    return usuarioCreado;
-                    */
+                    var formData = new FormData();
+                    //formData.append("description", this.description);
+                    formData.append("file", archivo);
+                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/image/upload' }));
+                    multipartItem.formData = formData;
+                    return multipartItem;
                 };
                 userService.prototype.setUserByID = function (luserOb) {
                     var _this = this;

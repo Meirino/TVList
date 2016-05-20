@@ -44,6 +44,7 @@ export class MainApp implements OnInit{
     return false;
   }
 
+  private keep:boolean=true;
   private _componenteACargar = centroUsuarioComponent;
   @ViewChild('modal') private modal:modalComponent;
 
@@ -74,6 +75,7 @@ export class MainApp implements OnInit{
       if (suc){
         this.modal.toggleModal();
         this.cargarUsuario();
+        this.keep=false;
       }
     });
   }
@@ -82,10 +84,6 @@ export class MainApp implements OnInit{
   private navigateByUrl(url:string){
     this._router.navigateByUrl(url).then(x=>{return true});
   }
-
-
-
-
 
   private cargarUsuario(){
 
@@ -99,7 +97,12 @@ export class MainApp implements OnInit{
 */
 
   private mostrarLogin(){
-    this.modal.toggleModal();
+    this.keep=true;
+    setTimeout((a)=>{
+      this.modal.toggleModal();
+
+    },0)
+
 
   }
 

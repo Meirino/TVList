@@ -1,9 +1,12 @@
 package es.urjc.code.daw.library.book;
 
+import org.apache.tomcat.jni.Global;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 
+import es.urjc.code.daw.library.globalData.GlobalData;
+import es.urjc.code.daw.library.globalData.GlobalDataRepository;
 import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserRepository;
 
@@ -15,6 +18,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private GlobalDataRepository globalRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -37,6 +43,10 @@ public class DatabaseInitializer implements CommandLineRunner {
 		userRepository.save(new User("admin", "pass", "admin@TvList.com",true,"Paquito","El Chocolatero","avatar1.png","ROLE_USER", "ROLE_ADMIN"));
 		userRepository.save(new User("david", "pass","david@gmail.com",false,"David","Martinez","avatar2.jpg", "ROLE_USER"));
 		userRepository.save(new User("juan", "pass","juan@outlook.com",false,"Juan","No se","avatar3.png", "ROLE_USER"));
+	
+		
+		globalRepository.save(new GlobalData());
+	
 	}
 
 }

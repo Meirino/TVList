@@ -33,6 +33,7 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                     this.ref = ref;
                     this.fb = fb;
                     this.userToCreate = new user_data_1.user();
+                    this.imagenPrev = false;
                     this.currentStep = 1;
                     this.showmessage = false;
                     this.errors = [];
@@ -50,7 +51,6 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                 };
                 registerComponent.prototype.reg_step1 = function () {
                     var _this = this;
-                    this.userToCreate.surname;
                     this.showmessage = false;
                     var userAceptableStream = this.servicioUsuarios.checkIf_UserName_AND_Email_Free(this.userToCreate.user_Name, this.userToCreate.user_Email);
                     userAceptableStream.subscribe(function (value) {
@@ -65,7 +65,50 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                     this.currentStep = 3;
                 };
                 registerComponent.prototype.reg_step3 = function () {
-                    var userCreated = this.servicioUsuarios.createUser(this.userToCreate);
+                    var _this = this;
+                    if (this.file) {
+                        var multipartItem = this.servicioUsuarios.upload(this.file);
+                        multipartItem.callback = function (data, status, headers) {
+                            if (status == 200) {
+                                _this.userToCreate.avatar = data;
+                                console.debug("File has been uploaded");
+                                //this.loadImages();
+                                var userCreated = _this.servicioUsuarios.createUser(_this.userToCreate);
+                            }
+                            else {
+                                console.error("Error uploading file");
+                            }
+                        };
+                        multipartItem.upload();
+                    }
+                    else
+                        this.servicioUsuarios.createUser(this.userToCreate);
+                };
+                registerComponent.prototype.selectFile = function ($event) {
+                    this.file = $event.target.files[0];
+                    if (this.file) {
+                        this.imagenPrev = true;
+                        var ctx = document.getElementById('canvas').getContext('2d');
+                        var reader = new FileReader();
+                        // load to image to get it's width/height
+                        var img = new Image();
+                        img.onload = function () {
+                            // scale canvas to image
+                            ctx.canvas.width = img.width;
+                            ctx.canvas.height = img.height;
+                            // draw image
+                            ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
+                        };
+                        // this is to setup loading the image
+                        reader.onloadend = function () {
+                            img.src = reader.result;
+                        };
+                        // this is to read the file
+                        reader.readAsDataURL(this.file);
+                    }
+                    else {
+                        this.imagenPrev = false;
+                    }
                 };
                 registerComponent.prototype.back = function (num) {
                     switch (num) {
@@ -169,6 +212,10 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                     core_1.ViewChild('link_Step3'), 
                     __metadata('design:type', core_1.ElementRef)
                 ], registerComponent.prototype, "link_Step3", void 0);
+                __decorate([
+                    core_1.ViewChild('imgPrev'), 
+                    __metadata('design:type', core_1.ElementRef)
+                ], registerComponent.prototype, "imagePreview", void 0);
                 registerComponent = __decorate([
                     core_1.Component({
                         directives: [common_1.FORM_DIRECTIVES],

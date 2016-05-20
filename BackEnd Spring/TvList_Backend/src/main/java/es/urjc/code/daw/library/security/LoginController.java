@@ -70,7 +70,7 @@ public class LoginController {
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUsuario(@RequestBody User usuario) {
-		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar(),"USER");
+		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar()==null?"":usuario.getAvatar(),"USER");
 		userRepository.save(usr);
 		return usr;
 	}

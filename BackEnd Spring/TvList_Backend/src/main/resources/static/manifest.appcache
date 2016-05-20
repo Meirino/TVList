@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: de134a04cb7c4115058e40be37ecf97630ee4f08
+# sw.version: f919d7d57497fc10b4fd25392e410470d3686eee
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
 # sw.file.hash: 1d575a0871f76a3e8b0624b3007f13e93133e9bf
@@ -45,13 +45,13 @@ CACHE MANIFEST
 \app\components\centroUsuario\login\login.component.js.map
 # sw.file.hash: 2bc8040f3b605b7cdd8e550b54f1842db787e0b9
 \app\components\centroUsuario\login\login.template.html
-# sw.file.hash: 50ccd3c7815568e42254539a8c5fb1229820d293
+# sw.file.hash: fb68e2f0ffcc4a6523e97045f2cf6f34a6954905
 \app\components\centroUsuario\register\register.component.js
-# sw.file.hash: 010e6cd4702595567af78f1977e1fdfc446be309
+# sw.file.hash: 02c535ce8cd336a7d1459d200eec147a42671560
 \app\components\centroUsuario\register\register.component.js.map
-# sw.file.hash: bef236bf19b20c7fc930be9240e3058359e378a3
+# sw.file.hash: 3da0ac82e8a3b61b549f80b8d733becfc62d407a
 \app\components\centroUsuario\register\register.style.css
-# sw.file.hash: 39a5304b24c4c619aac9039ca222debe03176935
+# sw.file.hash: a50c5d58a8db7a6de15c6a253e7d98c322a2c8e0
 \app\components\centroUsuario\register\register.template.html
 # sw.file.hash: ce700c470df20acccca418e7323b1fb0887b3a1d
 \app\components\index\index.component.js
@@ -91,7 +91,7 @@ CACHE MANIFEST
 \app\components\modal\modal.component.js
 # sw.file.hash: 61fb497556b3cad4aa8388ff847d90c3de313262
 \app\components\modal\modal.component.js.map
-# sw.file.hash: a787c88f1173119368259885997c85417ec33a01
+# sw.file.hash: b251e5e91ba9097eb2e4555058ebdf142b20aa5e
 \app\components\modal\modal.template.html
 # sw.file.hash: c9af25ffe3ae62f6680403392d53cb3df7659c68
 \app\components\perfil\misValoraciones\misValoraciones.component.js
@@ -105,7 +105,7 @@ CACHE MANIFEST
 \app\components\perfil\perfil.Component.js.map
 # sw.file.hash: db41d73647a2dc3d7c86f7930be1a2ad760b5aaf
 \app\components\perfil\perfil.Style.css
-# sw.file.hash: 20cf6873c00621dd3a5b47456d42bf0cac90d98d
+# sw.file.hash: 8a44aa3fdac48c1369ab77c1a3dfd6954b73c958
 \app\components\perfil\perfil.Template.html
 # sw.file.hash: f9111ec293c78e27d38134c8f34cbdc847704569
 \app\components\perfil\profileData\profileData.Component.js
@@ -119,19 +119,27 @@ CACHE MANIFEST
 \app\components\user\loginAuth.js
 # sw.file.hash: 21b937577a93b1e40add1ffc15886194e70ea28f
 \app\components\user\loginAuth.js.map
+# sw.file.hash: 6f6cb7ad6bbc821f2ff48dfbaa1b37e647e464e2
+\app\components\user\multipart-upload\multipart-item.js
+# sw.file.hash: a5de70e119b7e598a5c0bdcf55967acf7f5fffbe
+\app\components\user\multipart-upload\multipart-item.js.map
+# sw.file.hash: 482f5e3c3280b26c648c56777753bcc28c3d81bf
+\app\components\user\multipart-upload\multipart-uploader.js
+# sw.file.hash: ef4c14432493e5f9345d8bd6b455c28cec5267f3
+\app\components\user\multipart-upload\multipart-uploader.js.map
 # sw.file.hash: 00e613e0ab6e9d24e40530768b60c84bd2b1f49e
 \app\components\user\user.data.js
 # sw.file.hash: 2296114c92a9fdde83dba3d0ae27962a49aeab3c
 \app\components\user\user.data.js.map
-# sw.file.hash: b9943377faea86dcea627bbce842759174138aaf
+# sw.file.hash: 275c91841b40a19144f97a4a9958028c049d178a
 \app\components\user\user.service.js
-# sw.file.hash: 1ef9c6bddbae5190aec7a8598ca09bf816f163cc
+# sw.file.hash: a3c2c1f024fed63422e76dcb7af96455de12c596
 \app\components\user\user.service.js.map
-# sw.file.hash: 35c2f785425ca72d0984c119df78c0bd62657a41
+# sw.file.hash: 6916978a7edd8ef6b9f6f763224d85a675b9d8a8
 \app\main.html
-# sw.file.hash: e03e4fbf406ce92c1fff8266a79b725080ab8252
+# sw.file.hash: f2c3f6023364cba3a790fc264fc1ccbe829d1f71
 \app\main.js
-# sw.file.hash: 964416ae89bace4b62c0126c38645938cb3b3004
+# sw.file.hash: c4be3bb898e1628b82c5fde125aeecd46123225e
 \app\main.js.map
 # sw.file.hash: 49d5a62222a3771363a160fa0e460f0f8c60b1d7
 \app\utilities.js

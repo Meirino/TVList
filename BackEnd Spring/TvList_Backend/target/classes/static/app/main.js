@@ -48,6 +48,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                     this._router = _router;
                     this._servicioUsuarios = _servicioUsuarios;
                     this._breadCrumbService = _breadCrumbService;
+                    this.keep = true;
                     this._componenteACargar = centroUsuario_component_1.centroUsuarioComponent;
                     _router.subscribe(function (val) {
                         _router.recognize(val).then(function (x) {
@@ -70,6 +71,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                         if (suc) {
                             _this.modal.toggleModal();
                             _this.cargarUsuario();
+                            _this.keep = false;
                         }
                     });
                 }
@@ -91,7 +93,11 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                   }
                 */
                 MainApp.prototype.mostrarLogin = function () {
-                    this.modal.toggleModal();
+                    var _this = this;
+                    this.keep = true;
+                    setTimeout(function (a) {
+                        _this.modal.toggleModal();
+                    }, 0);
                 };
                 MainApp.prototype._desconectarUsuario = function () {
                     this._router.navigate(['/Index']);
