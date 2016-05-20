@@ -15,20 +15,26 @@ export class Serie {
 
   @Injectable()
   export class seriesService {
-    private series = [
-  	   new Serie(1, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
-       new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
+    private series:string[] = [
+        "String 1", "String 2"
     ];
 
-  addSerie(serie:Serie) {
+    constructor() {
+        /*this.series  = [
+            new Serie(1, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
+            new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
+        ];*/
+    }
+
+  /*addSerie(serie:Serie) {
     this.series.push(serie);
-  }
+  }*/
 
   getSeries() {
-    return withObserver(this.series);
+    return this.series;
   }
 
-  getSeriebyID(id:number | string) {
+  /*getSeriebyID(id:number | string) {
     let elem = this.series.filter(h => h.id === +id)[0]
     return withObserver(new Serie(elem.id, elem.titulo, elem.sinopsis, elem.esSerie, elem.temporadas, elem.capitulos, elem.rutaIMG, elem.categorias, elem.personal));
   }
@@ -76,5 +82,5 @@ export class Serie {
       this.series.push(serie);
     }
     return withObserver(serie);
-  }
+  }*/
 }

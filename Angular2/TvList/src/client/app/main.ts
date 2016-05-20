@@ -42,11 +42,6 @@ import {SeriesComponent} from "./components/SeriesList/Series.component";
     name: 'Actores',
     component: ActoresListComponent
   },
-    {
-        path: '/ActoresAdmin',
-        name:'ActoresAdmin',
-        component: ActoresAdminComponent
-    },
   {
     path: '/Series',
     name: 'Series',

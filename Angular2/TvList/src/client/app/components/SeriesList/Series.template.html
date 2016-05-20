@@ -20,7 +20,14 @@
                     </tr>
                     <tr>
                         <td>
-                            <button class="btn">Más detalles</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Viendo</a></li>
+                                    <li><a href="#">Completo</a></li>
+                                </ul>
+                            </div>
+                            <button (click)="onSelect(serie)" class="btn pro-btn">Más detalles</button>
                             <!-- <button class="btn">Eliminar</button> -->
                         </td>
                     </tr>
