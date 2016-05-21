@@ -1,4 +1,4 @@
-/**
+/*
  * Created by Javi on 19/05/2016.
  */
 import {Component}  from 'angular2/core';

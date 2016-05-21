@@ -12,6 +12,13 @@ import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
 import {ActoresListComponent} from "./components/ActorList/ActoresList.component";
 import {SeriesComponent} from "./components/SeriesList/Series.component";
 import {ActorDetalleComponent} from "./components/ActorDetalle/ActorDetalle.component";
+import {PeliculasListComponent} from "./components/PeliculasList/PeliculasList.component";
+import {PeliculasListAccionComponent} from "./components/PeliculasList/PeliculasListAccion.component";
+import {PeliculasListAventurasComponent} from "./components/PeliculasList/PeliculasListAventuras.component";
+import {PeliculasListComediaComponent} from "./components/PeliculasList/PeliculasListComedia.component";
+import {PeliculasListInfantilComponent} from "./components/PeliculasList/PeliculasListInfantil.component";
+import {PeliculasListSuspenseComponent} from "./components/PeliculasList/PeliculaListSuspense.component";
+import {PeliculasListRomanceComponent} from "./components/PeliculasList/PeliculasListRomance.component";
 
 
 
@@ -51,6 +58,41 @@ import {ActorDetalleComponent} from "./components/ActorDetalle/ActorDetalle.comp
     path: '/Series',
     name: 'Series',
     component: SeriesComponent
+  },
+  {
+    path: '/Peliculas',
+    name: 'Peliculas',
+    component: PeliculasListComponent
+  },
+  {
+    path: '/Peliculas/Accion',
+    name: 'PeliculasAccion',
+    component: PeliculasListAccionComponent
+  },
+  {
+    path: '/Peliculas/Aventuras',
+    name: 'PeliculasAventuras',
+    component: PeliculasListAventurasComponent
+  },
+  {
+    path: '/Peliculas/Comedia',
+    name: 'PeliculasComedia',
+    component: PeliculasListComediaComponent
+  },
+  {
+    path: '/Peliculas/Infantil',
+    name: 'PeliculasInfantil',
+    component: PeliculasListInfantilComponent
+  },
+  {
+    path: '/Peliculas/Suspense',
+    name: 'PeliculasSuspense',
+    component: PeliculasListSuspenseComponent
+  },
+  {
+    path: '/Peliculas/Romance',
+    name: 'PeliculasRomance',
+    component: PeliculasListRomanceComponent
   }
 ])
 

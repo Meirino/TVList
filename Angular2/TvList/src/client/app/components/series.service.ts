@@ -9,8 +9,9 @@ export class Serie {
               public esSerie:boolean,
               public temporadas:number, 
               public capitulos:number,
-              public rutaIMG:string, public categorias:String[], 
-              public personal:String[]) {}
+              public rutaIMG:string,
+              public categorias:string[],
+              public personal:string[]) {}
 }
 
   @Injectable()
