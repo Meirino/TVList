@@ -13,6 +13,7 @@ export class adminElementsComponent {
         new Serie(0, 'Drive', 'Película protagonizada por Ryan Gosling', false, 0, 1, '#', ['Conducción'], ['Ryan Gosling']),
         new Serie(1, 'Sherlock', 'Serie protagonizada por Sherlock Holmes', true, 4, 20, '#', ['Misterio'], ['Benedict Cumcumberbatch'])
     ];
+    public nombre:string;
 
     addSerie() {
         this.serieActual.rutaIMG = '#';

@@ -13,7 +13,9 @@
         <div class="col-xs-4">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por nombre"  class="form-control"/></div>
+                <input [(ngModel)]="nombre" type="text" value="" placeholder="Filtrar por nombre"  class="form-control"/>
+            </div>
+            <button (click)="filtrarNombre()" class="btn">Filtrar</button>
         </div>
     </div>
 

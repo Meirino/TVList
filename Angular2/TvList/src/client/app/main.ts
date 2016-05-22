@@ -19,6 +19,12 @@ import {PeliculasListComediaComponent} from "./components/PeliculasList/Pelicula
 import {PeliculasListInfantilComponent} from "./components/PeliculasList/PeliculasListInfantil.component";
 import {PeliculasListSuspenseComponent} from "./components/PeliculasList/PeliculaListSuspense.component";
 import {PeliculasListRomanceComponent} from "./components/PeliculasList/PeliculasListRomance.component";
+import {SeriesAccionComponent} from "./components/SeriesList/SeriesAccion.component";
+import {SeriesAventurasComponent} from "./components/SeriesList/SeriesAventuras.component";
+import {SeriesComediaComponent} from "./components/SeriesList/SeriesComedia.component";
+import {SeriesInfantilComponent} from "./components/SeriesList/SeriesInfantil.component";
+import {SeriesSuspenseComponent} from "./components/SeriesList/SeriesSuspense.component";
+import {SeriesRomanceComponent} from "./components/SeriesList/SeriesRomance.component";
 
 
 
@@ -93,6 +99,36 @@ import {PeliculasListRomanceComponent} from "./components/PeliculasList/Pelicula
     path: '/Peliculas/Romance',
     name: 'PeliculasRomance',
     component: PeliculasListRomanceComponent
+  },
+  {
+    path: '/Series/Accion',
+    name: 'SeriesAccion',
+    component: SeriesAccionComponent
+  },
+  {
+    path: '/Series/Aventuras',
+    name: 'SeriesAventuras',
+    component: SeriesAventurasComponent
+  },
+  {
+    path: '/Series/Comedia',
+    name: 'SeriesComedia',
+    component: SeriesComediaComponent
+  },
+  {
+    path: '/Series/Infantil',
+    name: 'SeriesInfantil',
+    component: SeriesInfantilComponent
+  },
+  {
+    path: '/Series/Suspense',
+    name: 'SeriesSuspense',
+    component: SeriesSuspenseComponent
+  },
+  {
+    path: '/Series/Romance',
+    name: 'SeriesRomance',
+    component: SeriesRomanceComponent
   }
 ])
 

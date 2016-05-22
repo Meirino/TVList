@@ -11,6 +11,7 @@ import {Actor, ActoresService} from "../../actores.service";
 
 export class adminActoresComponent {
     public nuevoActor:Actor = new Actor(0, '', '', '#', ['']);
+    public obras: string = '';
     public lista:Actor[] = [
         new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive'])
     ];
@@ -22,6 +23,7 @@ export class adminActoresComponent {
     anadirActor() {
         var id = this.lista.length;
         this.nuevoActor.IMG = "#";
+        this.separarStrings(this.obras, this.nuevoActor.obras);
         this.lista.push(new Actor(id, this.nuevoActor.nombre, this.nuevoActor.descrip, '#', this.nuevoActor.obras));
     }
 
@@ -29,6 +31,13 @@ export class adminActoresComponent {
         var index = this.lista.indexOf(actor);
         if (index > -1) {
             this.lista.splice(index, 1);
+        }
+    }
+
+    separarStrings(cadena:string, arrayString:string[]) {
+        arrayString = cadena.split(',');
+        for(var i = 0; i < arrayString.length; i++) {
+            arrayString[i] = arrayString[i].replace(/^\s*/, "").replace(/\s*$/, "");
         }
     }
 }
