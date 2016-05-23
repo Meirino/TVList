@@ -8,7 +8,8 @@ import {perfilComponent} from './components/perfil/perfil.Component';
 import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
-import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
+import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
+import {proyeccionesListComponent} from './components/proyecciones/proyeccionesList/proyeccionesList.Component';
 
 
 @Component({
@@ -32,7 +33,12 @@ import {breadCrumbService} from './components/breadCrumb/breadCrumb.service'
     path: '/admin/...',
     name: 'Admin',
     component: adminComponent
-  }
+  },
+  {
+    path: '/peliculas/',
+    name: 'Peliculas',
+    component: proyeccionesListComponent
+  },
 ])
 
 export class MainApp implements OnInit{
