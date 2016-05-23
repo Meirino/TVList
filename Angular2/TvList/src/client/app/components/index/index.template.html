@@ -274,9 +274,9 @@
     </div>
     <div class="row">
             <div class="btn-group btn-group-justified btn-radio-group " role="group">
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
+                <a type="button" (click)="filterByTodo()" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
+                <a type="button" (click)="filterBySeries()" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
+                <a type="button" (click)="filterByPeliculas()" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
             </div>
     </div>
     <div class="row">
@@ -318,6 +318,7 @@
                         <tr>
                             <td>
                                 <p class="desc">{{serie.sinopsis}}</p>
+                                <button class="btn pro-btn">Más detalles</button>
                             </td>
                         </tr>
                     </table>

@@ -23,7 +23,12 @@ export class Serie {
         new Serie(3, 'Virgen a los 40', 'Virgen a los 40', false, 0, 1, '#', ['Comedia', 'Romance'], ['Steve Carell']),
         new Serie(4, 'Indiana Jones', 'Película protagonizada por Harrison Ford', false, 0, 1, '#', ['Aventuras', 'Acción'], ['Harrison Ford']),
         new Serie(5, 'Heavy Rain', 'Película sobre asesinatos', false, 0, 1, '#', ['Suspense', 'Acción'], ['Scott Shellby']),
-        new Serie(4, 'Frozen', 'Película realizada por Disney', false, 0, 1, '#', ['Infantil', 'Romance'], ['Elsa'])
+        new Serie(6, 'Frozen', 'Película realizada por Disney', false, 0, 1, '#', ['Infantil', 'Romance'], ['Elsa']),
+        new Serie(7, 'The Office', 'Serie sobre la vida en una oficina', true, 10, 90, '#', ['Comedia', 'Romance'], ['Steve Carell']),
+        new Serie(8, 'Orange is the new black', 'Serie sobre una prisión femenina', true, 5, 50, '#', ['Suspense', 'Acción'], ['']),
+        new Serie(9, 'Agents of SHILED', 'Serie sobre super heroes', true, 3, 12, '#', ['Suspense', 'Acción', 'Comedia'], ['']),
+        new Serie(10, 'Castle', 'Serie sobre un escritor que trabaja con la policia', true, 10, 100, '#', ['Comedia', 'Acción', 'Suspense', 'Romance'], ['Richard Castle']),
+        new Serie(11, 'Its always sunny on Philadelphia', 'Serie sobre una pandilla que tiene un bar', true, 11, 100, '#', ['Comedia', 'Aventuras', 'Infantil'], ['Charlie Day'])
       ];
 
     constructor() {}

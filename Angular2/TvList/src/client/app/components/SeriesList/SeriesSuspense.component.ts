@@ -6,30 +6,21 @@ import {RouteParams, Router} from 'angular2/router';
 import {Serie, seriesService} from "../series.service";
 
 @Component({
-    templateUrl: './app/components/SeriesList/Series.template.html'
+    templateUrl: './app/components/SeriesList/Series.template.html',
+    providers: [seriesService]
 })
 
 export class SeriesSuspenseComponent {
     public lista:Serie[];
     public serie:Serie;
+    public busq:string;
 
-    constructor(public router:Router) {
-        this.lista = [
-            new Serie(0, 'Drive', 'Película protagonizada por Ryan Gosling', false, 0, 1, '#', ['Conducción'], ['Ryan Gosling']),
-            new Serie(1, 'Sherlock', 'Serie protagonizada por Sherlock Holmes', true, 4, 20, '#', ['Misterio'], ['Benedict Cumcumberbatch']),
-            new Serie(2, 'True Detective', 'Serie protagonizada por un detective', true, 4, 20, '#', ['Suspense', 'Acción'], ['Sam Wilson'])
-        ].filter(serie => serie.categorias.lastIndexOf('Suspense') > -1);
+    constructor(public service:seriesService, public router:Router) {
+        this.lista = this.service.filterBySeries();
+        this.lista = this.lista.filter(serie => serie.categorias.indexOf('Suspense') > -1);
     }
 
-    removeSerie(serie: Serie){
-        for(let i=0; i<this.lista.length; i++){
-            if(this.lista[i].id === serie.id){
-                this.lista.splice(i,1);
-            }
-        }
-    }
-
-    onSelect(serie:Serie) {
-        this.router.navigate(['/Series/', serie.id]);
+    filtrarPorNombre() {
+        this.lista = this.service.getElementoByTitulo(this.busq);
     }
 }
