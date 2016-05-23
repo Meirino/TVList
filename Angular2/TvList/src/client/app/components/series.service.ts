@@ -16,24 +16,46 @@ export class Serie {
 
   @Injectable()
   export class seriesService {
-    private series:string[] = [
-        "String 1", "String 2"
-    ];
+    private series:Serie[] = [
+        new Serie(0, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
+        new Serie(1, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
+      ];
 
-    constructor() {
-        /*this.series  = [
-            new Serie(1, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
-            new Serie(2, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
-        ];*/
-    }
+    constructor() {}
 
-  /*addSerie(serie:Serie) {
-    this.series.push(serie);
-  }*/
+  addSerie(serie:Serie) {
+      this.series.push(serie);
+  }
 
   getSeries() {
     return this.series;
   }
+
+      removeSerie(serie: Serie){
+          for(let i=0; i<this.series.length; i++){
+              if(this.series[i].id === serie.id){
+                  this.series.splice(i,1);
+                  break;
+              }
+          }
+          return withObserver(undefined);
+      }
+
+      filterBySeries() {
+          return this.series.filter(serie => serie.esSerie == true);
+      }
+
+      filterByPelicula() {
+          return this.series.filter(serie => serie.esSerie == false);
+      }
+
+      filterByTodo() {
+          return this.series;
+      }
+
+      getElementoByTitulo(nombre:string) {
+          return this.series.filter(serie => serie.titulo == nombre);
+      }
 
   /*getSeriebyID(id:number | string) {
     let elem = this.series.filter(h => h.id === +id)[0]
@@ -55,16 +77,6 @@ export class Serie {
   getSeriesbyTipo(tipo:boolean) {
     let elem = this.series.filter(h => h.esSerie == tipo);
     return elem;
-  }
-
-  removeSerie(serie: Serie){
-    for(let i=0; i<this.series.length; i++){
-        if(this.series[i].id === serie.id){
-          this.series.splice(i,1);
-          break;
-        }
-    }
-    return withObserver(undefined);
   }
 
   saveSerie(serie: Serie){
