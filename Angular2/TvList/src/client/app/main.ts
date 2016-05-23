@@ -39,6 +39,11 @@ import {proyeccionesListComponent} from './components/proyecciones/proyeccionesL
     name: 'Peliculas',
     component: proyeccionesListComponent
   },
+  {
+    path: '/peliculas/:type',
+    name: 'PeliculasTipo',
+    component: proyeccionesListComponent
+  },
 ])
 
 export class MainApp implements OnInit{

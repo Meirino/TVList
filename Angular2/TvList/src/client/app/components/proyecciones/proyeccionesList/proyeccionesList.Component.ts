@@ -1,6 +1,7 @@
 import {Component,OnInit,ElementRef,ViewChild} from 'angular2/core';
 import {proyeccionesItemComponent} from '../proyeccionesItem/proyeccionesItem.Component';
 import {proyeccionService} from '../proyeccion.service';
+import {RouteParams} from 'angular2/router';
 
 @Component({
   templateUrl: './app/components/proyecciones/proyeccionesList/proyeccionesList.Template.html',
@@ -9,12 +10,22 @@ import {proyeccionService} from '../proyeccion.service';
 })
 
 export class proyeccionesListComponent implements OnInit{
-  
-  ngOnInit():any {
 
+  private type:string;
+  private title:string;
+  
+  constructor(private _proServ:proyeccionService, params: RouteParams){
+    this.type=params.get("type");
+    this.type=params.get("titulo");
+  }
+
+  ngOnInit():any {
+    //let peliculas$=this._proServ.getPeliculas_TypeAll();
+    console.log("Tipo : "+this.type);
+    console.log("Titulo : "+this.type);
   }
   
 
-  constructor(private _proServ:proyeccionService){}
-  
+
+
 }
