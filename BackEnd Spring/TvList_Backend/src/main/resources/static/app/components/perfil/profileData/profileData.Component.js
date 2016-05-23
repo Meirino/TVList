@@ -37,6 +37,7 @@ System.register(['angular2/core', '../../../components/user/user.service', '../.
                     this.greenVal = 0;
                     this.userToCreate = new user_data_1.user();
                     this.succesLabel = false;
+                    this.imagenPrev = false;
                 }
                 profileDataComponent.prototype.ngOnInit = function () {
                     // (<user>this._servicioUsuario.userLogged).name;
@@ -51,14 +52,38 @@ System.register(['angular2/core', '../../../components/user/user.service', '../.
                 };
                 profileDataComponent.prototype.updateUser = function () {
                     var _this = this;
+                    var userCreated;
                     this.succesLabel = false;
-                    var userLap = this._servicioUsuario.setUserByID(this.userToCreate);
-                    userLap.subscribe(function (x) {
-                        _this._servicioUsuario.userLogged = x;
-                        setTimeout(function (a) {
-                            _this.succesLabel = true;
-                        }, 0);
-                    });
+                    if (this.file) {
+                        var multipartItem = this._servicioUsuario.upload(this.file);
+                        multipartItem.callback = function (data, status, headers) {
+                            if (status == 200) {
+                                _this.userToCreate.avatar = data;
+                                console.debug("File has been uploaded");
+                                //this.loadImages();
+                                userCreated = _this._servicioUsuario.setUserByID(_this.userToCreate);
+                                userCreated.subscribe(function (x) {
+                                    _this._servicioUsuario.userLogged = _this.userToCreate;
+                                    setTimeout(function (a) {
+                                        _this.succesLabel = true;
+                                    }, 0);
+                                });
+                            }
+                            else {
+                                console.error("Error uploading file");
+                            }
+                        };
+                        multipartItem.upload();
+                    }
+                    else {
+                        userCreated = this._servicioUsuario.setUserByID(this.userToCreate);
+                        userCreated.subscribe(function (x) {
+                            _this._servicioUsuario.userLogged = _this.userToCreate;
+                            setTimeout(function (a) {
+                                _this.succesLabel = true;
+                            }, 0);
+                        });
+                    }
                 };
                 profileDataComponent.prototype.loadProfileData = function () {
                     this.userToCreate = JSON.parse(JSON.stringify(this._servicioUsuario.userLogged));
@@ -82,6 +107,32 @@ System.register(['angular2/core', '../../../components/user/user.service', '../.
                         if (passStre < 50) {
                             return { passwordStrenError: true };
                         }
+                    }
+                };
+                profileDataComponent.prototype.selectFile = function ($event) {
+                    this.file = $event.target.files[0];
+                    if (this.file) {
+                        this.imagenPrev = true;
+                        var ctx = document.getElementById('canvas').getContext('2d');
+                        var reader = new FileReader();
+                        // load to image to get it's width/height
+                        var img = new Image();
+                        img.onload = function () {
+                            // scale canvas to image
+                            ctx.canvas.width = img.width;
+                            ctx.canvas.height = img.height;
+                            // draw image
+                            ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
+                        };
+                        // this is to setup loading the image
+                        reader.onloadend = function () {
+                            img.src = reader.result;
+                        };
+                        // this is to read the file
+                        reader.readAsDataURL(this.file);
+                    }
+                    else {
+                        this.imagenPrev = false;
                     }
                 };
                 profileDataComponent.prototype.UpdateBar = function (passw) {

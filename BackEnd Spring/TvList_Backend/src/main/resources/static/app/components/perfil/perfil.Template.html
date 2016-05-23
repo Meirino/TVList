@@ -1,9 +1,10 @@
 <div class="card hovercard">
     <div class="card-background">
-        <img [src]="'/assets/images/profile/'+(_servicioUsuario.userLogged.avatar!=false?_servicioUsuario.userLogged.avatar:'noAvatar.png')" alt="" class="card-bkimg">
+        <img [src]="'/assets/images/profile/'+(_servicioUsuario.userLogged.avatar!=''?_servicioUsuario.userLogged.avatar:'noAvatar.png')" alt="" class="card-bkimg">
+        <!-- http://lorempixel.com/850/280/people/9/ -->
     </div>
     <div class="useravatar">
-        <img [src]="'/assets/images/profile/'+(_servicioUsuario.userLogged.avatar!=false?_servicioUsuario.userLogged.avatar:'noAvatar.png')" alt="">
+        <img [src]="'/assets/images/profile/'+(_servicioUsuario.userLogged.avatar!=''?_servicioUsuario.userLogged.avatar:'noAvatar.png')" alt="">
     </div>
     <div class="card-info"> <span class="card-title"> {{_servicioUsuario.userLogged?.user_Name}} </span>
 

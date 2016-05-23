@@ -68,8 +68,20 @@
                         <span class="sr-only">20% Complete (success)</span>
                     </div>
                 </div>
-
             </div>
+            <div class="col-xs-4"></div>
+            <div class=" col-xs-4 useravatar alert alert-info ">
+                <h2 class="center-block label-success"><span class="label label-success center-block">Avatar</span></h2>
+                            <span [hidden]="!imagenPrev">
+                             <canvas  #imgPrev width="400" height="300" id="canvas" class="center-block"></canvas>
+                            </span>
+                            <span [hidden]="imagenPrev">
+                                <img  [src]="'/assets/images/profile/'+(_servicioUsuario.userLogged.avatar!=false?_servicioUsuario.userLogged.avatar:'noAvatar.png')" class="center-block">
+                            </span>
+                <input type="file" (change)="selectFile($event)" class="btn btn-info center-block">
+            </div>
+            <div class="col-xs-4"></div>
+            <div class="clearfix"></div>
             <div class="col-xs-4"></div>
             <button type="submit" class="btn pro-btn col-xs-4 text-center hvr-icon-spin" [disabled]="!updForm.valid" >Actualizar</button>
             <div class="col-xs-4"></div>

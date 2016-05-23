@@ -140,7 +140,7 @@ export class userService{
         });
         let options = new RequestOptions({ headers });
 
-        return this.http.post("/registerUser", body, options)
+        return this.http.post("/User", body, options)
             .map(response => response.json())
             .catch(error => error).subscribe(next=>{
                 this.getUserByUser_And_Pass(userOb.user_Name,userOb.user_Password);
@@ -170,18 +170,25 @@ export class userService{
     
 
     setUserByID(luserOb:user):Observable<user> {
-       let usuarioActualizado=Observable.create(x=>{
-           for (let userOb  in this.listaUsuarios){
-               if (this.listaUsuarios[userOb].id==luserOb.id){
-                   this.listaUsuarios[userOb]=luserOb;
-                   x.next(luserOb);
-               }
-           }
-           x.error(false)
-       })
-        
-        return usuarioActualizado;
+        let userS = new userSpring(luserOb);
+        let body = JSON.stringify(userS);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.put("/User", body, options)
+            .map(response => response.json())
+            .catch(error => error);
     }
+
+    private handleError(error: any){
+        console.error(error);
+        return Observable.throw("Server error (" + error.status + "): " + error.text())
+    }
+
+
 
     deleteUserByID(id:number):user {
         return undefined;

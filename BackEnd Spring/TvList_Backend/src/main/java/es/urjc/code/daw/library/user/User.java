@@ -59,17 +59,6 @@ public class User {
 	
 	private String avatar;
 
-	private String image;
-
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<String> roles;
 

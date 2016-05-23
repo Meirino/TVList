@@ -135,7 +135,7 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http', "./
                         'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.post("/registerUser", body, options)
+                    return this.http.post("/User", body, options)
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return error; }).subscribe(function (next) {
                         _this.getUserByUser_And_Pass(userOb.user_Name, userOb.user_Password);
@@ -155,17 +155,20 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http', "./
                     return multipartItem;
                 };
                 userService.prototype.setUserByID = function (luserOb) {
-                    var _this = this;
-                    var usuarioActualizado = Rx_1.Observable.create(function (x) {
-                        for (var userOb in _this.listaUsuarios) {
-                            if (_this.listaUsuarios[userOb].id == luserOb.id) {
-                                _this.listaUsuarios[userOb] = luserOb;
-                                x.next(luserOb);
-                            }
-                        }
-                        x.error(false);
+                    var userS = new user_data_1.userSpring(luserOb);
+                    var body = JSON.stringify(userS);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
-                    return usuarioActualizado;
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put("/User", body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return error; });
+                };
+                userService.prototype.handleError = function (error) {
+                    console.error(error);
+                    return Rx_1.Observable.throw("Server error (" + error.status + "): " + error.text());
                 };
                 userService.prototype.deleteUserByID = function (id) {
                     return undefined;

@@ -58,6 +58,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
 
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/registerUser").hasRole("USER");		
+		
+		
+		
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();
 	}

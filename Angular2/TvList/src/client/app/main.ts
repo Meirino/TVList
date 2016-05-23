@@ -39,11 +39,7 @@ export class MainApp implements OnInit{
   ngOnInit():any {
     this._breadCrumbService.host=window.location.origin;
   }
-
-  routerCanDeactivate(nextInstruction:ComponentInstruction, prevInstruction:ComponentInstruction):boolean|Promise<boolean> {
-    return false;
-  }
-
+  
   private keep:boolean=true;
   private _componenteACargar = centroUsuarioComponent;
   @ViewChild('modal') private modal:modalComponent;

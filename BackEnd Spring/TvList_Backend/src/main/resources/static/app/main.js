@@ -78,9 +78,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                 MainApp.prototype.ngOnInit = function () {
                     this._breadCrumbService.host = window.location.origin;
                 };
-                MainApp.prototype.routerCanDeactivate = function (nextInstruction, prevInstruction) {
-                    return false;
-                };
                 MainApp.prototype.navigateByUrl = function (url) {
                     this._router.navigateByUrl(url).then(function (x) { return true; });
                 };

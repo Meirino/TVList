@@ -2,6 +2,7 @@ package es.urjc.code.daw.library.user;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -34,6 +35,16 @@ public class UserComponent {
 
 	public boolean isLoggedUser() {
 		return this.user != null;
+	}
+	
+	public User actualizarUsuario(User usuarioDatosNuevos){
+		user.setAvatar(usuarioDatosNuevos.getAvatar());
+		user.setMail(usuarioDatosNuevos.getMail());
+		user.setName(usuarioDatosNuevos.getName());
+		user.setPasswordHash(new BCryptPasswordEncoder().encode(usuarioDatosNuevos.getPasswordHash()));
+		user.setRname(usuarioDatosNuevos.getRname());
+		user.setSurname(usuarioDatosNuevos.getSurname());
+		return user;
 	}
 
 }

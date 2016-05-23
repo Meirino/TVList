@@ -23,7 +23,13 @@ export class profileDataComponent implements OnInit{
 
   private succesLabel:boolean=false;
 
+  private file: File;
+
+  private imagenPrev:boolean=false;
+
   form: ControlGroup;
+
+  constructor(private _servicioUsuario:userService,private ref:ElementRef,private fb: FormBuilder){}
 
   ngOnInit():any {
     // (<user>this._servicioUsuario.userLogged).name;
@@ -38,22 +44,48 @@ export class profileDataComponent implements OnInit{
   }
 
   private updateUser(){
-    this.succesLabel=false;
-    let userLap=this._servicioUsuario.setUserByID(this.userToCreate);
-    userLap.subscribe(x=>{
-      this._servicioUsuario.userLogged=x;
-      setTimeout((a)=>{
-        this.succesLabel=true;
 
-      },0)
-    });
+    let userCreated;
+    this.succesLabel=false;
+      if (this.file){
+        let multipartItem=this._servicioUsuario.upload(this.file);
+        multipartItem.callback = (data, status, headers) => {
+          if (status == 200){
+            this.userToCreate.avatar=data;
+            console.debug("File has been uploaded");
+            //this.loadImages();
+            userCreated=this._servicioUsuario.setUserByID(this.userToCreate);
+            userCreated.subscribe(x=>{
+              this._servicioUsuario.userLogged=this.userToCreate;
+              setTimeout((a)=>{
+                this.succesLabel=true;
+              },0)
+            });
+          } else {
+            console.error("Error uploading file");
+          }
+        };
+        multipartItem.upload();
+      }
+      else
+      {
+        userCreated=this._servicioUsuario.setUserByID(this.userToCreate);
+        userCreated.subscribe(x=>{
+        this._servicioUsuario.userLogged=this.userToCreate;
+        setTimeout((a)=>{
+          this.succesLabel=true;
+        },0)
+      });
+      }
   }
+
+
 
   private loadProfileData(){
     this.userToCreate=JSON.parse(JSON.stringify(this._servicioUsuario.userLogged));
     this.userToCreate.user_Password='';
   }
-  constructor(private _servicioUsuario:userService,private ref:ElementRef,private fb: FormBuilder){}
+
 
   private passwordStreValidator(control: Control): { [s: string]: boolean } {
     if (control.value != undefined) {
@@ -74,6 +106,37 @@ export class profileDataComponent implements OnInit{
       if (passStre<50){
         return {passwordStrenError: true};
       }
+    }
+  }
+
+
+  private selectFile($event) {
+    this.file = $event.target.files[0];
+    if (this.file)
+    {
+      this.imagenPrev=true;
+      var ctx=(<any>document.getElementById('canvas')).getContext('2d');
+      var reader  = new FileReader();
+      // load to image to get it's width/height
+      var img = new Image();
+      img.onload = function() {
+        // scale canvas to image
+        ctx.canvas.width = img.width;
+        ctx.canvas.height = img.height;
+        // draw image
+        ctx.drawImage(img, 0, 0
+            , ctx.canvas.width, ctx.canvas.height
+        );
+      }
+      // this is to setup loading the image
+      reader.onloadend = function () {
+        img.src = reader.result;
+      }
+      // this is to read the file
+      reader.readAsDataURL(this.file);
+    }
+    else{
+      this.imagenPrev=false;
     }
   }
 

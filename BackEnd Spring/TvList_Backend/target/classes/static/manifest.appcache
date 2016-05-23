@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: f919d7d57497fc10b4fd25392e410470d3686eee
+# sw.version: 99b39c15bfaef0f1160707f4a853ba806a85f9d0
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
 # sw.file.hash: 1d575a0871f76a3e8b0624b3007f13e93133e9bf
@@ -105,15 +105,15 @@ CACHE MANIFEST
 \app\components\perfil\perfil.Component.js.map
 # sw.file.hash: db41d73647a2dc3d7c86f7930be1a2ad760b5aaf
 \app\components\perfil\perfil.Style.css
-# sw.file.hash: 8a44aa3fdac48c1369ab77c1a3dfd6954b73c958
+# sw.file.hash: 20cf6873c00621dd3a5b47456d42bf0cac90d98d
 \app\components\perfil\perfil.Template.html
-# sw.file.hash: f9111ec293c78e27d38134c8f34cbdc847704569
+# sw.file.hash: cd5074b7171dbe00b8e6e4b01d11fec49e570102
 \app\components\perfil\profileData\profileData.Component.js
-# sw.file.hash: 55904b7c2ce10400fa3125fc047c2ee6a147a571
+# sw.file.hash: e910cfcc0be51932ead3b2ef0bd1cd74b7813f53
 \app\components\perfil\profileData\profileData.Component.js.map
-# sw.file.hash: db41d73647a2dc3d7c86f7930be1a2ad760b5aaf
+# sw.file.hash: 291eb1ca4ca38dff7de1f8b4b1689e2b5f835ee9
 \app\components\perfil\profileData\profileData.Style.css
-# sw.file.hash: 4cc15f6fd7edae86ba4f01b52d84bc5cfe8c18f9
+# sw.file.hash: 9c4ff4246ef6ed56ff5f0e0bdfc73c957094f830
 \app\components\perfil\profileData\profileData.Template.html
 # sw.file.hash: 8db637bf95f57038edaf96235d7287662761c28c
 \app\components\user\loginAuth.js
@@ -131,15 +131,15 @@ CACHE MANIFEST
 \app\components\user\user.data.js
 # sw.file.hash: 2296114c92a9fdde83dba3d0ae27962a49aeab3c
 \app\components\user\user.data.js.map
-# sw.file.hash: 275c91841b40a19144f97a4a9958028c049d178a
+# sw.file.hash: 407e836da5ff9202fb9ba2673af6d7afa422e850
 \app\components\user\user.service.js
-# sw.file.hash: a3c2c1f024fed63422e76dcb7af96455de12c596
+# sw.file.hash: f47d51d82a8d1bfe90e21f7b555f519c23f73f97
 \app\components\user\user.service.js.map
 # sw.file.hash: 6916978a7edd8ef6b9f6f763224d85a675b9d8a8
 \app\main.html
-# sw.file.hash: f2c3f6023364cba3a790fc264fc1ccbe829d1f71
+# sw.file.hash: 070c713c2dfb7564fb6cb05bd56408ad6cce40fc
 \app\main.js
-# sw.file.hash: c4be3bb898e1628b82c5fde125aeecd46123225e
+# sw.file.hash: c794f26b29a8b1b9cafc0f5f32f9355dc3d93581
 \app\main.js.map
 # sw.file.hash: 49d5a62222a3771363a160fa0e460f0f8c60b1d7
 \app\utilities.js
