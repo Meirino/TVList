@@ -14,6 +14,7 @@ export class adminActoresComponent {
     public nuevoActor:Actor = new Actor(0, '', '', '#', ['']);
     public obras: string = '';
     public lista:Actor[];
+    public busq:string;
 
     constructor(public service: ActoresService) {
         this.lista = this.service.getDatos();
@@ -35,5 +36,9 @@ export class adminActoresComponent {
         for(var i = 0; i < arrayString.length; i++) {
             arrayString[i] = arrayString[i].replace(/^\s*/, "").replace(/\s*$/, "");
         }
+    }
+
+    filtrarPorNombre() {
+        this.lista = this.service.getActorByNombre(this.busq);
     }
 }

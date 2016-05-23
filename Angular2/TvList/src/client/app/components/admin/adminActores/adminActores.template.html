@@ -1,6 +1,20 @@
 <div class="col-md-12">
     <button type="button" class="btn pro-btn btn-lg btn-block" data-toggle="modal" data-target="#AddModal">Añadir elemento</button>
 </div>
+<br>
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" [(ngModel)]="busq" placeholder="Filtrar por nombre"  class="form-control"/></div>
+        </div>
+        <div class="col-xs-2">
+            <button (click)="filtrarPorNombre()" class="btn pro-btn btn-block">Filtrar</button>
+        </div>
+    </div>
+</div>
+<br>
 <hr>
 <div id="AddModal" class="modal modal-lg fade" role="dialog">
     <div class="modal-dialog">
