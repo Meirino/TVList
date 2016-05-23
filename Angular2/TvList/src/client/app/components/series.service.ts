@@ -17,8 +17,13 @@ export class Serie {
   @Injectable()
   export class seriesService {
     private series:Serie[] = [
-        new Serie(0, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción'], ['Ryan Gosling']),
-        new Serie(1, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Thriller', 'Policiaco'], ['Brian Carston'])
+        new Serie(0, 'Drive', 'Sinopsis', false, 0, 0, 'aaa', ['Drama', 'Conducción', 'Romance'], ['Ryan Gosling']),
+        new Serie(1, 'Breaking Bad', 'Sinopsis', true, 7, 50, 'aaa', ['Drama', 'Suspense', 'Policiaco'], ['Brian Carston']),
+        new Serie(2, 'Los vengadores', 'Película protagonizada por los vengadores', false, 0, 1, '#', ['Superheroes', 'Acción', 'Comedia'], ['Chris Evans']),
+        new Serie(3, 'Virgen a los 40', 'Virgen a los 40', false, 0, 1, '#', ['Comedia', 'Romance'], ['Steve Carell']),
+        new Serie(4, 'Indiana Jones', 'Película protagonizada por Harrison Ford', false, 0, 1, '#', ['Aventuras', 'Acción'], ['Harrison Ford']),
+        new Serie(5, 'Heavy Rain', 'Película sobre asesinatos', false, 0, 1, '#', ['Suspense', 'Acción'], ['Scott Shellby']),
+        new Serie(4, 'Frozen', 'Película realizada por Disney', false, 0, 1, '#', ['Infantil', 'Romance'], ['Elsa'])
       ];
 
     constructor() {}

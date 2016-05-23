@@ -6,19 +6,21 @@ import {RouteParams, Router} from 'angular2/router';
 import {Serie, seriesService} from "../series.service";
 
 @Component({
-    templateUrl: './app/components/PeliculasList/PeliculasList.template.html'
+    templateUrl: './app/components/PeliculasList/PeliculasList.template.html',
+    providers: [seriesService]
 })
 
 export class PeliculasListSuspenseComponent {
     public lista:Serie[];
     public serie:Serie;
+    public busq:string;
 
-    constructor(public router:Router) {
-        this.lista = [
-            new Serie(0, 'Drive', 'Película protagonizada por Ryan Gosling', false, 0, 1, '#', ['Romance', 'Accion'], ['Ryan Gosling']),
-            new Serie(1, 'Los vengadores', 'Película protagonizada por los vengadores', false, 0, 1, '#', ['Superheroes', 'Acción'], ['Chris Evans']),
-            new Serie(2, 'Indiana Jones', 'Película protagonizada por Harrison Ford', false, 0, 1, '#', ['Acción', 'Aventuras'], ['Harrison Ford']),
-            new Serie(3, 'Sherlock', 'Serie protagonizada por Sherlock Holmes', true, 4, 20, '#', ['Misterio'], ['Benedict Cumcumberbatch'])
-        ].filter(serie => serie.categorias.lastIndexOf('Suspense') > -1)
+    constructor(public service:seriesService, public router:Router) {
+        this.lista = this.service.filterByPelicula();
+        this.lista = this.lista.filter(serie => serie.categorias.indexOf('Suspense') > -1);
+    }
+
+    filtrarPorNombre() {
+        this.lista = this.service.getElementoByTitulo(this.busq);
     }
 }
