@@ -25,8 +25,10 @@ export class loginComponent{
                 console.log('Soy el login y el valor es: '+value);
             },
             error => {
-                console.log("error");
-                this.showMessage(error);
+                if (error.status=="401")
+                    this.showMessage("Usuario o contaseña incorrectos");
+                else
+                    this.showMessage("Error de conexion");
             }
         );
     }

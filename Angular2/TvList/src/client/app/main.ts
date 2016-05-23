@@ -136,11 +136,8 @@ export class MainApp implements OnInit{
   ngOnInit():any {
     this._breadCrumbService.host=window.location.origin;
   }
-
-  routerCanDeactivate(nextInstruction:ComponentInstruction, prevInstruction:ComponentInstruction):boolean|Promise<boolean> {
-    return false;
-  }
-
+  
+  private keep:boolean=true;
   private _componenteACargar = centroUsuarioComponent;
   @ViewChild('modal') private modal:modalComponent;
 
@@ -171,6 +168,7 @@ export class MainApp implements OnInit{
       if (suc){
         this.modal.toggleModal();
         this.cargarUsuario();
+        this.keep=false;
       }
     });
   }
@@ -179,10 +177,6 @@ export class MainApp implements OnInit{
   private navigateByUrl(url:string){
     this._router.navigateByUrl(url).then(x=>{return true});
   }
-
-
-
-
 
   private cargarUsuario(){
 
@@ -196,13 +190,18 @@ export class MainApp implements OnInit{
 */
 
   private mostrarLogin(){
-    this.modal.toggleModal();
+    this.keep=true;
+    setTimeout((a)=>{
+      this.modal.toggleModal();
+
+    },0)
+
 
   }
 
   private _desconectarUsuario(){
     this._router.navigate(['/Index']);
-    this._servicioUsuarios.userLogged=null;
+    this._servicioUsuarios.logOut().subscribe();
   }
 
 

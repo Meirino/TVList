@@ -1,0 +1,115 @@
+
+/* Elimina el borde al pulsar o estar encima de un boton que no es cuadrado */
+/*
+.btn:focus,.btn:active {
+    outline: none !important;
+}
+
+.btn {
+    background: #d9344a;
+    background-image: -webkit-linear-gradient(top, #d9344a, #b82b47);
+    background-image: -moz-linear-gradient(top, #d9344a, #b82b47);
+    background-image: -ms-linear-gradient(top, #d9344a, #b82b47);
+    background-image: -o-linear-gradient(top, #d9344a, #b82b47);
+    background-image: linear-gradient(to bottom, #d9344a, #b82b47);
+    -webkit-border-radius: 60;
+    -moz-border-radius: 60;
+    border-radius: 60px;
+    -webkit-box-shadow: 0px 1px 3px #f000f0;
+    -moz-box-shadow: 0px 1px 3px #f000f0;
+    box-shadow: 0px 1px 3px #f000f0;
+    color: #ffffff;
+    border: solid #000000 1px;
+    text-decoration: none;
+
+}
+
+.btn:hover {
+    background: #fc3c3c;
+    background-image: -webkit-linear-gradient(top, #fc3c3c, #d93434);
+    background-image: -moz-linear-gradient(top, #fc3c3c, #d93434);
+    background-image: -ms-linear-gradient(top, #fc3c3c, #d93434);
+    background-image: -o-linear-gradient(top, #fc3c3c, #d93434);
+    background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
+    text-decoration: none;
+}
+
+
+*/
+
+/* Cambiamos el color del simbolo */
+.mytemplate-btn-circle:before{
+    color:#FFFFFF;
+}
+
+
+
+.hvr-icon-forward{
+    padding-right: 1em;
+}
+.hvr-icon-back{
+    padding-left: 1em;
+}
+
+/* Cambio el icono por defecto por otro */
+.hvr-icon-pop:before{
+    content: "\f044";
+}
+
+#register-form-tabs > li > a{
+    background-color: #0a819c;
+}
+
+#register-form-tabs > li:first-child > a{
+    border-right: transparent;
+    border-bottom: transparent;
+    border-top-right-radius:0; !important;
+    border-bottom-right-radius:0; !important;
+    border-bottom-left-radius:0; !important;
+}
+
+#register-form-tabs > li:last-child > a{
+    border-left: transparent;
+    border-bottom: transparent;
+    border-top-left-radius: 0; !important;
+    border-bottom-right-radius:0; !important;
+    border-bottom-left-radius:0; !important;
+}
+
+#login-form-btn-sent:before {
+    content: "\f090";
+}
+
+.btn-group > .btn {
+    margin: 0;
+
+}
+
+.btn-group > .btn {
+    margin: 0;
+
+}
+
+
+.btn-group.btn-radio-group > .btn-radio-checked {
+    border: 2px solid #0a3c59;
+    background: #0c6bab;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0d6cab), to(#0c6bab));
+    background: -webkit-linear-gradient(top, #0d6cab, #0c6bab);
+    background: -moz-linear-gradient(top, #0d6cab, #0c6bab);
+    background: -ms-linear-gradient(top, #0d6cab, #0c6bab);
+    background: -o-linear-gradient(top, #0d6cab, #0c6bab);
+    background-image: -ms-linear-gradient(top, #0d6cab 0%, #0c6bab 100%);
+    z-index: 10;
+
+    -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+    text-shadow: #7ea4bd 0 1px 0;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: helvetica, serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+

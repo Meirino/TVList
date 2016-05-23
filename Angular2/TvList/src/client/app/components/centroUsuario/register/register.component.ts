@@ -4,7 +4,8 @@
 import {Component,ViewChild,ElementRef, OnInit} from 'angular2/core';
 import {userService} from '../../user/user.service';
 import {Observable,ConnectableObservable } from 'rxjs/Rx';
-import {user} from '../../user/user.data'
+import {user} from '../../user/user.data';
+
 
 import {Control,Validators,FormBuilder,ControlGroup,FORM_DIRECTIVES} from 'angular2/common';
 
@@ -22,8 +23,12 @@ export class registerComponent{
     @ViewChild('link_Step1') link_Step1:ElementRef;
     @ViewChild('link_Step2') link_Step2:ElementRef;
     @ViewChild('link_Step3') link_Step3:ElementRef;
+    @ViewChild('imgPrev') imagePreview:ElementRef;
 
     private userToCreate:user=new user();
+    private file: File;
+
+    private imagenPrev:boolean=false;
 
     form: ControlGroup;
 
@@ -54,7 +59,6 @@ export class registerComponent{
     }
 
     private reg_step1(){
-        this.userToCreate.surname
         this.showmessage=false;
         let userAceptableStream=this.servicioUsuarios.checkIf_UserName_AND_Email_Free(this.userToCreate.user_Name,this.userToCreate.user_Email);
         userAceptableStream.subscribe(
@@ -74,15 +78,56 @@ export class registerComponent{
     }
 
     private reg_step3(){
-        let userCreated:Observable<user>=this.servicioUsuarios.createUser(this.userToCreate);
-        userCreated.subscribe((suc)=>{
-            console.log(this.servicioUsuarios.getAllUser());
-        },
-        (error)=>{
+        if (this.file){
+        let multipartItem=this.servicioUsuarios.upload(this.file);
+        multipartItem.callback = (data, status, headers) => {
 
-        });
+            if (status == 200){
+                this.userToCreate.avatar=data;
+                console.debug("File has been uploaded");
+                //this.loadImages();
+                let userCreated=this.servicioUsuarios.createUser(this.userToCreate);
+            } else {
+                console.error("Error uploading file");
+            }
+        };
+        multipartItem.upload();
+        }
+        else
+            this.servicioUsuarios.createUser(this.userToCreate);
 
     }
+
+    private selectFile($event) {
+        this.file = $event.target.files[0];
+        if (this.file)
+        {
+        this.imagenPrev=true;
+        var ctx=(<any>document.getElementById('canvas')).getContext('2d');
+        var reader  = new FileReader();
+        // load to image to get it's width/height
+        var img = new Image();
+        img.onload = function() {
+            // scale canvas to image
+            ctx.canvas.width = img.width;
+            ctx.canvas.height = img.height;
+            // draw image
+            ctx.drawImage(img, 0, 0
+                , ctx.canvas.width, ctx.canvas.height
+            );
+        }
+        // this is to setup loading the image
+        reader.onloadend = function () {
+            img.src = reader.result;
+        }
+        // this is to read the file
+        reader.readAsDataURL(this.file);
+        }
+        else{
+            this.imagenPrev=false;
+        }
+    }
+    
 
 
     private back(num:number){

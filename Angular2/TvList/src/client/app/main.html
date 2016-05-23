@@ -38,7 +38,7 @@
 
                 </li>
                 <li *ngIf="_servicioUsuarios.userLogged">
-                    <img  [src]="'/assets/images/profile/'+(_servicioUsuarios.userLogged.avatar!=undefined?_servicioUsuarios.userLogged.avatar:'noAvatar.png')" class="img-responsive img-circle pro-img-mini-circle center-block">
+                    <img  [src]="'/assets/images/profile/'+(_servicioUsuarios.userLogged.avatar!=false?_servicioUsuarios.userLogged.avatar:'noAvatar.png')" class="img-responsive img-circle pro-img-mini-circle center-block">
                 </li>
                 <li *ngIf="!_servicioUsuarios.userLogged">
                     <a href="#" class="hvr-bounce-to-bottom animated bounceIn" data-toggle="modal" data-target="#modal-transparent" (click)="mostrarLogin()"><i class="fa fa-fw fa-user"></i> Usuario </a>
@@ -106,7 +106,7 @@
 
         <!-- Aqui el cuerpo de la pagina, donde se debe cargar la info -->
 
-        <pro-modal #modal [componenteInterior]="_componenteACargar"></pro-modal>
+        <pro-modal *ngIf="keep" #modal [componenteInterior]="_componenteACargar"></pro-modal>
 
         <div id="page-wrapper">
 

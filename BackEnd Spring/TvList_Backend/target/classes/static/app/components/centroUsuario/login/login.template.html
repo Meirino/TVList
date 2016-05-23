@@ -1,0 +1,29 @@
+<div *ngIf="showmessage">
+    <div class="alert alert-danger animated shake text-center">
+        {{mens}}
+    </div>
+</div>
+<form  (ngSubmit)="login()" #loginForm="ngForm" >
+    <div class="form-group">
+        <div class="pro-input-group input-group">
+            <span [ngClass]="!userName.touched && userName.pristine?'input-group-addon label-info': userName.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Usuario</span>
+            <input type="text" class="form-control" ngControl="userName" required #userName="ngForm">
+            <span [ngClass]="!userName.touched && userName.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userName.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+        </div>
+        <div [hidden]="userName.valid || !userName.touched" class="alert alert-danger">
+            Rellene campo Usuario
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="pro-input-group input-group">
+            <span [ngClass]="!userPass.touched && userPass.pristine?'input-group-addon label-info': userPass.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Contraseña</span>
+            <input type="password" class="form-control" ngControl="userPass" required #userPass="ngForm">
+            <span [ngClass]="!userPass.touched  && userPass.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': userPass.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+        </div>
+        <div [hidden]="userPass.valid || !userPass.touched" class="alert alert-danger">
+            Rellene campo Contraseña
+        </div>
+    </div>
+    <div class="form-group"></div>
+    <button type="submit"  id="login-form-btn-sent" class="form-control btn pro-btn btn-primary mytemplate-btn-circle hvr-icon-pop icon-prop-reg">Conectarse</button>
+</form>

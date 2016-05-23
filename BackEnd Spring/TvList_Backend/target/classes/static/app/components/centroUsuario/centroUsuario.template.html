@@ -1,0 +1,16 @@
+<ul class="nav nav-pills pro-pills nav-justified nav-tabs-justified">
+    <li class="active"><a href="#login" class="hvr-overline-reveal" data-toggle="tab" (click)="switchValue=0">Login</a></li>
+    <li><a href="#register" class="hvr-overline-reveal" data-toggle="tab" (click)="switchValue=1">Registrarse</a></li>
+</ul>
+<div [ngSwitch]="switchValue" id="my-tab-content" class="tab-content">
+    <div class="tab-pane active" id="login">
+        <div *ngSwitchWhen="0">
+            <login></login>
+        </div>
+    </div>
+    <div class="tab-pane" id="register">
+        <div *ngSwitchWhen="1">
+            <register></register>
+        </div>
+    </div>
+</div>

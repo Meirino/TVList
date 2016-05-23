@@ -1,13 +1,20 @@
 /**
  * Created by david on 19/04/2016.
  */
-import {Injectable} from 'angular2/core';
-import {user} from './user.data';
+import {Injectable,OnInit} from 'angular2/core';
+import {user,userSpring} from './user.data';
 import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
+import { Http, RequestOptions, Headers } from 'angular2/http';
+import 'rxjs/Rx';
+import {MultipartItem} from "./multipart-upload/multipart-item";
+import {MultipartUploader} from "./multipart-upload/multipart-uploader";
+
 @Injectable()
 export class userService{
 
     public userLogged=null;
+    public usuario;
+
 
     private listaUsuarios:user[]=[
         new user(0,"admin","pass","admin@tvlist.com",true,"Pepito","Piscinas","avatar1.png"),
@@ -16,7 +23,11 @@ export class userService{
     ];
     
     private _autoid=3;
-    
+
+    constructor(private http: Http){
+        this.reqIsLogged();
+    }
+
     private _ponerUsuario(usr:user){
         usr.isAdmin=false;
         usr.id=this._autoid;
@@ -34,21 +45,37 @@ export class userService{
         this._loginSucces.next(true);
     }
 
-    getUserByUser_And_Pass(userName:string, userPassword:string):ConnectableObservable<any> {
-        var userStream = Observable.create((observer:any) => {
-            let userToReturn=null;
-            for (let userOb of this.listaUsuarios){
-                if (userOb.user_Name==userName && userOb.user_Password==userPassword){
-                    userToReturn=userOb;
-                    observer.next(userToReturn);
-                    observer.complete();
-                }
+    public logOut(){
+        return this.http.get('logOut').map(
+            response => {
+                this.userLogged=null;
+                return response;
             }
-            observer.error('Usuario o Contraseña incorrecto');
-        }).publishReplay(1);;
+        );
+    }
+
+    getUserByUser_And_Pass(userName:string, userPassword:string){
+
+
+        let userPass = userName + ":" + userPassword;
+
+        let headers = new Headers({
+            'Authorization': 'Basic '+utf8_to_b64(userPass),
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        let options = new RequestOptions({headers});
+
+        var userStream= this.http.get('logIn', options).map(
+            response => {
+                this.processLogInResponse(response);
+                return this.usuario;
+            }
+        ).publishReplay(1);
+
 
         var userAcceptedStream = userStream.map(x => {
-            if (x==0)
+            if (x==null)
                 return false;
             else
                 return true;
@@ -62,10 +89,13 @@ export class userService{
                 console.log('BOOM');
             }
         );
+
         userStream.connect();
+
         return userAcceptedStream;
     }
-    
+
+
     
     checkIf_UserName_AND_Email_Free(userName:string,userMail:string):Observable<boolean>{
         var doesThisUserExist = Observable.create((obs) => {
@@ -101,35 +131,99 @@ export class userService{
         return this.listaUsuarios;
     }
 
-    createUser(userOb:user):Observable<user> {
-        let usuarioCreado=Observable.create((obs)=>{
-            this._ponerUsuario(userOb);
-            this.loginUserInApp(userOb);
-            obs.next(userOb);
-            obs.complete();
-        }
-    );
-        return usuarioCreado;
+    createUser(userOb:user){
+        let userS = new userSpring(userOb);
+        let body = JSON.stringify(userS);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.post("/User", body, options)
+            .map(response => response.json())
+            .catch(error => error).subscribe(next=>{
+                this.getUserByUser_And_Pass(userOb.user_Name,userOb.user_Password);
+            });
     }
 
-    setUserByID(luserOb:user):Observable<user> {
-       let usuarioActualizado=Observable.create(x=>{
-           for (let userOb  in this.listaUsuarios){
-               if (this.listaUsuarios[userOb].id==luserOb.id){
-                   this.listaUsuarios[userOb]=luserOb;
-                   x.next(luserOb);
-               }
-           }
-           x.error(false)
-       })
-        
-        return usuarioActualizado;
+    upload(archivo:File) {
+
+        console.debug("Uploading file...");
+
+        if (archivo == null){
+            console.error("You have to select a file and set a description.");
+            return;
+        }
+
+        let formData = new FormData();
+
+        //formData.append("description", this.description);
+        formData.append("file",  archivo);
+
+        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload'}));
+
+        multipartItem.formData = formData;
+
+        return multipartItem;
     }
+    
+
+    setUserByID(luserOb:user):Observable<user> {
+        let userS = new userSpring(luserOb);
+        let body = JSON.stringify(userS);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this.http.put("/User", body, options)
+            .map(response => response.json())
+            .catch(error => error);
+    }
+
+    private handleError(error: any){
+        console.error(error);
+        return Observable.throw("Server error (" + error.status + "): " + error.text())
+    }
+
+
 
     deleteUserByID(id:number):user {
         return undefined;
     }
-    
-    
 
+    private processLogInResponse(response){
+        this.userLogged = true;
+        let userdata = response.json();
+        this.usuario = new user(userdata.id,userdata.name,null,userdata.mail,userdata.admin,userdata.rname,userdata.surname,userdata.avatar,userdata.roles);
+        this.userLogged=this.usuario;
+    }
+
+    reqIsLogged(){
+
+        let headers = new Headers({
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+
+        let options = new RequestOptions({headers});
+
+        this.http.get('logIn', options).subscribe(
+            response => this.processLogInResponse(response),
+            error => {
+                if(error.status != 401){
+                    console.error("Error when asking if logged: "+
+                        JSON.stringify(error));
+                }
+            }
+        );
+    }
+
+}
+
+function utf8_to_b64(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode(<any>'0x' + p1);
+    }));
 }
