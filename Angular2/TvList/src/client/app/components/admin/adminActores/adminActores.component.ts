@@ -6,32 +6,28 @@ import {RouteParams, Router} from 'angular2/router';
 import {Actor, ActoresService} from "../../actores.service";
 
 @Component({
-    templateUrl: './app/components/admin/adminActores/adminActores.template.html'
+    templateUrl: './app/components/admin/adminActores/adminActores.template.html',
+    providers:[ActoresService]
 })
 
 export class adminActoresComponent {
     public nuevoActor:Actor = new Actor(0, '', '', '#', ['']);
     public obras: string = '';
-    public lista:Actor[] = [
-        new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive'])
-    ];
-    public service: ActoresService;
+    public lista:Actor[];
 
-    constructor() {
+    constructor(public service: ActoresService) {
+        this.lista = this.service.getDatos();
     }
 
     anadirActor() {
         var id = this.lista.length;
         this.nuevoActor.IMG = "#";
         this.separarStrings(this.obras, this.nuevoActor.obras);
-        this.lista.push(new Actor(id, this.nuevoActor.nombre, this.nuevoActor.descrip, '#', this.nuevoActor.obras));
+        this.service.anadirActor(new Actor(this.service.lista.length, this.nuevoActor.nombre, this.nuevoActor.descrip, this.nuevoActor.IMG, this.nuevoActor.obras));
     }
 
     eliminarActor(actor:Actor) {
-        var index = this.lista.indexOf(actor);
-        if (index > -1) {
-            this.lista.splice(index, 1);
-        }
+        this.service.eliminarActor(actor);
     }
 
     separarStrings(cadena:string, arrayString:string[]) {

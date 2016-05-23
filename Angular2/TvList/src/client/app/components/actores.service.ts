@@ -14,26 +14,29 @@ export class Actor {
 
 @Injectable()
 export class ActoresService {
-
+    public nuevoActor:Actor;
+    public obras: string = '';
     lista:Actor[] = [
-        new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive'])
+        new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive']),
+        new Actor(1, 'Brian Craston', 'Protagonista de Breaking Bad', '#', ['Breaking Bad'])
     ];
-
-    /*removePersona(actor: Actor){
-        for(let i=0; i<this.datos.length; i++){
-            if(this.datos[i].id === actor.id){
-                this.datos.splice(i,1);
-            }
-        }
-        return withObserver(actor);
-    }*/
 
     getDatos() {
         return this.lista;
     }
 
-    /*getAutoresByID(id: number) {
-        let elem = this.datos.filter(h => h.id == id)
-        return elem;
-    }*/
+    anadirActor(actor:Actor) {
+        this.lista.push(actor);
+    }
+
+    eliminarActor(actor:Actor) {
+        var index = this.lista.indexOf(actor);
+        if (index > -1) {
+            this.lista.splice(index, 1);
+        }
+    }
+
+    getActorByNombre(nombre:string) {
+        return this.lista.filter(actor => actor.nombre == nombre);
+    }
 }

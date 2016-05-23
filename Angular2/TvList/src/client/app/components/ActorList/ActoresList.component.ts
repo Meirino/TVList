@@ -1,4 +1,3 @@
-
 import {Component}  from 'angular2/core';
 import {RouteConfig, Router, RouterOutlet, RouteParams,CanActivate,ComponentInstruction} from 'angular2/router';
 import {Actor, ActoresService} from "../actores.service";
@@ -11,9 +10,13 @@ import {ActorDetalleComponent} from "../ActorDetalle/ActorDetalle.component";
 })
 
 export class ActoresListComponent{
-    public lista:Actor[]=this._actoresServicio.getDatos();
+    public lista:Actor[]=this.service.getDatos();
+    public busq:string;
 
-    constructor(public router:Router, private _actoresServicio:ActoresService) {
+    constructor(public router:Router, private service:ActoresService) {
     }
 
+    filtrarPorNombre() {
+        this.lista = this.service.getActorByNombre(this.busq);
+    }
 }
