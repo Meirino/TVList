@@ -1,5 +1,9 @@
 package es.urjc.code.daw.library.book;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.tomcat.jni.Global;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +13,8 @@ import es.urjc.code.daw.library.globalData.GlobalData;
 import es.urjc.code.daw.library.globalData.GlobalDataRepository;
 import es.urjc.code.daw.library.proyecciones.Proyeccion;
 import es.urjc.code.daw.library.proyecciones.ProyeccionRepository;
+import es.urjc.code.daw.library.temas.Tema;
+import es.urjc.code.daw.library.temas.TemaRepository;
 import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserRepository;
 
@@ -27,6 +33,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Autowired
 	private ProyeccionRepository proyeRepository;
 
+	@Autowired
+	private TemaRepository temaRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -43,13 +52,40 @@ public class DatabaseInitializer implements CommandLineRunner {
 		bookRepository.save(new Book("LA LEGIÓN PERDIDA",
 				"En el año 53 a. C. el cónsul Craso cruzó el Éufrates para conquistar Oriente, pero su ejército fue destrozado en Carrhae. Una legión entera cayó prisionera de los partos. Nadie sabe a ciencia cierta qué pasó con aquella legión perdida.150 años después, Trajano está a punto de volver a cruzar el Éufrates. ..."));
 
-		// Sample users
+		// Usuarios
 
 		userRepository.save(new User("admin", "pass", "admin@TvList.com",true,"Paquito","El Chocolatero","avatar1.png","ROLE_USER", "ROLE_ADMIN"));
 		userRepository.save(new User("david", "pass","david@gmail.com",false,"David","Martinez","avatar2.jpg", "ROLE_USER"));
 		userRepository.save(new User("juan", "pass","juan@outlook.com",false,"Juan","No se","avatar3.png", "ROLE_USER"));
 	
 		
+		// Temas
+		
+		
+		Tema accion = new Tema("Accion");
+		Tema aventuras =new Tema("Aventuras");
+		Tema comedia =new Tema("Comedia");
+		Tema infantil =new Tema("Infantil");
+		Tema suspense =new Tema("Suspense");
+		Tema romance =new Tema("Romance");
+		
+		
+		// Una vez creo el objeto en la base de dato almaceno la referencia
+		// de ese objeto creado, si no, en el siguiente paso creara
+		// una nueva tupla accion por cada pelicula que contenga el tema accion
+		// De esta manera como pasa la referencia de la tupla generada
+		// Pasara la misma referencia y no creara nuevos temas accion
+		accion=temaRepository.save(accion);
+		aventuras=temaRepository.save(aventuras);
+		comedia=temaRepository.save(comedia);
+		infantil=temaRepository.save(infantil);
+		suspense=temaRepository.save(suspense);
+		romance=temaRepository.save(romance);
+		
+	
+		
+		// Peliculas
+		/*
 		proyeRepository.save(new Proyeccion("DeadPool","Sobre la base de la mayoría no convencional anti-héroe de Marvel Comics, Deadpool dice la historia del origen del ex Fuerzas Especiales operativa mercenario convertido Wade Wilson, que después de haber sido sometido a un experimento de la picaresca que lo deja con poderes curativos acelerado, adopta el alter ego Deadpool. Armado con sus nuevas habilidades y un sentido oscuro, torcido del humor, Deadpool persigue el hombre que casi destruyó su vida.","portada2.jpeg"));
 		proyeRepository.save(new Proyeccion("Angry Birds, La Película","El rey Pig y toda la piara malvada ha planeado una meticulosa estrategia para conseguir los huevos tan preciados de los pájaros enfadados. Cuando los plumíferos con malas pulgas descubren que han sido robados por su enemigo más despiadado, deciden contraatacar con un arriesgado plan en el que tendrán que luchar y dar lo mejor de sus increíbles capacidades para salir victoriosos. Angry Birds está basada en el videojuego con el mismo nombre de animación para móviles, protagonizado por los tres famosos pájaros enfadados y unos cerdos ladrones de huevos. El juego fue creado por la empresa finlandesa Rovio Mobile en el año 2009 y debido al éxito cosechado, Rovio y Sony decidieron producir la película conjuntamente.","portada3.jpg"));
 		proyeRepository.save(new Proyeccion("El Cazador y la Reina del Hielo","El argumento de 'La Leyenda del Cazador' nos sitúa en la búsqueda del espejo mágico. Con el cazador (Chris Hemswoth) en su búsqueda, algo que le obligará a enfrenarse con su pasado y con la malvada Reina de las Nieves (interpretada por Emily Blunt), que desea venganza por su hermana Ravenna (Charlize Theron).","portada4.jpg"));
@@ -60,8 +96,35 @@ public class DatabaseInitializer implements CommandLineRunner {
 		proyeRepository.save(new Proyeccion("Kung Fu Panda 3","Po ha salvado el mundo innumerables veces, pero nada de eso le ha preparado para el desafío más grande, agradar a dos padres. Po se reúne con su pare biológico y regresa a su hogar natal, sólo para darse cuenta de que no encaja. Allí conoce a la ansiosa Mei Mei, a la que se la ha prometido que se casará con Po. Además nuestro protagonista deberá luchar con un malvado espíritu llamado “El Coleccionista”, que tiene la capacidad de absorber los poderes de los maestros de Kung Fu a los que derrota. Y sus ojos están puestos en Po.","portada8.JPG"));
 		proyeRepository.save(new Proyeccion("Ciudades de Papel","Quentin Jacobsen ha pasado toda su vida amando en secreto a la aventurera Margo Roth Spiegelman. Así que cuando ella rompe una ventana y entra en su vida disfrazada de ninja y reclutándole para una misión de venganza, él le sigue sin dudar. Después de que la noche que han pasado juntos termine y el día comience, Q llega al colegio para descubrir que Margo, que siempre ha sido un enigma, ahora es un completo misterio. Pero Q descubre que hay pistas y que son para él. Andando por un camino sin conexión, cuanto más cerca está, menos ve de la chica que él creía que conocía.","portada9.png"));
 		
+	*/	
+
+		proyeRepository.save(new Proyeccion("DeadPool","Sobre la base de la mayoría no convencional anti-héroe de Marvel Comics, Deadpool dice la historia del origen del ex Fuerzas Especiales operativa mercenario convertido Wade Wilson, que después de haber sido sometido a un experimento de la picaresca que lo deja con poderes curativos acelerado, adopta el alter ego Deadpool. Armado con sus nuevas habilidades y un sentido oscuro, torcido del humor, Deadpool persigue el hombre que casi destruyó su vida.","portada2.jpeg",Arrays.asList(new Tema[]{accion, comedia})));
+		proyeRepository.save(new Proyeccion("Angry Birds, La Película","El rey Pig y toda la piara malvada ha planeado una meticulosa estrategia para conseguir los huevos tan preciados de los pájaros enfadados. Cuando los plumíferos con malas pulgas descubren que han sido robados por su enemigo más despiadado, deciden contraatacar con un arriesgado plan en el que tendrán que luchar y dar lo mejor de sus increíbles capacidades para salir victoriosos. Angry Birds está basada en el videojuego con el mismo nombre de animación para móviles, protagonizado por los tres famosos pájaros enfadados y unos cerdos ladrones de huevos. El juego fue creado por la empresa finlandesa Rovio Mobile en el año 2009 y debido al éxito cosechado, Rovio y Sony decidieron producir la película conjuntamente.","portada3.jpg",Arrays.asList(new Tema[]{infantil, comedia,aventuras})));
+		proyeRepository.save(new Proyeccion("El Cazador y la Reina del Hielo","El argumento de 'La Leyenda del Cazador' nos sitúa en la búsqueda del espejo mágico. Con el cazador (Chris Hemswoth) en su búsqueda, algo que le obligará a enfrenarse con su pasado y con la malvada Reina de las Nieves (interpretada por Emily Blunt), que desea venganza por su hermana Ravenna (Charlize Theron).","portada4.jpg",Arrays.asList(new Tema[]{accion, romance,aventuras})));
+		proyeRepository.save(new Proyeccion("Captain America: Civil war","Steve Rogers era un joven de familia pobre que consiguió entrar en el ejército americano para combatir contra Hitler en la II Guerra Mundial. A cambio, tuvo que entregarse como conejillo de indias para un experimento para cambiar su constitución de enfermizo y convertirle en un súper-soldado. Gracias a ello, Steve Roger se convierte en un súperhombre y adquiere una fuerza y una agilidad asombrosa. A partir de ese momento, ya no será nunca más Steve Rogers, si no Capitán América.","portada5.jpg",Arrays.asList(new Tema[]{accion,aventuras})));
+		proyeRepository.save(new Proyeccion("X-Men: Apocalipsis","Desde los orígenes de la civilización, él fue venerado como un dios. Apocalipsis, el primero y más poderoso de los mutantes del Universo X-Men de Marvel, se hizo con los poderes de otros muchos mutantes, convirtiéndose en inmortal e invencible. Tras su debilitamiento después de miles de años, su desilusión hacia el mundo le obliga a reclutar a un grupo de poderosos mutantes, incluyendo al descorazonado Magneto, para purificar la humanidad y crear un nuevo orden mundial, del cual estará al frente. Mientras el destino de la Tierra pende de un hilo, Raven con la ayuda del Profesor X tendrá que liderar un equipo de jóvenes X-Men para detener a su mayor enemigo y salvar a la humanidad de la destrucción total.","portada6.png",Arrays.asList(new Tema[]{aventuras, accion,suspense})));
+		proyeRepository.save(new Proyeccion("Dioses de Egipto","En medio de la tiranía absoluta del dios Set, quien ha usurpado el trono de Egipto sumiendo al próspero imperio en un total caos y desgobierno, un impensado pero valiente héroe conocido como Bek comienza un viaje con la misión de liberar a su mundo y rescatar a su verdadero amor. En esta lucha se une al dios Horus, con quien irá al Más Allá en donde ambos deberán demostrar su valentía y sacrificio.","portada1.jpg",Arrays.asList(new Tema[]{accion,aventuras})));
+		proyeRepository.save(new Proyeccion("Zoolander 2","Han pasado 10 años desde que dejamos a Derek inaugurando su “Centro para niños que no saben leer chachi” y las cosas no han ido nada bien. Debido a una serie de desastres Zoolander decide exiliarse ya que ha perdido “su fuego” y durante más de una década pasa a convertirse en un fantasma. Derek se verá obligado a volver al mundo de la moda cuando las estrellas de rock de todo el mundo comienzan a ser asesinadas y todo indica a que él es el único que puede resolver el misterio. En esta nueva aventura tendrá que afrontar todos sus miedos y su pasado para volver a convertirse en el número 1 de la pasarela. ","portada7.jpg",Arrays.asList(new Tema[]{comedia,romance})));
+		proyeRepository.save(new Proyeccion("Kung Fu Panda 3","Po ha salvado el mundo innumerables veces, pero nada de eso le ha preparado para el desafío más grande, agradar a dos padres. Po se reúne con su pare biológico y regresa a su hogar natal, sólo para darse cuenta de que no encaja. Allí conoce a la ansiosa Mei Mei, a la que se la ha prometido que se casará con Po. Además nuestro protagonista deberá luchar con un malvado espíritu llamado “El Coleccionista”, que tiene la capacidad de absorber los poderes de los maestros de Kung Fu a los que derrota. Y sus ojos están puestos en Po.","portada8.JPG",Arrays.asList(new Tema[]{infantil,aventuras})));
+		proyeRepository.save(new Proyeccion("Ciudades de Papel","Quentin Jacobsen ha pasado toda su vida amando en secreto a la aventurera Margo Roth Spiegelman. Así que cuando ella rompe una ventana y entra en su vida disfrazada de ninja y reclutándole para una misión de venganza, él le sigue sin dudar. Después de que la noche que han pasado juntos termine y el día comience, Q llega al colegio para descubrir que Margo, que siempre ha sido un enigma, ahora es un completo misterio. Pero Q descubre que hay pistas y que son para él. Andando por un camino sin conexión, cuanto más cerca está, menos ve de la chica que él creía que conocía.","portada9.png",Arrays.asList(new Tema[]{romance, suspense})));
+
+/*
+		List<Proyeccion> a=proyeRepository.findAll();
+		for (Proyeccion f:a)
+		{
+			ArrayList <Tema>eliminar=new ArrayList<>();
+			List <Tema>ts=f.getTemas();
+			for (Tema t:ts)
+			{
+				if (t.getId()==accion.getId())
+					eliminar.add(t);
+			}
+			ts.removeAll(eliminar);
+			proyeRepository.save(f);
+		}
 		
-		
+		temaRepository.delete(accion);
+		*/
 		globalRepository.save(new GlobalData());
 	
 	}
