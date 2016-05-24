@@ -274,9 +274,9 @@
     </div>
     <div class="row">
             <div class="btn-group btn-group-justified btn-radio-group " role="group">
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
-                <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
+                <a type="button" (click)="filterByTodo()" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
+                <a type="button" (click)="filterBySeries()" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
+                <a type="button" (click)="filterByPeliculas()" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
             </div>
     </div>
     <div class="row">
@@ -299,78 +299,32 @@
             </div>
         </div>
     </div>
-
+<br>
     <div class="row">
-        <!-- item  Lista libro -->
+        <!-- item  Lista Actores -->
         <table class="table">
-            <!-- Libro -->
-            <tr>
+            <!-- Actor -->
+            <tr template="ngFor #serie of lista; #i = index">
                 <td class="col-xs-3">
-                <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
+                    <img class="center-block img-responsive" [src]="IMG" alt="ImagenDelActor" title=""/>
                 </td>
                 <td class="col-xs-9 pro-vcenter">
                     <table>
                         <tr>
                             <td>
-                                <h3>Architecture</h3>
+                                <h3>{{serie.titulo}}</h3>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Viendo</a></li>
-                                        <li><a href="#">Completo</a></li>
-                                    </ul>
-                                </div>
-                                <a href="itemDetails.html">
-                                  <button class="btn pro-btn" href="Libro.html">Más detalles</button>
-                                </a>
+                                <p class="desc">{{serie.sinopsis}}</p>
+                                <button class="btn pro-btn">Más detalles</button>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
-            <!-- Fin Libro -->
-            <tr>
-                <td class="col-xs-3">
-                    <img class="center-block" src="http://lorempixel.com/150/200/sports" alt="" title=""/>
-                </td>
-                <td class="col-xs-9 pro-vcenter">
-                    <table>
-                        <tr>
-                            <td>
-                                <h3>Architecture</h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="desc">Architecture is both the process and product of planning, designing and construction. Architectural works, in the material form of buildings, are often perceived as cultural symbols and as works of art. Historical civilizations are often identified with their surviving architectural achievements.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Viendo</a></li>
-                                        <li><a href="#">Completo</a></li>
-                                    </ul>
-                                </div>
-                                <button class="btn pro-btn" href="Libro.html">Más detalles</button>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+            <!-- Fin Actor -->
         </table>
-        <!-- FIN Lista item libro -->
-
+        <!-- FIN Lista item Actor -->
     </div>

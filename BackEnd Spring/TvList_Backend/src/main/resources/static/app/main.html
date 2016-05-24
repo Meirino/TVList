@@ -66,37 +66,37 @@
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="movies" class="collapse">
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                            <li><a [routerLink]="['/Peliculas']" href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a [routerLink]="['/PeliculasAccion']" href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a [routerLink]="['/PeliculasAventuras']" href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a [routerLink]="['/PeliculasComedia']" href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a [routerLink]="['/PeliculasInfantil']" href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a [routerLink]="['/PeliculasSuspense']" href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a [routerLink]="['/PeliculasRomance']" href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#shows" class="hvr-bounce-to-right"><i class="icon-tv"></i> Series <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="shows" class="collapse">
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
-                            <li><a href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                            <li><a [routerLink]="['/Series']" href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a [routerLink]="['/SeriesAccion']" href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a [routerLink]="['/SeriesAventuras']" href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a [routerLink]="['/SeriesComedia']" href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a [routerLink]="['/SeriesInfantil']" href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a [routerLink]="['/SeriesSuspense']" href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a [routerLink]="['/SeriesRomance']" href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="hvr-bounce-to-right"><i class="icon-user-tie"></i>Autores</a>
+                        <a [routerLink]="['/Actores']" class="hvr-bounce-to-right"><i class="icon-user-tie"></i> Actores</a>
                     </li>
                     <li *ngIf="_servicioUsuarios.userLogged?.isAdmin">
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="hvr-bounce-to-right animated bounceInLeft"><i class="fa fa-fw fa-gears"></i> Administrar <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li><a [routerLink]="['/Admin/AdminIndex']" class="hvr-underline-from-left"><span class="menu-title">Inicio</span></a></li>
                             <li><a [routerLink]="['/Admin/Elementos']" class="hvr-underline-from-left"><span class="menu-title">Elementos</span></a></li>
-                            <li><a href="adminAutores.html" class="hvr-underline-from-left"><span class="menu-title">Autores</span></a></li>
-                            <li><a href="adminUsuarios.html" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
+                            <li><a [routerLink]="['/Admin/Actores']" class="hvr-underline-from-left"><span class="menu-title">Actores</span></a></li>
+                            <li><a [routerLink]="['/Admin/Usuarios']" class="hvr-underline-from-left"><span class="menu-title">Usuarios</span></a></li>
                         </ul>
                     </li>
                 </ul>

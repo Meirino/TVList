@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './adminIndex/adminIndex.component', './adminElements/adminElements.component', '../user/loginAuth'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './adminIndex/adminIndex.component', './adminElements/adminElements.component', '../user/loginAuth', "./adminActores/adminActores.component", "./adminUsuarios/adminUsuarios.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './adminIndex/adminIndex.co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, adminIndex_component_1, adminElements_component_1, loginAuth_1;
+    var core_1, router_1, adminIndex_component_1, adminElements_component_1, loginAuth_1, adminActores_component_1, adminUsuarios_component_1;
     var adminComponent;
     return {
         setters:[
@@ -28,6 +28,12 @@ System.register(['angular2/core', 'angular2/router', './adminIndex/adminIndex.co
             },
             function (loginAuth_1_1) {
                 loginAuth_1 = loginAuth_1_1;
+            },
+            function (adminActores_component_1_1) {
+                adminActores_component_1 = adminActores_component_1_1;
+            },
+            function (adminUsuarios_component_1_1) {
+                adminUsuarios_component_1 = adminUsuarios_component_1_1;
             }],
         execute: function() {
             adminComponent = (function () {
@@ -48,6 +54,16 @@ System.register(['angular2/core', 'angular2/router', './adminIndex/adminIndex.co
                             path: '/elementos',
                             name: 'Elementos',
                             component: adminElements_component_1.adminElementsComponent
+                        },
+                        {
+                            path: '/actores',
+                            name: 'Actores',
+                            component: adminActores_component_1.adminActoresComponent
+                        },
+                        {
+                            path: '/usuarios',
+                            name: 'Usuarios',
+                            component: adminUsuarios_component_1.userAdminComponent
                         }
                     ]),
                     router_1.CanActivate(function (next, previous) {

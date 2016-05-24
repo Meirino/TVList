@@ -2,12 +2,14 @@
  * Created by Javi on 17/05/2016.
  */
 import {Injectable} from 'angular2/core';
-import {withObserver} from './utils'
+import {withObserver} from './utils';
+import {RequestOptions, Request, RequestMethod, HTTP_PROVIDERS, Http, RequestOptionsArgs, Headers} from 'angular2/http';
+import 'rxjs/Rx';
 
 export class Actor {
     constructor(public id:number,
     public nombre:string,
-    public descrip:string,
+    public descripcion:string,
     public IMG:string,
     public obras:string[]) {}
 }
@@ -16,24 +18,47 @@ export class Actor {
 export class ActoresService {
     public nuevoActor:Actor;
     public obras: string = '';
-    lista:Actor[] = [
-        new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', '#', ['Drive']),
-        new Actor(1, 'Brian Craston', 'Protagonista de Breaking Bad', '#', ['Breaking Bad'])
-    ];
+    public url = "https://localhost:8443/actores/";
+    public lista:Actor[];
+    //public options:RequestOptionsArgs;
+
+    constructor(private http: Http) {
+        //this.options.headers.append('Content-Type', 'application/json');
+        //this.options.headers.append('Authorization', 'Basic YWRtaW46cGFzcw==');
+    }
 
     getDatos() {
-        return this.lista;
+        let listaPro:Actor[] = [];
+        this.http.get(this.url).subscribe(response => {
+            for(let i = 0; i < response.json().length;i++) {
+                console.log(response.json()[i]);
+                listaPro.push(new Actor(response.json()[i].id, response.json()[i].nombre, response.json()[i].descripcion, response.json()[i].IMG, response.json()[i].obras));
+            }
+        });
+        return listaPro;
     }
 
     anadirActor(actor:Actor) {
-        this.lista.push(actor);
+        let body = JSON.stringify(actor);
+        console.log(body);
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+        let options = new RequestOptions({headers})
+        this.http.post(this.url, body, options).subscribe(
+            response => console.log(response),
+            error => console.error(error)
+        );
     }
 
-    eliminarActor(actor:Actor) {
-        var index = this.lista.indexOf(actor);
-        if (index > -1) {
-            this.lista.splice(index, 1);
-        }
+    eliminarActor(id:string) {
+        let jsonActor = id; //JSON.stringify(actor.id);
+        this.http.delete("https://localhost:8443/actores/"+id).subscribe(
+            response => {
+                console.log(response);
+            },
+            error => console.log(error)
+        );
     }
 
     getActorByNombre(nombre:string) {

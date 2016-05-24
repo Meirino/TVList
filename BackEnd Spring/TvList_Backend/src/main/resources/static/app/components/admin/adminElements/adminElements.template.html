@@ -4,26 +4,18 @@
             <button type="button" class="btn pro-btn btn-lg btn-block" data-toggle="modal" data-target="#AddModal">Añadir elemento</button>
         </div>
         <div class="btn-group btn-group-justified btn-radio-group " role="group">
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
-            <a type="button" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
+            <a type="button" (click)="filterByTodo()" class="btn pro-btn btn-default btn-secondary animated ">Todos los tipos</a>
+            <a type="button" (click)="filterBySeries()" class="btn pro-btn btn-default btn-secondary animated ">Series</a>
+            <a type="button" (click)="filterByPeliculas()" class="btn pro-btn btn-default btn-secondary animated ">Películas</a>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-4">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por título"  class="form-control"/></div>
-        </div>
-        <div class="col-xs-4">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por director" class="form-control"/></div>
-        </div>
-        <div class="col-xs-4">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" value="" placeholder="Filtrar por actor" class="form-control"/></div>
+                <input [(ngModel)]="nombre" type="text" value="" placeholder="Filtrar por nombre"  class="form-control"/>
+            </div>
+            <button (click)="filtrarNombre()" class="btn pro-btn">Filtrar</button>
         </div>
     </div>
 
@@ -36,20 +28,55 @@
                     <h4 class="modal-title">Añadir elemento</h4>
                 </div>
                 <div class="modal-body">
-                    <p><label>Título:</label> <input type="text"></p>
+                    <p><label>Nombre:</label> <input [(ngModel)]="serieActual.titulo" type="text"></p>
                     <p><label>Imagen:</label> <input type="file"></p>
-                    <p><label>Descripción: </label></p> <p><textarea></textarea></p>
+                    <p><label>Sinopsis: </label> <input [(ngModel)]="serieActual.sinopsis" type="text"></p>
                     <p><label>Tipo:</label></p>
-                    <p><input type="checkbox"> <label>Serie</label></p>
-                    <p><label>Nº de temporadas: </label> <input type="number"></p>
-                    <p><label>Nº de cpítulos en total: </label> <input type="number"></p>
-                    <p><input type="checkbox"> <label>Película</label></p>
-                    <p><input type="submit"></p>
+                    <p><input [(ngModel)]="serieActual.esSerie" type="checkbox"> <label>Es una serie</label></p>
+                    <div ngif="serieActual.esSerie"><p><label>Nº de temporadas: </label> <input [(ngModel)]="serieActual.temporadas" type="number"></p>
+                    <p><label>Nº de cpítulos en total: </label> <input [(ngModel)]="serieActual.capitulos" type="number"></p></div>
+                    <p><label>Categorias (Separadas por comas):</label> <input [(ngModel)]="categorias" type="text"></p>
+                    <p><label>Personal (Separados por comas):</label> <input [(ngModel)]="personal" type="text"></p>
+                    <p><button (click)="addSerie()" class="btn pro-btn">Crear</button></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn  btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <!-- item  Lista Actores -->
+        <table class="table">
+            <!-- Actor -->
+            <tr template="ngFor #serie of lista; #i = index">
+                <td class="col-xs-3">
+                    <img class="center-block img-responsive" [src]="IMG" alt="ImagenDelActor" title=""/>
+                </td>
+                <td class="col-xs-9 pro-vcenter">
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>{{serie.titulo}}</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="desc">{{serie.sinopsis}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button (click)="eliminarSerie(serie)" class="btn pro-btn">Eliminar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Fin Actor -->
+        </table>
+        <!-- FIN Lista item Actor -->
     </div>
 </div>

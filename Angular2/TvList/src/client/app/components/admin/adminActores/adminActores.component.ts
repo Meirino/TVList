@@ -11,7 +11,7 @@ import {Actor, ActoresService} from "../../actores.service";
 })
 
 export class adminActoresComponent {
-    public nuevoActor:Actor = new Actor(0, '', '', '#', ['']);
+    public nuevoActor:Actor = new Actor(0, '', '', '#', ['','']);
     public obras: string = '';
     public lista:Actor[];
     public busq:string;
@@ -21,21 +21,18 @@ export class adminActoresComponent {
     }
 
     anadirActor() {
-        var id = this.lista.length;
         this.nuevoActor.IMG = "#";
         this.separarStrings(this.obras, this.nuevoActor.obras);
-        this.service.anadirActor(new Actor(this.service.lista.length, this.nuevoActor.nombre, this.nuevoActor.descrip, this.nuevoActor.IMG, this.nuevoActor.obras));
+        this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
     }
 
     eliminarActor(actor:Actor) {
-        this.service.eliminarActor(actor);
+        console.log(actor.id);
+        this.service.eliminarActor(actor.id.toString());
     }
 
     separarStrings(cadena:string, arrayString:string[]) {
         arrayString = cadena.split(',');
-        for(var i = 0; i < arrayString.length; i++) {
-            arrayString[i] = arrayString[i].replace(/^\s*/, "").replace(/\s*$/, "");
-        }
     }
 
     filtrarPorNombre() {

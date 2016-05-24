@@ -1,49 +1,145 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 99b39c15bfaef0f1160707f4a853ba806a85f9d0
+# sw.version: 01b959442dcadb74b8e318f3e4511e5074ca4f61
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
-# sw.file.hash: 1d575a0871f76a3e8b0624b3007f13e93133e9bf
+# sw.file.hash: 20d408b75d53936df4162bd12927fd1789ec7bea
 \app.js.map
 # sw.file.hash: 30900dea21f4943b6461743617ef715d99db473f
 \app\app-injector.js
 # sw.file.hash: ae261150757033fcb2391ebb47fd3ea3e790a936
 \app\app-injector.js.map
-# sw.file.hash: 5a007ca0b393916bcc58e77ac90a1bdbdec2c1b8
+# sw.file.hash: 350c7b973d82917cca1405c5b2bba67f1e802ae8
+\app\components\ActorDetalle\ActorDetalle.component.js
+# sw.file.hash: 35b1b00915dd7343734f009a133f57cd6cfb0fcb
+\app\components\ActorDetalle\ActorDetalle.component.js.map
+# sw.file.hash: be4b937b08c1c2114e003ac851844658d717e413
+\app\components\ActorDetalle\ActorDetalle.template.html
+# sw.file.hash: 7c9ca5925b1815dcdd3b50065a11c117d01a3066
+\app\components\ActorList\ActorList.component.html
+# sw.file.hash: 2417127220ddb8f7b049287eb00b8d2eb600500c
+\app\components\ActorList\ActoresList.component.js
+# sw.file.hash: 14f5f3c9c8f36cffeded2e9ed7c84f02d37e21b5
+\app\components\ActorList\ActoresList.component.js.map
+# sw.file.hash: e57b5dba698d3e16d54ca44fefecdaf41bbaea9f
+\app\components\ActorList\ActoresList.template.html
+# sw.file.hash: 5d4f5a859a372b0304472fc9eb858b38a60e3b4d
+\app\components\PeliculasList\PeliculaListSuspense.component.js
+# sw.file.hash: 574d87c96c02f622b7dac72c1e45ef7c5da5810a
+\app\components\PeliculasList\PeliculaListSuspense.component.js.map
+# sw.file.hash: e414c54a7c0e43c894c952708df265c5e677cf0c
+\app\components\PeliculasList\PeliculasList.component.js
+# sw.file.hash: 0b1abbfcf4573ecc0ab2724f45ffd5478fd2cc3a
+\app\components\PeliculasList\PeliculasList.component.js.map
+# sw.file.hash: 63b766bfd73aada7b528ad113e73c192dcfee2f8
+\app\components\PeliculasList\PeliculasList.template.html
+# sw.file.hash: fef3728fa14d87d6b1256ac9fe9306064062753c
+\app\components\PeliculasList\PeliculasListAccion.component.js
+# sw.file.hash: 632daadf05baa7d86f615cb6dea9009c1de9047a
+\app\components\PeliculasList\PeliculasListAccion.component.js.map
+# sw.file.hash: 74c3532ffc9d18c83edd9dec0bd2e0e84755b79f
+\app\components\PeliculasList\PeliculasListAventuras.component.js
+# sw.file.hash: 654b55ca346caacd5402633714f633492b821f3a
+\app\components\PeliculasList\PeliculasListAventuras.component.js.map
+# sw.file.hash: 732b24625e470ea4b51705605822298d771d4f98
+\app\components\PeliculasList\PeliculasListComedia.component.js
+# sw.file.hash: cd2d4b0e1dbe0819f6d869e013ba46af29314665
+\app\components\PeliculasList\PeliculasListComedia.component.js.map
+# sw.file.hash: b090f6656fad39f09f6d9785a63bffc62689b455
+\app\components\PeliculasList\PeliculasListInfantil.component.js
+# sw.file.hash: 0dde3eebd9f160d0a279ac78b139ebbb2d33695a
+\app\components\PeliculasList\PeliculasListInfantil.component.js.map
+# sw.file.hash: 621ac070b4d8c5e6d7748aedc3f855e3864b50a9
+\app\components\PeliculasList\PeliculasListRomance.component.js
+# sw.file.hash: 7f87fb532efca8985fd2c40a5105a9d2ce8ce5fe
+\app\components\PeliculasList\PeliculasListRomance.component.js.map
+# sw.file.hash: b1dbbc259cc205977c508e07b867202e6639b0c1
+\app\components\SerieDetalle\SerieDetalle.component.js
+# sw.file.hash: 9ae85c012f176420dfe55703996b51609ef1223c
+\app\components\SerieDetalle\SerieDetalle.component.js.map
+# sw.file.hash: 088e76142421a5b48c9f928753189a6ff327d2df
+\app\components\SerieDetalle\SerieDetalle.template.html
+# sw.file.hash: b5291d3001e8c88bc1156274abb6a573cfb9b176
+\app\components\SeriesList\Series.component.js
+# sw.file.hash: ed1b4629b47d2cd71e309f6857b78c45f353bea3
+\app\components\SeriesList\Series.component.js.map
+# sw.file.hash: 14aee18e470ccd5c7bcbf8374ecc964bcddd2269
+\app\components\SeriesList\Series.template.html
+# sw.file.hash: e7f5383014192d2b82722fba5bcd2c68317c317b
+\app\components\SeriesList\SeriesAccion.component.js
+# sw.file.hash: 1db92b7f5015f120368a2ac5f97e6321ee7a5092
+\app\components\SeriesList\SeriesAccion.component.js.map
+# sw.file.hash: e71eb662ba0ed091ab4df648669a79d7f74bfcc7
+\app\components\SeriesList\SeriesAventuras.component.js
+# sw.file.hash: 36b216f7b60e4f4f0772301a92acd12718320c4b
+\app\components\SeriesList\SeriesAventuras.component.js.map
+# sw.file.hash: 9d6bbff4e558e3a9a665cb698bd2b90964488e65
+\app\components\SeriesList\SeriesComedia.component.js
+# sw.file.hash: 52d8700f92351e2313876e039c25c78afc6bb9a3
+\app\components\SeriesList\SeriesComedia.component.js.map
+# sw.file.hash: 2f0f57882aac3aa9dd254152a495096799d0d6cc
+\app\components\SeriesList\SeriesInfantil.component.js
+# sw.file.hash: 580e08a0e5d26309aee9a7a68e64bd9e58fb0019
+\app\components\SeriesList\SeriesInfantil.component.js.map
+# sw.file.hash: bbb9aa0779ddefb8d383fe70a9e23e9dc6e8e5e9
+\app\components\SeriesList\SeriesRomance.component.js
+# sw.file.hash: defc90dfb0bd5bc4e510c63ac5f047efd7b242e0
+\app\components\SeriesList\SeriesRomance.component.js.map
+# sw.file.hash: 27d4777dd27e73fa3bdc106c323e583904785282
+\app\components\SeriesList\SeriesSuspense.component.js
+# sw.file.hash: fe7ba3319f08fe4c61c09982a80a00b23021c1a4
+\app\components\SeriesList\SeriesSuspense.component.js.map
+# sw.file.hash: 74c110a12ef1f3e4829970b42ab248e93d851ee8
+\app\components\actores.service.js
+# sw.file.hash: a14c77f0ecbc565b622e8273a7fb79ce7563f1e0
+\app\components\actores.service.js.map
+# sw.file.hash: c574f079467e030f3900c533d4dbe0aeb3a563fd
 \app\components\admin\admin.Component.js
-# sw.file.hash: 7fcb3c7b1a5430a48b789687a666679aa2e74611
+# sw.file.hash: 8f54ec34e82bd07ba91412efa2e4d9d05362f0b4
 \app\components\admin\admin.Component.js.map
-# sw.file.hash: 4cd6bd3d3c0afb707edcc35249eb2e196e2357f0
+# sw.file.hash: cc5336fb60267ae39aca9028df816d47e3ee2dfe
 \app\components\admin\admin.template.html
-# sw.file.hash: 72f504c34305b52ee51f0db1e44dfc0aea5bb16b
+# sw.file.hash: a2208c05443f5e0bfcfeab47cd4811e1e770859e
+\app\components\admin\adminActores\adminActores.component.js
+# sw.file.hash: 4d3c7bd675eefa04eedfdce323fb2dfbad4c0df4
+\app\components\admin\adminActores\adminActores.component.js.map
+# sw.file.hash: c5f92b964e4db42f50fafc99cc0b490fc6c77271
+\app\components\admin\adminActores\adminActores.template.html
+# sw.file.hash: ec06fc813fa0b8fe244c549ef5fca17f159ea808
 \app\components\admin\adminElements\adminElements.component.js
-# sw.file.hash: 6521b99fb43bebba148f2ab0725bade306060b19
+# sw.file.hash: 9af13c65cad1d82c518dde099227ca3207e26f31
 \app\components\admin\adminElements\adminElements.component.js.map
-# sw.file.hash: 32f0bf086a39bcfff7eac09124bebd0217498e86
+# sw.file.hash: 3c0770b409efa6309aac7eeccedda4851469fa5a
 \app\components\admin\adminElements\adminElements.template.html
 # sw.file.hash: 94623891cc3ceee1f64777d5a05be619f496000f
 \app\components\admin\adminIndex\adminIndex.component.js
-# sw.file.hash: 2ad05619dc7619bce00a3bc100c63e8474834e99
+# sw.file.hash: c7203c61c5d52a10de1b1c9a9b62601d2159ed6d
 \app\components\admin\adminIndex\adminIndex.component.js.map
-# sw.file.hash: 6c1583d7e451d9060bd99f3fb2aecb0f6e46af24
+# sw.file.hash: d6f668414b234c63e6e59e5a9e331ef61ac8ded1
 \app\components\admin\adminIndex\adminIndex.template.html
+# sw.file.hash: 0db8db542f8fc2faa9df753e38da7c9b4f2dc2e6
+\app\components\admin\adminUsuarios\adminUsuarios.component.js
+# sw.file.hash: 308c439f57b9bf54e78ec8f0f84b082cfaff5b88
+\app\components\admin\adminUsuarios\adminUsuarios.component.js.map
+# sw.file.hash: 1ec5ce5b4f150f01e90785a9429636ec61dcd3ea
+\app\components\admin\adminUsuarios\adminUsuarios.template.html
 # sw.file.hash: 8d15795c263cdd5fa07f297c936bcf616c0bb40c
 \app\components\breadCrumb\breadCrumb.service.js
-# sw.file.hash: 7941d4a2a88468d77a854af9c08d8ba25ff9451b
+# sw.file.hash: 943ba39509a38b7998769a5728ae3d3543dc0f0e
 \app\components\breadCrumb\breadCrumb.service.js.map
 # sw.file.hash: 898127b1c43c4432ecb96a8ffe387907db9a1a20
 \app\components\centroUsuario\centroUsuario.component.js
-# sw.file.hash: a22778cbf8251b5fed165269d205eb333cf6051c
+# sw.file.hash: 6c351c6902d1c051836d0dc402d7f6aad7ec855f
 \app\components\centroUsuario\centroUsuario.component.js.map
-# sw.file.hash: b1aec063548bf23ee0a38b47d2b889ddab568609
+# sw.file.hash: ca40b1fb54f4cf5f3b3ddaa0979f09bfdf64e477
 \app\components\centroUsuario\centroUsuario.style.css
-# sw.file.hash: a59c0a6c88d38331556d9551c1b674b42a575cc0
+# sw.file.hash: e78e11df6b5dae073f21c43e61bb22fa8b9327f8
 \app\components\centroUsuario\centroUsuario.template.html
 # sw.file.hash: f4c76422039f3d35946fc9f904b87e2d11877aeb
 \app\components\centroUsuario\login\login.component.js
 # sw.file.hash: dc277b34de4fd297df5d70142c0b092a3dab2a2b
 \app\components\centroUsuario\login\login.component.js.map
-# sw.file.hash: 2bc8040f3b605b7cdd8e550b54f1842db787e0b9
+# sw.file.hash: 6242d2fb299f76ca411b31b258f3932a2015cea6
 \app\components\centroUsuario\login\login.template.html
 # sw.file.hash: fb68e2f0ffcc4a6523e97045f2cf6f34a6954905
 \app\components\centroUsuario\register\register.component.js
@@ -53,57 +149,57 @@ CACHE MANIFEST
 \app\components\centroUsuario\register\register.style.css
 # sw.file.hash: a50c5d58a8db7a6de15c6a253e7d98c322a2c8e0
 \app\components\centroUsuario\register\register.template.html
-# sw.file.hash: ce700c470df20acccca418e7323b1fb0887b3a1d
+# sw.file.hash: e52e71a40027c21cb12ff44882040c163bcb57ec
 \app\components\index\index.component.js
-# sw.file.hash: de906f98622b8cd5b037beaf860dcce369935b21
+# sw.file.hash: b708fd69ef1e6b8a0a9ab58a27141b43dadcd3b7
 \app\components\index\index.component.js.map
-# sw.file.hash: b8cfd8397b8220334466e57d89b844930ededf6d
+# sw.file.hash: 51b226cde14b8153dfda1b3e2ec4b044c5ae299c
 \app\components\index\index.template.html
-# sw.file.hash: feb59e3ced358adc7450652eb6a42e3ecbf2ccca
+# sw.file.hash: 08be10b460f45377a3bb9980206bcd5aae3c850c
 \app\components\index\topCarrouselComponent.Style.css
 # sw.file.hash: 20ee1868f60601565b289f1b5bf789f58eb9ca53
 \app\components\itemDetail\itemDetail.Component.js
-# sw.file.hash: 982c74b3aab800d36bd942fa1fcffaea4fa9dc70
+# sw.file.hash: 262ba4dcf0b5a3055bb13039ed48c6dd88fc2e22
 \app\components\itemDetail\itemDetail.Component.js.map
-# sw.file.hash: b4c6884ad823f24398cff1eb622de45ba2472d45
+# sw.file.hash: ce68ff9f5de01be4cc859bce4be78cfb24cd1b6f
 \app\components\itemDetail\itemDetail.Template.html
 # sw.file.hash: 80039fc298bd5877a74faa3504cc77ff54ed8d5f
 \app\components\messages\message.data.js
-# sw.file.hash: da2390a6a8124374580b8d7baa556e222ab16c70
+# sw.file.hash: 270a09d0509163375fac44c14ff4f85c707a1579
 \app\components\messages\message.data.js.map
 # sw.file.hash: 117aa1662c294512e72636870d5160f354dbe6de
 \app\components\messages\message.service.js
-# sw.file.hash: 6f526f5eb9cccd020976a48c7e89bba1f81a404e
+# sw.file.hash: 0f5bb32b650dae4299975e5b7b8074dcd283e17b
 \app\components\messages\message.service.js.map
 # sw.file.hash: e642e8ab0867bfb440e2ccb80e294a22c3bd3b58
 \app\components\messages\messageItem\messageItem.component.js
-# sw.file.hash: 208bdde140f4012f06210cfee5291a4d8faab4f3
+# sw.file.hash: 0576c7d68ea0e0528cc805824614ca1aa0dc1954
 \app\components\messages\messageItem\messageItem.component.js.map
-# sw.file.hash: 228c514ea17c900adfaae2e593d3af5d97e57ca9
+# sw.file.hash: 710cfd67f1dcd8ec9b3e8b0ae8080fd8cb3929a8
 \app\components\messages\messageItem\messageItem.template.html
 # sw.file.hash: 6da1704296016e09988b14ffa6cc18e094344954
 \app\components\messages\messageList.component.js
-# sw.file.hash: bc13dec6dcac04d45d8944bad7c2493fdada6c26
+# sw.file.hash: bbf3a6aa469a200a7c9f13de9af360ab17571b1e
 \app\components\messages\messageList.component.js.map
-# sw.file.hash: 1754a1e9c42062b819ac43860c8d4553fa05d096
+# sw.file.hash: abbc977d70bd02384cf81f91822f2f43446b8a66
 \app\components\messages\messageList.template.html
 # sw.file.hash: 4792e8abef99583b1395d7881b96a5ffa9433b0a
 \app\components\modal\modal.component.js
-# sw.file.hash: 61fb497556b3cad4aa8388ff847d90c3de313262
+# sw.file.hash: 9f7c9132605254f49fd6a1e40a3d4c4ef65ae16b
 \app\components\modal\modal.component.js.map
 # sw.file.hash: b251e5e91ba9097eb2e4555058ebdf142b20aa5e
 \app\components\modal\modal.template.html
 # sw.file.hash: c9af25ffe3ae62f6680403392d53cb3df7659c68
 \app\components\perfil\misValoraciones\misValoraciones.component.js
-# sw.file.hash: 195cdf932a2a4664baecddd21c6c7d71df7da084
+# sw.file.hash: 721d134c153ee4bccb283d67239e78c14e34b6c1
 \app\components\perfil\misValoraciones\misValoraciones.component.js.map
-# sw.file.hash: 428a207dcbe23a3d66dadd6629f7a63ce3dc86a3
+# sw.file.hash: 4b871e9ccd599af8b6d66dde5982434fedd8cc96
 \app\components\perfil\misValoraciones\misValoraciones.template.html
 # sw.file.hash: 980233acf4944e70d7e60b81838b148bca7f6950
 \app\components\perfil\perfil.Component.js
-# sw.file.hash: 8a44ff3f0ef8aac3d3db99a1198e0c3589a5ce00
+# sw.file.hash: fd0b53766feee32c1ace5b7ff0c350d25bdc1eb0
 \app\components\perfil\perfil.Component.js.map
-# sw.file.hash: db41d73647a2dc3d7c86f7930be1a2ad760b5aaf
+# sw.file.hash: 84470b68f8dff79c344fbc93abd392da83bc19be
 \app\components\perfil\perfil.Style.css
 # sw.file.hash: 20cf6873c00621dd3a5b47456d42bf0cac90d98d
 \app\components\perfil\perfil.Template.html
@@ -115,17 +211,21 @@ CACHE MANIFEST
 \app\components\perfil\profileData\profileData.Style.css
 # sw.file.hash: 9c4ff4246ef6ed56ff5f0e0bdfc73c957094f830
 \app\components\perfil\profileData\profileData.Template.html
+# sw.file.hash: 9ed0350f5f7545e2ed762ebbff614c0eb91588dd
+\app\components\series.service.js
+# sw.file.hash: 9d38b391bed0befde307fa88e43ca5ead0aa3233
+\app\components\series.service.js.map
 # sw.file.hash: 8db637bf95f57038edaf96235d7287662761c28c
 \app\components\user\loginAuth.js
-# sw.file.hash: 21b937577a93b1e40add1ffc15886194e70ea28f
+# sw.file.hash: f035f4eac248193cc2efc00eeb8807cd79f94a91
 \app\components\user\loginAuth.js.map
 # sw.file.hash: 6f6cb7ad6bbc821f2ff48dfbaa1b37e647e464e2
 \app\components\user\multipart-upload\multipart-item.js
-# sw.file.hash: a5de70e119b7e598a5c0bdcf55967acf7f5fffbe
+# sw.file.hash: f5e344539a6ea9a8381d0d03ff62cc02995c3b51
 \app\components\user\multipart-upload\multipart-item.js.map
 # sw.file.hash: 482f5e3c3280b26c648c56777753bcc28c3d81bf
 \app\components\user\multipart-upload\multipart-uploader.js
-# sw.file.hash: ef4c14432493e5f9345d8bd6b455c28cec5267f3
+# sw.file.hash: 7e56db38a8c6a7aa6e4de9f2fc4e68a08e0e1a63
 \app\components\user\multipart-upload\multipart-uploader.js.map
 # sw.file.hash: 00e613e0ab6e9d24e40530768b60c84bd2b1f49e
 \app\components\user\user.data.js
@@ -135,11 +235,15 @@ CACHE MANIFEST
 \app\components\user\user.service.js
 # sw.file.hash: f47d51d82a8d1bfe90e21f7b555f519c23f73f97
 \app\components\user\user.service.js.map
-# sw.file.hash: 6916978a7edd8ef6b9f6f763224d85a675b9d8a8
+# sw.file.hash: 7ad2c89fb9f1ca7a834d4e2a52c2edce81f9944f
+\app\components\utils.js
+# sw.file.hash: 0ce655e3fab1088bc8f93bd79d3bf163dae06dc2
+\app\components\utils.js.map
+# sw.file.hash: 1e380f6808ab0acd8a3f14dde91898940a1818af
 \app\main.html
-# sw.file.hash: 070c713c2dfb7564fb6cb05bd56408ad6cce40fc
+# sw.file.hash: f8ff481e43cfff7427f69c98363306aea95189b6
 \app\main.js
-# sw.file.hash: c794f26b29a8b1b9cafc0f5f32f9355dc3d93581
+# sw.file.hash: 9b726c9b0a66f07852fc09fd61a2cda4c0bc12af
 \app\main.js.map
 # sw.file.hash: 49d5a62222a3771363a160fa0e460f0f8c60b1d7
 \app\utilities.js
@@ -231,6 +335,8 @@ CACHE MANIFEST
 \assets\images\profile\avatar3.png
 # sw.file.hash: 04926d3b65bcc060e85ffdc55879b06f472e30d3
 \assets\images\profile\noAvatar.png
+# sw.file.hash: b8cba836999780a363765fca6fe56b6d2c934ba5
+\assets\images\rg.jpg
 # sw.file.hash: b0d98935e4aba5d02dafa297904a62030a481f79
 \favicon.ico
 # sw.file.hash: 3538bd16e919e3e4f28c6a767e73126e33ec3729

@@ -1,0 +1,29 @@
+<div class="col-xs-12">
+ <div class="row">
+        <!-- item  Lista Actores -->
+        <table class="table">
+            <!-- Actor -->
+            <tr template="ngFor #usuario of listaUsers; #i = index">
+                <td class="col-xs-3">
+                    <img class="center-block img-responsive" [src]="IMG" alt="ImagenDelActor" title=""/>
+                </td>
+                <td class="col-xs-9 pro-vcenter">
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>{{usuario.user_name}}</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button (click)="eliminarUsuario(usuario)" class="btn pro-btn">Eliminar usuario</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Fin Actor -->
+        </table>
+        <!-- FIN Lista item Actor -->
+    </div>
+</div>

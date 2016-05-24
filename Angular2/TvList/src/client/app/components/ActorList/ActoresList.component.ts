@@ -10,13 +10,14 @@ import {ActorDetalleComponent} from "../ActorDetalle/ActorDetalle.component";
 })
 
 export class ActoresListComponent{
-    public lista:Actor[]=this.service.getDatos();
+    public lista:Actor[];// = this.service.getDatos();
     public busq:string;
 
     constructor(public router:Router, private service:ActoresService) {
+        this.lista = this.service.getDatos();
     }
 
     filtrarPorNombre() {
-        this.lista = this.service.getActorByNombre(this.busq);
+        //this.lista = this.service.getActorByNombre(this.busq);
     }
 }
