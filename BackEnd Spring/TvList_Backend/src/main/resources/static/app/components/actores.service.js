@@ -104,6 +104,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', "./user/multipart-
                         console.error("You have to select a file and set a description.");
                         return;
                     }
+                    ;
                     var formData = new FormData();
                     formData.append("file", archivo);
                     var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/image/upload' }));

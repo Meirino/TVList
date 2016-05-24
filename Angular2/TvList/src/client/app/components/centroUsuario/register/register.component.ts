@@ -93,9 +93,7 @@ export class registerComponent{
         };
         multipartItem.upload();
         }
-        else
-            this.servicioUsuarios.createUser(this.userToCreate);
-
+        else this.servicioUsuarios.createUser(this.userToCreate);
     }
 
     private selectFile($event) {

@@ -22,20 +22,24 @@ export class adminActoresComponent {
     }
 
     anadirActor() {
-        if(this.file) {
+        this.nuevoActor.IMG = "#";
+        this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
+    }
+
+    anadirActorIMG() {
+        if (this.file){
             let multipartItem = this.service.upload(this.file);
             multipartItem.callback = (data, status, headers) => {
                 if (status == 200){
                     this.nuevoActor.IMG = data;
                     console.debug("File has been uploaded");
-                    this.nuevoActor.IMG = "#";
-                    this.service.upload(this.file);
-                    this.separarStrings(this.obras, this.nuevoActor.obras);
-                    this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
+                    //this.loadImages();
+                    let userCreated=this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
                 } else {
                     console.error("Error uploading file");
                 }
-            }
+            };
+            multipartItem.upload();
         }
     }
 

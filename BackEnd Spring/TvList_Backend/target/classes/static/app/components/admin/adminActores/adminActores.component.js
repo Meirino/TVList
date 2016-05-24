@@ -29,6 +29,10 @@ System.register(['angular2/core', "../../actores.service"], function(exports_1, 
                     this.lista = this.service.getDatos();
                 }
                 adminActoresComponent.prototype.anadirActor = function () {
+                    this.nuevoActor.IMG = "#";
+                    this.service.anadirActor(new actores_service_1.Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
+                };
+                adminActoresComponent.prototype.anadirActorIMG = function () {
                     var _this = this;
                     if (this.file) {
                         var multipartItem = this.service.upload(this.file);
@@ -36,15 +40,14 @@ System.register(['angular2/core', "../../actores.service"], function(exports_1, 
                             if (status == 200) {
                                 _this.nuevoActor.IMG = data;
                                 console.debug("File has been uploaded");
-                                _this.nuevoActor.IMG = "#";
-                                _this.service.upload(_this.file);
-                                _this.separarStrings(_this.obras, _this.nuevoActor.obras);
-                                _this.service.anadirActor(new actores_service_1.Actor(0, _this.nuevoActor.nombre, _this.nuevoActor.descripcion, _this.nuevoActor.IMG, _this.nuevoActor.obras));
+                                //this.loadImages();
+                                var userCreated = _this.service.anadirActor(new actores_service_1.Actor(0, _this.nuevoActor.nombre, _this.nuevoActor.descripcion, _this.nuevoActor.IMG, _this.nuevoActor.obras));
                             }
                             else {
                                 console.error("Error uploading file");
                             }
                         };
+                        multipartItem.upload();
                     }
                 };
                 adminActoresComponent.prototype.eliminarActor = function (actor) {
