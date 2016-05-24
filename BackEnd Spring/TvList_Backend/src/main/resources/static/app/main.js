@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/index/index.component', './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/index/index.component', './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service', './components/proyecciones/proyeccionesList/proyeccionesList.Component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, modal_component_1, index_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1;
+    var core_1, router_1, modal_component_1, index_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1, proyeccionesList_Component_1;
     var MainApp;
     return {
         setters:[
@@ -40,6 +40,9 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
             },
             function (breadCrumb_service_1_1) {
                 breadCrumb_service_1 = breadCrumb_service_1_1;
+            },
+            function (proyeccionesList_Component_1_1) {
+                proyeccionesList_Component_1 = proyeccionesList_Component_1_1;
             }],
         execute: function() {
             MainApp = (function () {
@@ -126,6 +129,11 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                             path: '/admin/...',
                             name: 'Admin',
                             component: admin_Component_1.adminComponent
+                        },
+                        {
+                            path: '/peliculas',
+                            name: 'Peliculas',
+                            component: proyeccionesList_Component_1.proyeccionesListComponent
                         }
                     ]), 
                     __metadata('design:paramtypes', [router_1.Router, user_service_1.userService, breadCrumb_service_1.breadCrumbService])

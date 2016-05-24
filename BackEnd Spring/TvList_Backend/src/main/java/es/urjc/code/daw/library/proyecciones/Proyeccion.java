@@ -56,7 +56,7 @@ public class Proyeccion {
 		this.temas=temas;
 	}
 
-	
+	@JsonView(Basico.class)
 	public long getId() {
 		return id;
 	}

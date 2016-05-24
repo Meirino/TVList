@@ -35,15 +35,10 @@ import {proyeccionesListComponent} from './components/proyecciones/proyeccionesL
     component: adminComponent
   },
   {
-    path: '/peliculas/',
+    path: '/peliculas',
     name: 'Peliculas',
     component: proyeccionesListComponent
-  },
-  {
-    path: '/peliculas/:type',
-    name: 'PeliculasTipo',
-    component: proyeccionesListComponent
-  },
+  }
 ])
 
 export class MainApp implements OnInit{

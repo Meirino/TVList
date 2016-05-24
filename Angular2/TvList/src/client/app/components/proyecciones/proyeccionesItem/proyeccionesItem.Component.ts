@@ -1,4 +1,4 @@
-import {Component,OnInit,ElementRef,ViewChild} from 'angular2/core';
+import {Component,Input} from 'angular2/core';
 
 
 @Component({
@@ -7,15 +7,9 @@ import {Component,OnInit,ElementRef,ViewChild} from 'angular2/core';
   styleUrls: ['./app/components/proyecciones/proyeccionesItem/proyeccionesItem.Style.css']
 })
 
-export class proyeccionesItemComponent implements OnInit{
+export class proyeccionesItemComponent{
+  @Input() peliInfo:any;
   
-  ngOnInit():any {
-    return undefined;
-  }
-  
-
   constructor(){}
-
-
 
 }

@@ -28,7 +28,9 @@ import es.urjc.code.daw.library.temas.TemaRepository;
 @RestController
 @RequestMapping("/peliculas")
 public class ProyeccionController {
+	
 
+	interface PaginaPeliculas extends Proyeccion.Basico, Pagina.PaginaJson {}
 	private static final Logger log = LoggerFactory.getLogger(ProyeccionController.class);
 
 	@Autowired
@@ -37,9 +39,10 @@ public class ProyeccionController {
 	@Autowired
 	private TemaRepository repositoryTema;
 
-	@JsonView(Proyeccion.Basico.class)
+	
+	@JsonView(PaginaPeliculas.class)
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public List<Proyeccion> getProyeccionesByType(@RequestParam(value="page", required=false) Integer page, @RequestParam(value="title", required=false) String name , @RequestParam(value="genre", required=false) String tema) {
+	public Pagina getProyeccionesByType(@RequestParam(value="page", required=false) Integer page, @RequestParam(value="title", required=false) String name , @RequestParam(value="genre", required=false) String tema) {
 		if (page==null)
 			page=(Integer) 0;
 		if (name==null || name.isEmpty())
@@ -47,13 +50,13 @@ public class ProyeccionController {
 		if (tema==null || tema.isEmpty())
 		{
 			Page pag= repositoryProye.findByTitleContainingIgnoreCase(name,new PageRequest(page, 2,new Sort(Direction.DESC,"id")));
-			return pag.getContent();
+			return new Pagina(pag.getContent(),pag.getNumber(),pag.getTotalPages());
 		}
 		else
 		{
 			Tema temaPeliculas = repositoryTema.findByTema(tema);
 			Page pag= repositoryProye.findByTemas(temaPeliculas,name.toUpperCase(),new PageRequest(page, 2,new Sort(Direction.DESC,"id")));
-			return pag.getContent();
+			return new Pagina(pag.getContent(),pag.getNumber(),pag.getTotalPages());
 		}
 	}
 

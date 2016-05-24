@@ -23,10 +23,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.pageBreadCrumb = [];
                 }
                 breadCrumbService.prototype.generateBreadCrumb = function (location) {
+                    var posPathOpcional = location.lastIndexOf("?");
+                    if (posPathOpcional >= 0)
+                        location = location.substr(0, posPathOpcional);
                     var paths = location.split('/');
                     this.pageBreadCrumb = [];
                     for (var c = 0; c < paths.length; c++) {
-                        this.pageBreadCrumb.push({ 'path': paths[c], 'acumulativePath': this.host + "/" });
+                        this.pageBreadCrumb.push({ 'path': paths[c], 'acumulativePath': this.host + "/#/" });
                         for (var ca = 0; ca <= (+c); ca++)
                             this.pageBreadCrumb[c].acumulativePath += paths[ca] + (ca < c ? '/' : '');
                         console.log(paths[c]);
