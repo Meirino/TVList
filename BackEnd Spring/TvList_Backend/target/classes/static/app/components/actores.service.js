@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', "./user/multipart-upload/multipart-uploader", "./user/multipart-upload/multipart-item"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1;
+    var core_1, http_1, multipart_uploader_1, multipart_item_1;
     var Actor, ActoresService;
     return {
         setters:[
@@ -20,7 +20,13 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (_1) {}],
+            function (_1) {},
+            function (multipart_uploader_1_1) {
+                multipart_uploader_1 = multipart_uploader_1_1;
+            },
+            function (multipart_item_1_1) {
+                multipart_item_1 = multipart_item_1_1;
+            }],
         execute: function() {
             Actor = (function () {
                 function Actor(id, nombre, descripcion, IMG, obras) {
@@ -65,6 +71,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     }, function (error) { return console.log(error); });
                     return actor;
                 };
+                ActoresService.prototype.filtrarPorNombre = function (nom) {
+                    var listaPro = [];
+                    this.http.get(this.url).subscribe(function (response) {
+                        for (var i = 0; i < response.json().length; i++) {
+                            if (response.json()[i].nombre == nom) {
+                                console.log(response.json()[i]);
+                                listaPro.push(new Actor(response.json()[i].id, response.json()[i].nombre, response.json()[i].descripcion, response.json()[i].IMG, response.json()[i].obras));
+                            }
+                        }
+                    });
+                    return listaPro;
+                };
                 ActoresService.prototype.anadirActor = function (actor) {
                     var body = JSON.stringify(actor);
                     console.log(body);
@@ -79,6 +97,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     this.http.delete("https://localhost:8443/actores/" + id).subscribe(function (response) {
                         console.log(response);
                     }, function (error) { return console.log(error); });
+                };
+                ActoresService.prototype.upload = function (archivo) {
+                    console.debug("Uploading file...");
+                    if (archivo == null) {
+                        console.error("You have to select a file and set a description.");
+                        return;
+                    }
+                    var formData = new FormData();
+                    formData.append("file", archivo);
+                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/image/upload' }));
+                    multipartItem.formData = formData;
+                    return multipartItem;
                 };
                 ActoresService = __decorate([
                     core_1.Injectable(), 

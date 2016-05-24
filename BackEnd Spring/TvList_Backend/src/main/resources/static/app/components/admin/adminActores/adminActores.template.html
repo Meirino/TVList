@@ -26,7 +26,7 @@
             </div>
             <div class="modal-body">
                 <p><label>Nombre:</label> <input [(ngModel)]="nuevoActor.nombre" type="text"></p>
-                <p><label>Imagen:</label> <input type="image"></p>
+                <p><label>Imagen:</label> <input type="file" (change)="SelectFiles($event)"></p>
                 <p><label>Descripción: </label><input [(ngModel)]="nuevoActor.descripcion" type="text"></p>
                 <p><label>Ha participado en (Separa por comas):</label> <input [(ngModel)]="obras" type="text"></p>
                 <p><button (click)="anadirActor()" class="btn pro-btn btn-block">Crear</button></p>

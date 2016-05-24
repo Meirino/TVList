@@ -15,15 +15,28 @@ export class adminActoresComponent {
     public obras: string = '';
     public lista:Actor[];
     public busq:string;
+    public file:File;
 
     constructor(public service: ActoresService) {
         this.lista = this.service.getDatos();
     }
 
     anadirActor() {
-        this.nuevoActor.IMG = "#";
-        this.separarStrings(this.obras, this.nuevoActor.obras);
-        this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
+        if(this.file) {
+            let multipartItem = this.service.upload(this.file);
+            multipartItem.callback = (data, status, headers) => {
+                if (status == 200){
+                    this.nuevoActor.IMG = data;
+                    console.debug("File has been uploaded");
+                    this.nuevoActor.IMG = "#";
+                    this.service.upload(this.file);
+                    this.separarStrings(this.obras, this.nuevoActor.obras);
+                    this.service.anadirActor(new Actor(0, this.nuevoActor.nombre, this.nuevoActor.descripcion, this.nuevoActor.IMG, this.nuevoActor.obras));
+                } else {
+                    console.error("Error uploading file");
+                }
+            }
+        }
     }
 
     eliminarActor(actor:Actor) {
@@ -35,7 +48,7 @@ export class adminActoresComponent {
         arrayString = cadena.split(',');
     }
 
-    filtrarPorNombre() {
-        
+    SelectFiles($event) {
+        this.file = $event.target.files[0];
     }
 }

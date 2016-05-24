@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 135d97c4b39722e6f6c515612e89813d09b8ff96
+# sw.version: dc575071705107b74727eee2c53c0d97ba98a6db
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
 # sw.file.hash: 20d408b75d53936df4162bd12927fd1789ec7bea
@@ -17,11 +17,11 @@ CACHE MANIFEST
 \app\components\ActorDetalle\ActorDetalle.template.html
 # sw.file.hash: 7c9ca5925b1815dcdd3b50065a11c117d01a3066
 \app\components\ActorList\ActorList.component.html
-# sw.file.hash: dce6d11ad52fa27be6fb5c11d74cd436ecef3d40
+# sw.file.hash: eeefaf918cb46a22d1d3fe0d906f127a0e64dc0a
 \app\components\ActorList\ActoresList.component.js
-# sw.file.hash: 5a226afe71c3488e859ac648028b40aee9a6eec2
+# sw.file.hash: ac33be7f6ea3e7f10588858e897299040dac19e1
 \app\components\ActorList\ActoresList.component.js.map
-# sw.file.hash: 79a84e94f5ea4bf0272dd2bd31076810ee138d87
+# sw.file.hash: 68979b49553d9eaa4fccf4ed02c6abf49ae99512
 \app\components\ActorList\ActoresList.template.html
 # sw.file.hash: 5d4f5a859a372b0304472fc9eb858b38a60e3b4d
 \app\components\PeliculasList\PeliculaListSuspense.component.js
@@ -89,9 +89,9 @@ CACHE MANIFEST
 \app\components\SeriesList\SeriesSuspense.component.js
 # sw.file.hash: fe7ba3319f08fe4c61c09982a80a00b23021c1a4
 \app\components\SeriesList\SeriesSuspense.component.js.map
-# sw.file.hash: 1370fa1ee7b96e1f0da313266b22ebc000767c4d
+# sw.file.hash: 66d2e99cce10a30abf5e307c064bffc05dfc2799
 \app\components\actores.service.js
-# sw.file.hash: 0f423f730c2c558c78d02483887480d0403b6f8f
+# sw.file.hash: 48a8e9ae83af31a1936ce680861ebc965ac234b7
 \app\components\actores.service.js.map
 # sw.file.hash: c574f079467e030f3900c533d4dbe0aeb3a563fd
 \app\components\admin\admin.Component.js
@@ -99,11 +99,11 @@ CACHE MANIFEST
 \app\components\admin\admin.Component.js.map
 # sw.file.hash: cc5336fb60267ae39aca9028df816d47e3ee2dfe
 \app\components\admin\admin.template.html
-# sw.file.hash: 1ef1c217be10ec4f208fb102155ed107649ced35
+# sw.file.hash: 2006cb6801288b2542c62776af45efa3934c758f
 \app\components\admin\adminActores\adminActores.component.js
-# sw.file.hash: 1c19d4af64cfa6be8737b493731d3d470d5bbcbf
+# sw.file.hash: 98816c317274dbe5b5e3734dccbd0b7300a09875
 \app\components\admin\adminActores\adminActores.component.js.map
-# sw.file.hash: c5f92b964e4db42f50fafc99cc0b490fc6c77271
+# sw.file.hash: 190d0954e4d4477e94f75c2b1f7ff1e263b6adda
 \app\components\admin\adminActores\adminActores.template.html
 # sw.file.hash: ec06fc813fa0b8fe244c549ef5fca17f159ea808
 \app\components\admin\adminElements\adminElements.component.js

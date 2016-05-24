@@ -5,6 +5,8 @@ import {Injectable} from 'angular2/core';
 import {withObserver} from './utils';
 import {RequestOptions, Request, RequestMethod, HTTP_PROVIDERS, Http, RequestOptionsArgs, Headers} from 'angular2/http';
 import 'rxjs/Rx';
+import {MultipartUploader} from "./user/multipart-upload/multipart-uploader";
+import {MultipartItem} from "./user/multipart-upload/multipart-item";
 
 export class Actor {
     constructor(public id:number,
@@ -54,6 +56,19 @@ export class ActoresService {
         );
         return actor;
     }
+    
+    filtrarPorNombre(nom:string) {
+        let listaPro:Actor[] = [];
+        this.http.get(this.url).subscribe(response => {
+            for(let i = 0; i < response.json().length;i++) {
+                if(response.json()[i].nombre == nom) {
+                    console.log(response.json()[i]);
+                    listaPro.push(new Actor(response.json()[i].id, response.json()[i].nombre, response.json()[i].descripcion, response.json()[i].IMG, response.json()[i].obras));
+                }
+            }
+        });
+        return listaPro;
+    }
 
     anadirActor(actor:Actor) {
         let body = JSON.stringify(actor);
@@ -76,5 +91,18 @@ export class ActoresService {
             },
             error => console.log(error)
         );
+    }
+
+    upload(archivo:File) {
+        console.debug("Uploading file...");
+        if (archivo == null) {
+            console.error("You have to select a file and set a description.");
+            return;
+        };
+        let formData = new FormData();
+        formData.append("file",  archivo);
+        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload'}));
+        multipartItem.formData = formData;
+        return multipartItem;
     }
 }

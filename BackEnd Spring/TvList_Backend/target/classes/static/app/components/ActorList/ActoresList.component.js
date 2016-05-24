@@ -32,6 +32,7 @@ System.register(['angular2/core', 'angular2/router', "../actores.service"], func
                     this.lista = this.service.getDatos();
                 }
                 ActoresListComponent.prototype.getActorByNombre = function () {
+                    this.lista = this.service.filtrarPorNombre(this.busq);
                 };
                 ActoresListComponent = __decorate([
                     core_1.Component({

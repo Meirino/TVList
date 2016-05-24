@@ -20,6 +20,6 @@ export class ActoresListComponent{
     }
 
     getActorByNombre() {
-        
+        this.lista = this.service.filtrarPorNombre(this.busq);
     }
 }
