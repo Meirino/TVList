@@ -1,4 +1,4 @@
-System.register(['angular2/core', "../actores.service"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', "../actores.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,32 @@ System.register(['angular2/core', "../actores.service"], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, actores_service_1;
+    var core_1, router_1, actores_service_1;
     var ActorDetalleComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
             function (actores_service_1_1) {
                 actores_service_1 = actores_service_1_1;
             }],
         execute: function() {
             ActorDetalleComponent = (function () {
-                function ActorDetalleComponent() {
-                    this.lista = new actores_service_1.Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', 'http://www.soletopia.com/wp-content/uploads/2013/07/ryan-gosling-only-god-forgives-style-11-navy-vest.jpg', ['Drive']);
+                function ActorDetalleComponent(params, service) {
+                    this.params = params;
+                    this.service = service;
+                    this.detalles = this.service.getActor(this.params.get("id"));
                 }
                 ActorDetalleComponent = __decorate([
                     core_1.Component({
-                        selector: 'ActoresList',
-                        templateUrl: './app/components/ActorList/ActoresList.template.html'
+                        templateUrl: './app/components/ActorDetalle/ActorDetalle.template.html',
+                        providers: [actores_service_1.ActoresService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [router_1.RouteParams, actores_service_1.ActoresService])
                 ], ActorDetalleComponent);
                 return ActorDetalleComponent;
             }());

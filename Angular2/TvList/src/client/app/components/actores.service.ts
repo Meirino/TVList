@@ -38,6 +38,23 @@ export class ActoresService {
         return listaPro;
     }
 
+    getActor(id:string) {
+        let actor:Actor = new Actor(0, 'Actor sin nombre', 'Descripción cualquiera', '#', ['Película 1','Película 2']);
+        this.http.get("https://localhost:8443/actores/"+id).subscribe(
+            response => {
+            let mySON = response.json();
+            console.log(mySON);
+            actor.id = mySON.id;
+            actor.nombre = mySON.nombre;
+            actor.descripcion = mySON.descripcion;
+            actor.IMG = mySON.IMG;
+            actor.obras = mySON.obras;
+        },
+            error => console.log(error)
+        );
+        return actor;
+    }
+
     anadirActor(actor:Actor) {
         let body = JSON.stringify(actor);
         console.log(body);
@@ -52,16 +69,12 @@ export class ActoresService {
     }
 
     eliminarActor(id:string) {
-        let jsonActor = id; //JSON.stringify(actor.id);
+        let jsonActor = id;
         this.http.delete("https://localhost:8443/actores/"+id).subscribe(
             response => {
                 console.log(response);
             },
             error => console.log(error)
         );
-    }
-
-    getActorByNombre(nombre:string) {
-        return this.lista.filter(actor => actor.nombre == nombre);
     }
 }

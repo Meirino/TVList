@@ -36,6 +36,6 @@ export class adminActoresComponent {
     }
 
     filtrarPorNombre() {
-        this.lista = this.service.getActorByNombre(this.busq);
+        
     }
 }

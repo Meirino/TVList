@@ -6,14 +6,13 @@ import {RouteParams, Router} from 'angular2/router';
 import {Actor, ActoresService} from "../actores.service";
 
 @Component({
-    selector: 'ActoresList',
-    templateUrl: './app/components/ActorList/ActoresList.template.html'
+    templateUrl: './app/components/ActorDetalle/ActorDetalle.template.html',
+    providers:[ActoresService]
 })
 
 export class ActorDetalleComponent {
-    public lista:Actor = new Actor(0, 'Ryan Gosling', 'Protagonista de la pelicula Drive', 'http://www.soletopia.com/wp-content/uploads/2013/07/ryan-gosling-only-god-forgives-style-11-navy-vest.jpg', ['Drive']);
-    public service: ActoresService;
-
-    constructor() {
+    detalles:Actor;
+    constructor(public params: RouteParams, private service:ActoresService) {
+        this.detalles = this.service.getActor(this.params.get("id"));
     }
 }

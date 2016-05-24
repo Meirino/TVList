@@ -52,6 +52,19 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     });
                     return listaPro;
                 };
+                ActoresService.prototype.getActor = function (id) {
+                    var actor = new Actor(0, 'Actor sin nombre', 'Descripción cualquiera', '#', ['Película 1', 'Película 2']);
+                    this.http.get("https://localhost:8443/actores/" + id).subscribe(function (response) {
+                        var mySON = response.json();
+                        console.log(mySON);
+                        actor.id = mySON.id;
+                        actor.nombre = mySON.nombre;
+                        actor.descripcion = mySON.descripcion;
+                        actor.IMG = mySON.IMG;
+                        actor.obras = mySON.obras;
+                    }, function (error) { return console.log(error); });
+                    return actor;
+                };
                 ActoresService.prototype.anadirActor = function (actor) {
                     var body = JSON.stringify(actor);
                     console.log(body);
@@ -62,13 +75,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     this.http.post(this.url, body, options).subscribe(function (response) { return console.log(response); }, function (error) { return console.error(error); });
                 };
                 ActoresService.prototype.eliminarActor = function (id) {
-                    var jsonActor = id; //JSON.stringify(actor.id);
+                    var jsonActor = id;
                     this.http.delete("https://localhost:8443/actores/" + id).subscribe(function (response) {
                         console.log(response);
                     }, function (error) { return console.log(error); });
-                };
-                ActoresService.prototype.getActorByNombre = function (nombre) {
-                    return this.lista.filter(function (actor) { return actor.nombre == nombre; });
                 };
                 ActoresService = __decorate([
                     core_1.Injectable(), 

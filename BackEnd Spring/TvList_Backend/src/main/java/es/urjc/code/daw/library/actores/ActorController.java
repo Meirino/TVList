@@ -26,7 +26,7 @@ public class ActorController {
 	
 	@PostConstruct
 	 public void init() {
-		String[] a = {"A","a"};
+		String[] a = {"Driver","Solo dios perdona"};
 		repositorio.save(new Actor("Ryan Gosling", "Protagonista de Driver", "#", a));
 		repositorio.save(new Actor("Harrison Ford", "Actor veterano que ha realizado muchos papeles famosos, como Indiana Jones o Han Solo", "#", a));
 	 }

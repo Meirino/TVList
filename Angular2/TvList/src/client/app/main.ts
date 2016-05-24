@@ -25,12 +25,14 @@ import {SeriesComediaComponent} from "./components/SeriesList/SeriesComedia.comp
 import {SeriesInfantilComponent} from "./components/SeriesList/SeriesInfantil.component";
 import {SeriesSuspenseComponent} from "./components/SeriesList/SeriesSuspense.component";
 import {SeriesRomanceComponent} from "./components/SeriesList/SeriesRomance.component";
+import {ActoresService} from "./components/actores.service";
 
 
 
 @Component({
   selector: 'main-app',
   templateUrl: 'app/main.html',
+  providers:[ActoresService],
   directives: [ROUTER_DIRECTIVES,modalComponent]
 })
 @RouteConfig([
@@ -55,11 +57,6 @@ import {SeriesRomanceComponent} from "./components/SeriesList/SeriesRomance.comp
         name: 'Actores',
         component: ActoresListComponent
     },
-    {
-        path: '/Detalles',
-        name: 'Detalles',
-        component: ActorDetalleComponent
-    },
   {
     path: '/Series',
     name: 'Series',
@@ -69,6 +66,11 @@ import {SeriesRomanceComponent} from "./components/SeriesList/SeriesRomance.comp
     path: '/Peliculas',
     name: 'Peliculas',
     component: PeliculasListComponent
+  },
+  {
+    path: '/Actores/:id/',
+    name: 'Actor',
+    component: ActorDetalleComponent
   },
   {
     path: '/Peliculas/Accion',

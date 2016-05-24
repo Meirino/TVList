@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 style="text-align:center">{{actor.nombre}}</h3>
+                <h3 style="text-align:center">{{detalles.nombre}}</h3>
                 <hr>
             </div>
         </div>
@@ -16,10 +16,11 @@
 <div class="col-md-9">
     <h3>Descripción:</h3>
     <hr>
-    <p>{{actor.descrip}}.</p>
+    <p>{{detalles.descripcion}}.</p>
     <br>
-    <h3>Ha participado en:</h3>
+    <h3><small>Ha participado en...</small></h3>
     <hr>
+    <div template="ngFor #obra of detalles.obras; #i = index">{{obra}}</div>
     <h4></h4>
     </div>
 

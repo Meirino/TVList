@@ -41,7 +41,6 @@ System.register(['angular2/core', "../../actores.service"], function(exports_1, 
                     arrayString = cadena.split(',');
                 };
                 adminActoresComponent.prototype.filtrarPorNombre = function () {
-                    this.lista = this.service.getActorByNombre(this.busq);
                 };
                 adminActoresComponent = __decorate([
                     core_1.Component({

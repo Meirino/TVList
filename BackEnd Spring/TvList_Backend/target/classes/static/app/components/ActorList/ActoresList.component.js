@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', "../actores.service"], func
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, actores_service_1;
+    var core_1, router_1, router_2, actores_service_1;
     var ActoresListComponent;
     return {
         setters:[
@@ -19,6 +19,7 @@ System.register(['angular2/core', 'angular2/router', "../actores.service"], func
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+                router_2 = router_1_1;
             },
             function (actores_service_1_1) {
                 actores_service_1 = actores_service_1_1;
@@ -30,16 +31,16 @@ System.register(['angular2/core', 'angular2/router', "../actores.service"], func
                     this.service = service;
                     this.lista = this.service.getDatos();
                 }
-                ActoresListComponent.prototype.filtrarPorNombre = function () {
-                    //this.lista = this.service.getActorByNombre(this.busq);
+                ActoresListComponent.prototype.getActorByNombre = function () {
                 };
                 ActoresListComponent = __decorate([
                     core_1.Component({
                         selector: 'ActoresList',
                         templateUrl: './app/components/ActorList/ActoresList.template.html',
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [actores_service_1.ActoresService]
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, actores_service_1.ActoresService])
+                    __metadata('design:paramtypes', [router_2.Router, actores_service_1.ActoresService])
                 ], ActoresListComponent);
                 return ActoresListComponent;
             }());
