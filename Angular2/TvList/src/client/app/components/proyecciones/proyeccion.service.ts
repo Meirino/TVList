@@ -9,14 +9,22 @@ import {proyeccion} from './proyeccion.data';
 @Injectable()
 export class proyeccionService {
 
+    private _url:string="/peliculas";
 
     constructor(private _http:Http) {
     }
 
 
-    public getPeliculas_TypeAll(){
-        
-        
+    public getPeliculasByType(tipo:string,titulo:string){
+        if (!tipo)
+            tipo="";
+        else
+            tipo="/"+tipo;
+        if (!titulo)
+            titulo="";
+        else
+            titulo="&titulo="+titulo;
+        var urlFull=this._url+tipo+titulo
     } 
     
 

@@ -16,13 +16,11 @@ export class proyeccionesListComponent implements OnInit{
   
   constructor(private _proServ:proyeccionService, params: RouteParams){
     this.type=params.get("type");
-    this.type=params.get("titulo");
+    this.title=params.get("titulo");
   }
 
   ngOnInit():any {
-    //let peliculas$=this._proServ.getPeliculas_TypeAll();
-    console.log("Tipo : "+this.type);
-    console.log("Titulo : "+this.type);
+    let peliculas$=this._proServ.getPeliculasByType(this.type,this.title);
   }
   
 
