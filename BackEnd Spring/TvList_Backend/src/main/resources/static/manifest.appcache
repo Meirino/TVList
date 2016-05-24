@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 76d5905d2e81039cf130eaf948f30bdc74b96f4a
+# sw.version: aa4398373acc36c96d005553249383a289979e61
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -119,9 +119,9 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccion.data.js
 # sw.file.hash: 7df20d7d0f10d3b472a69b4c65352639f55314c3
 \app\components\proyecciones\proyeccion.data.js.map
-# sw.file.hash: 728aa1e71dd4550ce9a4da83e5dbd544e426800e
+# sw.file.hash: b7c1035a388e0ae93808413d506bde9fed8f0c9e
 \app\components\proyecciones\proyeccion.service.js
-# sw.file.hash: f496785a7b260bf45c552270035a27cdd330355b
+# sw.file.hash: fdc8506e0072fafade2f9a5fe20627189cb7d4c5
 \app\components\proyecciones\proyeccion.service.js.map
 # sw.file.hash: 56dfee96172c01deb6dfbda6c3c20bc3bb7c81cf
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Component.js
@@ -131,13 +131,13 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
 # sw.file.hash: b6860dd041e05777b986232cf9f2166f1389be38
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
-# sw.file.hash: b52814382c6b2d608caa7da550dd10febab808a1
+# sw.file.hash: b258bf0d04c46ec34ac2c8c24a2cee176dbfa910
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
-# sw.file.hash: 969166f393a42602314a867fcf6a9b402bb6ea5d
+# sw.file.hash: 1809daf95aed4c0ae67dd1dcb7fddd124e4d333c
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
 # sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css
-# sw.file.hash: cab2d2024f1d8765fc8128416c4d05628ff4caea
+# sw.file.hash: fa118870999e49e7cdb5fe679b75d1e7c73d3cb3
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Template.html
 # sw.file.hash: 8db637bf95f57038edaf96235d7287662761c28c
 \app\components\user\loginAuth.js

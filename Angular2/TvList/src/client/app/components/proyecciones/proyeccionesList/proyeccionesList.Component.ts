@@ -4,7 +4,7 @@ import {proyeccionService} from '../proyeccion.service';
 import {RouteParams} from 'angular2/router';
 import {proyeccion} from '../proyeccion.data';
 import {Location} from 'angular2/router';
-
+import {Control} from 'angular2/common';
 
 @Component({
   templateUrl: './app/components/proyecciones/proyeccionesList/proyeccionesList.Template.html',
@@ -22,7 +22,8 @@ export class proyeccionesListComponent implements OnInit{
   private maxPage:number;
   private siguiente:number;
   private anterior:number;
-  private keepPage:boolean=false;
+
+  busqueda = new Control();
 
   constructor(private _proServ:proyeccionService, params: RouteParams,private location:Location){
     this.type=params.get("genre");
@@ -30,6 +31,20 @@ export class proyeccionesListComponent implements OnInit{
     this.page=Number.parseInt(params.get("page"));
     if (!this.page)
       this.page=0;
+    this.busqueda.valueChanges.debounceTime(400)
+        .distinctUntilChanged()
+        .switchMap(busqueda=>this._proServ.getPeliculasByTypeAndTitleAndPage(this.type,busqueda,"0")).subscribe(res =>{
+              this.title=this.busqueda.value;
+              this.page=0;
+              this.peliculas=this._proServ.convertirAListaPeliculas((<any>res).contenido);
+              this.actualizarPagina((<any>res).paginaActual,(<any>res).paginaTotal);
+              console.log(this.peliculas);
+            },
+            err => {
+              console.log(err);
+            }
+        );
+
   }
 
   ngOnInit():any {
@@ -65,6 +80,7 @@ export class proyeccionesListComponent implements OnInit{
   }
 
 
+
   private actualizarPagina(paginaActual,paginaTotal){
     var tip="";
     var titulo="";
@@ -79,5 +95,11 @@ export class proyeccionesListComponent implements OnInit{
     this.anterior=this.page-1;
   }
 
+
+  private buscarPorTitulo(val){
+    var ite=val;
+
+
+  }
 
 }

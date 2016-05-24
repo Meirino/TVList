@@ -15,7 +15,7 @@ export class proyeccionService {
     }
 
 
-    public getPeliculasByTypeAndTitleAndPage(tipo:string,titulo:string,pagina:string){
+    public getPeliculasByTypeAndTitleAndPage(tipo:string,titulo:any,pagina:string){
         if (!pagina)
             pagina="";
         else
@@ -27,7 +27,7 @@ export class proyeccionService {
         if (!titulo)
             titulo="";
         else
-            titulo="&titulo="+titulo;
+            titulo="&title="+titulo;
         var urlFull=this._url+tipo+titulo+pagina;
         return this._http.get(urlFull)
             .map(response => response.json())

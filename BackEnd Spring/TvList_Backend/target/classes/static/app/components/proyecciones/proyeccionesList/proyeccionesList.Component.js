@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../proyeccion.service', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../proyeccion.service', 'angular2/router', 'angular2/common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, proyeccionesItem_Component_1, proyeccion_service_1, router_1, router_2;
+    var core_1, proyeccionesItem_Component_1, proyeccion_service_1, router_1, router_2, common_1;
     var proyeccionesListComponent;
     return {
         setters:[
@@ -26,18 +26,33 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
             function (router_1_1) {
                 router_1 = router_1_1;
                 router_2 = router_1_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
             }],
         execute: function() {
             proyeccionesListComponent = (function () {
                 function proyeccionesListComponent(_proServ, params, location) {
+                    var _this = this;
                     this._proServ = _proServ;
                     this.location = location;
-                    this.keepPage = false;
+                    this.busqueda = new common_1.Control();
                     this.type = params.get("genre");
                     this.title = params.get("title");
                     this.page = Number.parseInt(params.get("page"));
                     if (!this.page)
                         this.page = 0;
+                    this.busqueda.valueChanges.debounceTime(400)
+                        .distinctUntilChanged()
+                        .switchMap(function (busqueda) { return _this._proServ.getPeliculasByTypeAndTitleAndPage(_this.type, busqueda, "0"); }).subscribe(function (res) {
+                        _this.title = _this.busqueda.value;
+                        _this.page = 0;
+                        _this.peliculas = _this._proServ.convertirAListaPeliculas(res.contenido);
+                        _this.actualizarPagina(res.paginaActual, res.paginaTotal);
+                        console.log(_this.peliculas);
+                    }, function (err) {
+                        console.log(err);
+                    });
                 }
                 proyeccionesListComponent.prototype.ngOnInit = function () {
                     this.cargarPeliculas();
@@ -75,6 +90,9 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     this.maxPage = Number.parseInt(paginaTotal);
                     this.siguiente = this.page + 1;
                     this.anterior = this.page - 1;
+                };
+                proyeccionesListComponent.prototype.buscarPorTitulo = function (val) {
+                    var ite = val;
                 };
                 proyeccionesListComponent = __decorate([
                     core_1.Component({

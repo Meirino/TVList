@@ -44,7 +44,7 @@ System.register(['angular2/core', 'rxjs/Rx', 'angular2/http', './proyeccion.data
                     if (!titulo)
                         titulo = "";
                     else
-                        titulo = "&titulo=" + titulo;
+                        titulo = "&title=" + titulo;
                     var urlFull = this._url + tipo + titulo + pagina;
                     return this._http.get(urlFull)
                         .map(function (response) { return response.json(); })
