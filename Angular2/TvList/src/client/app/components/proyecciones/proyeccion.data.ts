@@ -6,6 +6,7 @@ export class proyeccion{
         public id?:number,
         public title?:string,
         public description?:string,
+        public tipo?:string,
         public image?:string
     ){}
 }
@@ -24,5 +25,15 @@ export class proyeccionSpring{
     public constructor(proy:proyeccion){
 
     }
+    
 
+}
+
+export class tipo{
+    public constructor(
+        public id?:number,
+        public tema?:string
+    ){
+        
+    }
 }

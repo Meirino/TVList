@@ -1,15 +1,18 @@
 import {Component,OnInit,ElementRef,ViewChild} from 'angular2/core';
 import {proyeccionesItemComponent} from '../proyeccionesItem/proyeccionesItem.Component';
+import {modalComponent} from '../../modal/modal.component';
+import {proyeccionesFormComponent} from '../proyeccionesForm/proyeccionesForm.Component';
 import {proyeccionService} from '../proyeccion.service';
 import {RouteParams} from 'angular2/router';
 import {proyeccion} from '../proyeccion.data';
 import {Location} from 'angular2/router';
 import {Control} from 'angular2/common';
 
+
 @Component({
   templateUrl: './app/components/proyecciones/proyeccionesList/proyeccionesList.Template.html',
   styleUrls: ['./app/components/proyecciones/proyeccionesList/proyeccionesList.Style.css'],
-  directives: [proyeccionesItemComponent]
+  directives: [proyeccionesItemComponent,modalComponent]
 })
 
 export class proyeccionesListComponent implements OnInit{
@@ -25,6 +28,17 @@ export class proyeccionesListComponent implements OnInit{
 
   busqueda = new Control();
 
+
+
+
+  private keep:boolean=true;
+  private _componenteACargar = proyeccionesFormComponent;
+  @ViewChild('modal') private modal:modalComponent;
+  
+  
+  
+  
+  
   constructor(private _proServ:proyeccionService, params: RouteParams,private location:Location){
     this.type=params.get("genre");
     this.title=params.get("title");
@@ -97,7 +111,15 @@ export class proyeccionesListComponent implements OnInit{
 
 
   private buscarPorTitulo(val){
-    var ite=val;
+  var ite=val;
+
+  }
+
+  private mostrarCrearPelicula(){
+    this.keep=true;
+    setTimeout((a)=>{
+      this.modal.toggleModal();
+    },0)
 
 
   }

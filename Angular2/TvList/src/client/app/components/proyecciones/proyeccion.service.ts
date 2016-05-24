@@ -1,10 +1,10 @@
-/**
- * Created by david on 19/04/2016.
- */
+
 import {Injectable,OnInit} from 'angular2/core';
 import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import {proyeccion} from './proyeccion.data';
+import {tipo} from './proyeccion.data';
+
 
 @Injectable()
 export class proyeccionService {
@@ -46,6 +46,18 @@ export class proyeccionService {
     public convertirAPelicula(o:any){
         let pelicula=new proyeccion(o.id,o.title,o.description,o.image )
         return pelicula;
+    }
+
+    public getTiposPelicula(){
+        let tipos:tipo[]=[];
+        tipos.push(new tipo(1,"Accion"));
+        tipos.push(new tipo(2,"Aventuras"));
+        tipos.push(new tipo(3,"Comedia"));
+        tipos.push(new tipo(4,"Infantil"));
+        tipos.push(new tipo(5,"Suspense"));
+        tipos.push(new tipo(6,"Romance"));
+        return tipos;
+        
     }
 
     private handleError (error: any) {

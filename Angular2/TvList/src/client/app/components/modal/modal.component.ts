@@ -6,7 +6,7 @@ import {Component,ElementRef,DynamicComponentLoader, Injector,Input} from 'angul
 })
 export class modalComponent{
     @Input() componenteInterior:any;
-    
+    @Input() titulo:any;
     constructor(private dcl: DynamicComponentLoader, private injector: Injector, private ref:ElementRef) {}
 
     ngAfterViewInit() {
