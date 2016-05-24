@@ -54,11 +54,15 @@ System.register(['angular2/core', "../../actores.service"], function(exports_1, 
                     console.log(actor.id);
                     this.service.eliminarActor(actor.id.toString());
                 };
-                adminActoresComponent.prototype.separarStrings = function (cadena, arrayString) {
-                    arrayString = cadena.split(',');
+                adminActoresComponent.prototype.separarStrings = function (cadena) {
+                    var arrayString = cadena.split(',');
+                    return arrayString;
                 };
                 adminActoresComponent.prototype.SelectFiles = function ($event) {
                     this.file = $event.target.files[0];
+                };
+                adminActoresComponent.prototype.getActorByNombre = function () {
+                    this.lista = this.service.filtrarPorNombre(this.busq);
                 };
                 adminActoresComponent = __decorate([
                     core_1.Component({

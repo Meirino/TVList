@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 66a9e9fdc8c377d24f0e8ab24b74b2e74c38b3e4
+# sw.version: 61d8bc2531de81d0d8c17e5d0110a3382fbe0479
 # sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
 \app.js
 # sw.file.hash: 20d408b75d53936df4162bd12927fd1789ec7bea
@@ -99,11 +99,11 @@ CACHE MANIFEST
 \app\components\admin\admin.Component.js.map
 # sw.file.hash: cc5336fb60267ae39aca9028df816d47e3ee2dfe
 \app\components\admin\admin.template.html
-# sw.file.hash: 5f44bc5aa30f3d7579b2b093100830223203c1fa
+# sw.file.hash: dadfb2c901635a1c4055f696f5717fab6cf8b5a5
 \app\components\admin\adminActores\adminActores.component.js
-# sw.file.hash: 0f89c9a8155183f742e18ef65a75bff6750cb87c
+# sw.file.hash: da36abc33101a43a63ca89a0f5f9dcb5076989cc
 \app\components\admin\adminActores\adminActores.component.js.map
-# sw.file.hash: 79a3abf680477a2e62d6eb89f33d12cb912d5d05
+# sw.file.hash: da22bdc14f197732a6bcd19baed69ae02cdd53bf
 \app\components\admin\adminActores\adminActores.template.html
 # sw.file.hash: ec06fc813fa0b8fe244c549ef5fca17f159ea808
 \app\components\admin\adminElements\adminElements.component.js
@@ -327,6 +327,8 @@ CACHE MANIFEST
 \assets\images\TVList_Logo.svg
 # sw.file.hash: b0d98935e4aba5d02dafa297904a62030a481f79
 \assets\images\favicon.ico
+# sw.file.hash: e580f91e1196a8e12b9430c8d1d35be44b9a1f4b
+\assets\images\hs.jpg
 # sw.file.hash: e54c25ee866e828ee209bcb247ca1ec29f441619
 \assets\images\profile\avatar1.png
 # sw.file.hash: 0b7964c35bacb4b31a68f6d39229613956de9aad

@@ -27,8 +27,8 @@ public class ActorController {
 	@PostConstruct
 	 public void init() {
 		String[] a = {"Driver","Solo dios perdona"};
-		repositorio.save(new Actor("Ryan Gosling", "Protagonista de Driver", "#", a));
-		repositorio.save(new Actor("Harrison Ford", "Actor veterano que ha realizado muchos papeles famosos, como Indiana Jones o Han Solo", "#", a));
+		repositorio.save(new Actor("Ryan Gosling", "Protagonista de Driver", "Angular2/TvList/src/client/assets/images/rg.jpg", a));
+		repositorio.save(new Actor("Harrison Ford", "Actor veterano que ha realizado muchos papeles famosos, como Indiana Jones o Han Solo", "Angular2/TvList/src/client/assets/images/hs.jpg", a));
 	 }
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)

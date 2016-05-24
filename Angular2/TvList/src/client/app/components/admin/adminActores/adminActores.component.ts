@@ -48,11 +48,16 @@ export class adminActoresComponent {
         this.service.eliminarActor(actor.id.toString());
     }
 
-    separarStrings(cadena:string, arrayString:string[]) {
-        arrayString = cadena.split(',');
+    separarStrings(cadena:string) {
+        let arrayString = cadena.split(',');
+        return arrayString;
     }
 
     SelectFiles($event) {
         this.file = $event.target.files[0];
+    }
+
+    getActorByNombre() {
+        this.lista = this.service.filtrarPorNombre(this.busq);
     }
 }
