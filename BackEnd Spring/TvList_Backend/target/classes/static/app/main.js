@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/index/index.component', './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service', "./components/ActorList/ActoresList.component", "./components/SeriesList/Series.component", "./components/ActorDetalle/ActorDetalle.component", "./components/PeliculasList/PeliculasList.component", "./components/PeliculasList/PeliculasListAccion.component", "./components/PeliculasList/PeliculasListAventuras.component", "./components/PeliculasList/PeliculasListComedia.component", "./components/PeliculasList/PeliculasListInfantil.component", "./components/PeliculasList/PeliculaListSuspense.component", "./components/PeliculasList/PeliculasListRomance.component", "./components/SeriesList/SeriesAccion.component", "./components/SeriesList/SeriesAventuras.component", "./components/SeriesList/SeriesComedia.component", "./components/SeriesList/SeriesInfantil.component", "./components/SeriesList/SeriesSuspense.component", "./components/SeriesList/SeriesRomance.component", "./components/actores.service"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service', './components/proyecciones/proyeccionesList/proyeccionesList.Component', './components/proyecciones/proyeccionesDetail/proyeccionesDetail.Component', "./components/ActorList/ActoresList.component", "./components/SeriesList/Series.component", "./components/ActorDetalle/ActorDetalle.component", "./components/SeriesList/SeriesAccion.component", "./components/SeriesList/SeriesAventuras.component", "./components/SeriesList/SeriesComedia.component", "./components/SeriesList/SeriesInfantil.component", "./components/SeriesList/SeriesSuspense.component", "./components/SeriesList/SeriesRomance.component", "./components/actores.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, modal_component_1, index_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1, ActoresList_component_1, Series_component_1, ActorDetalle_component_1, PeliculasList_component_1, PeliculasListAccion_component_1, PeliculasListAventuras_component_1, PeliculasListComedia_component_1, PeliculasListInfantil_component_1, PeliculaListSuspense_component_1, PeliculasListRomance_component_1, SeriesAccion_component_1, SeriesAventuras_component_1, SeriesComedia_component_1, SeriesInfantil_component_1, SeriesSuspense_component_1, SeriesRomance_component_1, actores_service_1;
+    var core_1, router_1, modal_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1, proyeccionesList_Component_1, proyeccionesDetail_Component_1, ActoresList_component_1, Series_component_1, ActorDetalle_component_1, SeriesAccion_component_1, SeriesAventuras_component_1, SeriesComedia_component_1, SeriesInfantil_component_1, SeriesSuspense_component_1, SeriesRomance_component_1, actores_service_1;
     var MainApp;
     return {
         setters:[
@@ -22,9 +22,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
             },
             function (modal_component_1_1) {
                 modal_component_1 = modal_component_1_1;
-            },
-            function (index_component_1_1) {
-                index_component_1 = index_component_1_1;
             },
             function (perfil_Component_1_1) {
                 perfil_Component_1 = perfil_Component_1_1;
@@ -41,6 +38,12 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
             function (breadCrumb_service_1_1) {
                 breadCrumb_service_1 = breadCrumb_service_1_1;
             },
+            function (proyeccionesList_Component_1_1) {
+                proyeccionesList_Component_1 = proyeccionesList_Component_1_1;
+            },
+            function (proyeccionesDetail_Component_1_1) {
+                proyeccionesDetail_Component_1 = proyeccionesDetail_Component_1_1;
+            },
             function (ActoresList_component_1_1) {
                 ActoresList_component_1 = ActoresList_component_1_1;
             },
@@ -49,27 +52,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
             },
             function (ActorDetalle_component_1_1) {
                 ActorDetalle_component_1 = ActorDetalle_component_1_1;
-            },
-            function (PeliculasList_component_1_1) {
-                PeliculasList_component_1 = PeliculasList_component_1_1;
-            },
-            function (PeliculasListAccion_component_1_1) {
-                PeliculasListAccion_component_1 = PeliculasListAccion_component_1_1;
-            },
-            function (PeliculasListAventuras_component_1_1) {
-                PeliculasListAventuras_component_1 = PeliculasListAventuras_component_1_1;
-            },
-            function (PeliculasListComedia_component_1_1) {
-                PeliculasListComedia_component_1 = PeliculasListComedia_component_1_1;
-            },
-            function (PeliculasListInfantil_component_1_1) {
-                PeliculasListInfantil_component_1 = PeliculasListInfantil_component_1_1;
-            },
-            function (PeliculaListSuspense_component_1_1) {
-                PeliculaListSuspense_component_1 = PeliculaListSuspense_component_1_1;
-            },
-            function (PeliculasListRomance_component_1_1) {
-                PeliculasListRomance_component_1 = PeliculasListRomance_component_1_1;
             },
             function (SeriesAccion_component_1_1) {
                 SeriesAccion_component_1 = SeriesAccion_component_1_1;
@@ -103,7 +85,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                     this._componenteACargar = centroUsuario_component_1.centroUsuarioComponent;
                     _router.subscribe(function (val) {
                         _router.recognize(val).then(function (x) {
-                            console.log(x);
                         });
                         var abrir_modal_login = window.location;
                         _breadCrumbService.generateBreadCrumb(val);
@@ -148,7 +129,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                     }, 0);
                 };
                 MainApp.prototype._desconectarUsuario = function () {
-                    this._router.navigate(['/Index']);
+                    this._router.navigate(['/Peliculas']);
                     this._servicioUsuarios.logOut().subscribe();
                 };
                 __decorate([
@@ -166,8 +147,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                         {
                             path: '/',
                             name: 'Index',
-                            component: index_component_1.indexComponent,
-                            useAsDefault: true
+                            redirectTo: ["/Peliculas"]
                         },
                         {
                             path: '/perfil/...',
@@ -180,6 +160,17 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                             component: admin_Component_1.adminComponent
                         },
                         {
+                            path: '/peliculas',
+                            name: 'Peliculas',
+                            component: proyeccionesList_Component_1.proyeccionesListComponent,
+                            useAsDefault: true
+                        },
+                        {
+                            path: '/peliculas/:id',
+                            name: 'PeliculasDetail',
+                            component: proyeccionesDetail_Component_1.proyeccionesDetailComponent
+                        },
+                        {
                             path: '/Actores',
                             name: 'Actores',
                             component: ActoresList_component_1.ActoresListComponent
@@ -190,44 +181,9 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                             component: Series_component_1.SeriesComponent
                         },
                         {
-                            path: '/Peliculas',
-                            name: 'Peliculas',
-                            component: PeliculasList_component_1.PeliculasListComponent
-                        },
-                        {
                             path: '/Actores/:id/',
                             name: 'Actor',
                             component: ActorDetalle_component_1.ActorDetalleComponent
-                        },
-                        {
-                            path: '/Peliculas/Accion',
-                            name: 'PeliculasAccion',
-                            component: PeliculasListAccion_component_1.PeliculasListAccionComponent
-                        },
-                        {
-                            path: '/Peliculas/Aventuras',
-                            name: 'PeliculasAventuras',
-                            component: PeliculasListAventuras_component_1.PeliculasListAventurasComponent
-                        },
-                        {
-                            path: '/Peliculas/Comedia',
-                            name: 'PeliculasComedia',
-                            component: PeliculasListComedia_component_1.PeliculasListComediaComponent
-                        },
-                        {
-                            path: '/Peliculas/Infantil',
-                            name: 'PeliculasInfantil',
-                            component: PeliculasListInfantil_component_1.PeliculasListInfantilComponent
-                        },
-                        {
-                            path: '/Peliculas/Suspense',
-                            name: 'PeliculasSuspense',
-                            component: PeliculaListSuspense_component_1.PeliculasListSuspenseComponent
-                        },
-                        {
-                            path: '/Peliculas/Romance',
-                            name: 'PeliculasRomance',
-                            component: PeliculasListRomance_component_1.PeliculasListRomanceComponent
                         },
                         {
                             path: '/Series/Accion',

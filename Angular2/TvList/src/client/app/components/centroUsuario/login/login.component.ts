@@ -18,11 +18,11 @@ export class loginComponent{
     
     private login(){
         this.showmessage=false;
-        console.log(this.loginForm);
+        
         let userAceptableStream=this.servicioUsuarios.getUserByUser_And_Pass(this.loginForm.value.userName,this.loginForm.value.userPass);
         userAceptableStream.subscribe(
             value => {
-                console.log('Soy el login y el valor es: '+value);
+
             },
             error => {
                 if (error.status=="401")

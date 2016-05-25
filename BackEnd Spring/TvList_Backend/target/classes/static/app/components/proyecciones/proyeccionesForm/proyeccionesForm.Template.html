@@ -1,0 +1,44 @@
+<form (ngSubmit)="agregarPelicula()" #movieForm="ngForm" >
+    <div class="form-group">
+        <div class="pro-input-group input-group">
+            <span [ngClass]="!movieTitle.touched && movieTitle.pristine?'input-group-addon label-info': movieTitle.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Titulo</span>
+            <input [(ngModel)]="movieToCreate.title" type="text" class="form-control" ngControl="movieTitle" required #movieTitle="ngForm">
+            <span [ngClass]="!movieTitle.touched && movieTitle.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': movieTitle.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+        </div>
+        <div [hidden]="movieTitle.valid || !movieTitle.touched" class="alert alert-danger">
+            Rellene campo Titulo
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="pro-input-group input-group">
+            <span [ngClass]="!movieDesc.touched && movieDesc.pristine?'input-group-addon label-info': movieDesc.valid ? 'input-group-addon label-success': 'input-group-addon label-danger'">Descripcion</span>
+            <textarea [(ngModel)]="movieToCreate.description" type="text" class="form-control" ngControl="movieDesc" required #movieDesc="ngForm"></textarea>
+            <span [ngClass]="!movieDesc.touched && movieDesc.pristine?'input-group-addon label-info glyphicon glyphicon-exclamation-sign': movieDesc.valid ? 'input-group-addon label-success glyphicon glyphicon-ok-sign': 'input-group-addon label-danger glyphicon glyphicon-remove-sign'"></span>
+        </div>
+        <div [hidden]="movieDesc.valid || !movieDesc.touched" class="alert alert-danger">
+            Introduzca una descripcion
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="pro-input-group input-group">
+            <span class='input-group-addon label-info'>Tema</span>
+            <select [(ngModel)]="movieToCreate.tipo" class="form-control">
+                <option *ngFor="#tipo of tipos" [value]="tipo.id">{{tipo.tema}}</option>
+            </select>
+        </div>
+        <div [hidden]="movieDesc.valid || !movieDesc.touched" class="alert alert-danger">
+            Introduzca una descripcion
+        </div>
+    </div>
+    <div class="useravatar alert alert-info ">
+        <h2 class="center-block label-success"><span class="label label-success center-block">Avatar</span></h2>
+                            <span [hidden]="!imagenPrev">
+                             <canvas  #imgPrev width="400" height="300" id="canvas" class="center-block"></canvas>
+                            </span>
+                            <span [hidden]="imagenPrev">
+                                <img [src]="'/assets/images/proyec/noPortada.jpg'" class="center-block">
+                            </span>
+        <input type="file" (change)="selectFile($event)" class="btn btn-info center-block">
+    </div>
+    <button type="submit" class="btn pro-btn col-xs-6 hvr-icon-wobble-horizontal pull-right" [disabled]="!movieForm.valid" >Agregar Pelicula</button>
+</form>

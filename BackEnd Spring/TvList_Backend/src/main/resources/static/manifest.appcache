@@ -1,9 +1,9 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 61d8bc2531de81d0d8c17e5d0110a3382fbe0479
-# sw.file.hash: f35abb3d700d64dbeb3897d155908bc2d42b91f1
+# sw.version: 37ceee61cd3cb203df8a07f95e1b55f9e96ab2c1
+# sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
-# sw.file.hash: 20d408b75d53936df4162bd12927fd1789ec7bea
+# sw.file.hash: 85d5e4c6f596e1b8898352dd4a4a14e1de043ea4
 \app.js.map
 # sw.file.hash: 30900dea21f4943b6461743617ef715d99db473f
 \app\app-injector.js
@@ -123,9 +123,9 @@ CACHE MANIFEST
 \app\components\admin\adminUsuarios\adminUsuarios.component.js.map
 # sw.file.hash: 1ec5ce5b4f150f01e90785a9429636ec61dcd3ea
 \app\components\admin\adminUsuarios\adminUsuarios.template.html
-# sw.file.hash: 8d15795c263cdd5fa07f297c936bcf616c0bb40c
+# sw.file.hash: a8c9fd01df2a4c8029033be9ca8a3c58da5c776d
 \app\components\breadCrumb\breadCrumb.service.js
-# sw.file.hash: 943ba39509a38b7998769a5728ae3d3543dc0f0e
+# sw.file.hash: 438caa94083ff08f0e3e86683b42103b3e88e069
 \app\components\breadCrumb\breadCrumb.service.js.map
 # sw.file.hash: 898127b1c43c4432ecb96a8ffe387907db9a1a20
 \app\components\centroUsuario\centroUsuario.component.js
@@ -135,15 +135,15 @@ CACHE MANIFEST
 \app\components\centroUsuario\centroUsuario.style.css
 # sw.file.hash: e78e11df6b5dae073f21c43e61bb22fa8b9327f8
 \app\components\centroUsuario\centroUsuario.template.html
-# sw.file.hash: f4c76422039f3d35946fc9f904b87e2d11877aeb
+# sw.file.hash: 7786cea73f4d4aa78b72f567fbd868ab5a433e90
 \app\components\centroUsuario\login\login.component.js
-# sw.file.hash: dc277b34de4fd297df5d70142c0b092a3dab2a2b
+# sw.file.hash: 521d468fc7e4e23862097dfd49043a2f6debae13
 \app\components\centroUsuario\login\login.component.js.map
 # sw.file.hash: 6242d2fb299f76ca411b31b258f3932a2015cea6
 \app\components\centroUsuario\login\login.template.html
-# sw.file.hash: fb68e2f0ffcc4a6523e97045f2cf6f34a6954905
+# sw.file.hash: 73b4628fb4ae71d867c873b7a41fd71f695dea42
 \app\components\centroUsuario\register\register.component.js
-# sw.file.hash: c2eb85797e3f9030724f713bc2ec12a1ac89f632
+# sw.file.hash: 7308d2cc6a5f51ccccc2d218e17b6ce9cd4d4543
 \app\components\centroUsuario\register\register.component.js.map
 # sw.file.hash: 3da0ac82e8a3b61b549f80b8d733becfc62d407a
 \app\components\centroUsuario\register\register.style.css
@@ -161,7 +161,7 @@ CACHE MANIFEST
 \app\components\itemDetail\itemDetail.Component.js
 # sw.file.hash: 262ba4dcf0b5a3055bb13039ed48c6dd88fc2e22
 \app\components\itemDetail\itemDetail.Component.js.map
-# sw.file.hash: ce68ff9f5de01be4cc859bce4be78cfb24cd1b6f
+# sw.file.hash: a021fb89003dd9a6f534b3b95af668a4f18893e7
 \app\components\itemDetail\itemDetail.Template.html
 # sw.file.hash: 80039fc298bd5877a74faa3504cc77ff54ed8d5f
 \app\components\messages\message.data.js
@@ -183,12 +183,20 @@ CACHE MANIFEST
 \app\components\messages\messageList.component.js.map
 # sw.file.hash: abbc977d70bd02384cf81f91822f2f43446b8a66
 \app\components\messages\messageList.template.html
-# sw.file.hash: 4792e8abef99583b1395d7881b96a5ffa9433b0a
+# sw.file.hash: 77bff9939fb29dffd15c2d280d138481b7a5f3e8
 \app\components\modal\modal.component.js
-# sw.file.hash: 9f7c9132605254f49fd6a1e40a3d4c4ef65ae16b
+# sw.file.hash: 305dd82d159dfecb224a52e835bf4b5d4a3a0e20
 \app\components\modal\modal.component.js.map
-# sw.file.hash: b251e5e91ba9097eb2e4555058ebdf142b20aa5e
+# sw.file.hash: 91c5595b5dcaa22d85b2e091f59c964d88ddcfeb
 \app\components\modal\modal.template.html
+# sw.file.hash: 6f6cb7ad6bbc821f2ff48dfbaa1b37e647e464e2
+\app\components\multipart-upload\multipart-item.js
+# sw.file.hash: f5e344539a6ea9a8381d0d03ff62cc02995c3b51
+\app\components\multipart-upload\multipart-item.js.map
+# sw.file.hash: 482f5e3c3280b26c648c56777753bcc28c3d81bf
+\app\components\multipart-upload\multipart-uploader.js
+# sw.file.hash: 7e56db38a8c6a7aa6e4de9f2fc4e68a08e0e1a63
+\app\components\multipart-upload\multipart-uploader.js.map
 # sw.file.hash: c9af25ffe3ae62f6680403392d53cb3df7659c68
 \app\components\perfil\misValoraciones\misValoraciones.component.js
 # sw.file.hash: 721d134c153ee4bccb283d67239e78c14e34b6c1
@@ -211,6 +219,44 @@ CACHE MANIFEST
 \app\components\perfil\profileData\profileData.Style.css
 # sw.file.hash: 9c4ff4246ef6ed56ff5f0e0bdfc73c957094f830
 \app\components\perfil\profileData\profileData.Template.html
+# sw.file.hash: 2246ad39fe0be20b2b230c815d5cd6bb0a5589ed
+\app\components\proyecciones\proyeccion.data.js
+# sw.file.hash: c2e89a6c38d10e08fccbef01ac937c979c2bb33d
+\app\components\proyecciones\proyeccion.data.js.map
+# sw.file.hash: 826b76aa17f3944b0f666fd0c713b243c9db1c8c
+\app\components\proyecciones\proyeccion.service.js
+# sw.file.hash: d30b7b8d5e2b31bd818876e6c90d4337002ef0f8
+\app\components\proyecciones\proyeccion.service.js.map
+# sw.file.hash: 797287a6290385777ba28fedca30510cb604c259
+\app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Component.js
+# sw.file.hash: 6b53105cf5bf59a5a85a63f81f4bd3ff8f61f900
+\app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Component.js.map
+# sw.file.hash: 516770c4c9f79fa2a5deb0aad4b186b1ff1d2732
+\app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Template.html
+# sw.file.hash: c92b26a157019ef8c96c034ffb69dd6d47ff14f9
+\app\components\proyecciones\proyeccionesForm\proyeccionesForm.Component.js
+# sw.file.hash: 0a244b360d42e07d6fe7c06fd3116f7ea75bbbf5
+\app\components\proyecciones\proyeccionesForm\proyeccionesForm.Component.js.map
+# sw.file.hash: 9bdb0970236e3e550a048547615e5518337b8438
+\app\components\proyecciones\proyeccionesForm\proyeccionesForm.Style.css
+# sw.file.hash: b801ac0be3fad3596da322924317943472530e8e
+\app\components\proyecciones\proyeccionesForm\proyeccionesForm.Template.html
+# sw.file.hash: daa136d85add9e17e15f84217473f86436a9be49
+\app\components\proyecciones\proyeccionesItem\proyeccionesItem.Component.js
+# sw.file.hash: 00fc6de8f12beaca8484e43dc85d3d79b64fb917
+\app\components\proyecciones\proyeccionesItem\proyeccionesItem.Component.js.map
+# sw.file.hash: 82e4dcd6761a3538dda75b116791a13ca6c62257
+\app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
+# sw.file.hash: 113d2880aa416f885e82af06192470a86743fc24
+\app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
+# sw.file.hash: 18c9966bdac2a79e246688b590d73c273eccee19
+\app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
+# sw.file.hash: 99849886dd5def96b02032bf4bbd32814023b5ef
+\app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
+# sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
+\app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css
+# sw.file.hash: 5cc0091b8af9aa0b70f06d32dc5bb6d9bc15ba8d
+\app\components\proyecciones\proyeccionesList\proyeccionesList.Template.html
 # sw.file.hash: 9ed0350f5f7545e2ed762ebbff614c0eb91588dd
 \app\components\series.service.js
 # sw.file.hash: 9d38b391bed0befde307fa88e43ca5ead0aa3233
@@ -231,19 +277,19 @@ CACHE MANIFEST
 \app\components\user\user.data.js
 # sw.file.hash: 2296114c92a9fdde83dba3d0ae27962a49aeab3c
 \app\components\user\user.data.js.map
-# sw.file.hash: 407e836da5ff9202fb9ba2673af6d7afa422e850
+# sw.file.hash: b136da29c2209e1b6b9764933d621549af671097
 \app\components\user\user.service.js
-# sw.file.hash: f47d51d82a8d1bfe90e21f7b555f519c23f73f97
+# sw.file.hash: 5705ff820e0b1424dc73fae03cf8ff8683e9fede
 \app\components\user\user.service.js.map
 # sw.file.hash: 7ad2c89fb9f1ca7a834d4e2a52c2edce81f9944f
 \app\components\utils.js
 # sw.file.hash: 0ce655e3fab1088bc8f93bd79d3bf163dae06dc2
 \app\components\utils.js.map
-# sw.file.hash: 1e380f6808ab0acd8a3f14dde91898940a1818af
+# sw.file.hash: bec9f3c4ab8e8ea43e6d8dc846d1c559aae55b81
 \app\main.html
-# sw.file.hash: 87f6694eab9a8c169907b884da065799f6d4b1c5
+# sw.file.hash: 32582c645ed9a8a0d412ffa552dbdc69f0f4baa5
 \app\main.js
-# sw.file.hash: 0851e9c658537c75fa8919b0350a09784ecc0f15
+# sw.file.hash: 9d6977eb996f84d1608b1e9274a8c72ddef3628b
 \app\main.js.map
 # sw.file.hash: 49d5a62222a3771363a160fa0e460f0f8c60b1d7
 \app\utilities.js
@@ -337,6 +383,26 @@ CACHE MANIFEST
 \assets\images\profile\avatar3.png
 # sw.file.hash: 04926d3b65bcc060e85ffdc55879b06f472e30d3
 \assets\images\profile\noAvatar.png
+# sw.file.hash: 3aa218ce08091c0410a34912160752794ef13383
+\assets\images\proyec\noportada.jpg
+# sw.file.hash: 128dc3a2133dd903a6ed50a10841e40096edf875
+\assets\images\proyec\portada1.jpg
+# sw.file.hash: 475980d4614407be40305eb4428525b9a264a4e3
+\assets\images\proyec\portada2.jpeg
+# sw.file.hash: 5a938a11eecd61ee06ae1a04a0ec494bac8a9c42
+\assets\images\proyec\portada3.jpg
+# sw.file.hash: 26d2ca244958c470116919d1bf302c91c900bdfd
+\assets\images\proyec\portada4.jpg
+# sw.file.hash: cbe993f111f655ec96879dd33d8c4968540eee11
+\assets\images\proyec\portada5.jpg
+# sw.file.hash: 4d0ce79481956ffe833ca7f3a8a2ece960f7cc4e
+\assets\images\proyec\portada6.png
+# sw.file.hash: 8caa5273102b5818ac5c3915b629ab9f7df6d395
+\assets\images\proyec\portada7.jpg
+# sw.file.hash: 303803260223356951a9619b4003dff264a4f213
+\assets\images\proyec\portada8.JPG
+# sw.file.hash: 3bb8f5c230bab040d1eeef738773b4ae4b8425d2
+\assets\images\proyec\portada9.png
 # sw.file.hash: b8cba836999780a363765fca6fe56b6d2c934ba5
 \assets\images\rg.jpg
 # sw.file.hash: b0d98935e4aba5d02dafa297904a62030a481f79

@@ -54,8 +54,14 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                     this.showmessage = false;
                     var userAceptableStream = this.servicioUsuarios.checkIf_UserName_AND_Email_Free(this.userToCreate.user_Name, this.userToCreate.user_Email);
                     userAceptableStream.subscribe(function (value) {
-                        $(_this.link_Step2.nativeElement).tab('show');
-                        _this.currentStep = 2;
+                        console.log(value);
+                        if (value) {
+                            $(_this.link_Step2.nativeElement).tab('show');
+                            _this.currentStep = 2;
+                        }
+                        else {
+                            _this.showMessage("Usuario o Mail ya en uso");
+                        }
                     }, function (error) {
                         _this.showMessage(error);
                     });
@@ -90,20 +96,15 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                         this.imagenPrev = true;
                         var ctx = document.getElementById('canvas').getContext('2d');
                         var reader = new FileReader();
-                        // load to image to get it's width/height
                         var img = new Image();
                         img.onload = function () {
-                            // scale canvas to image
                             ctx.canvas.width = img.width;
                             ctx.canvas.height = img.height;
-                            // draw image
                             ctx.drawImage(img, 0, 0, ctx.canvas.width, ctx.canvas.height);
                         };
-                        // this is to setup loading the image
                         reader.onloadend = function () {
                             img.src = reader.result;
                         };
-                        // this is to read the file
                         reader.readAsDataURL(this.file);
                     }
                     else {
@@ -123,14 +124,24 @@ System.register(['angular2/core', '../../user/user.service', '../../user/user.da
                 registerComponent.prototype.showMessage = function (mes) {
                     var _this = this;
                     this.errors = [];
-                    if (mes[0].length != 0)
-                        this.errors.push(mes[0]);
-                    if (mes[1].length != 0)
-                        this.errors.push(mes[1]);
+                    this.errors.push(mes);
                     setTimeout(function () {
                         _this.showmessage = true;
                     }, 0);
                 };
+                /*
+                    private showMessage(mes:string[]){
+                        this.errors=[];
+                        if (mes[0].length!=0)
+                            this.errors.push(mes[0]);
+                        if (mes[1].length!=0)
+                            this.errors.push(mes[1]);
+                        setTimeout(() => {
+                            this.showmessage=true;
+                        }, 0);
+                    }
+                
+                */
                 registerComponent.prototype.changePasswordBar = function (perc) {
                     var redVa = 0;
                     if (perc > 49)

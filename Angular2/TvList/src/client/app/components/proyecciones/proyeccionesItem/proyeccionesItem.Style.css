@@ -1,0 +1,12 @@
+
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+}
+
+.portada{
+    width: 185px;
+    height: 275px;
+    max-width: 185px;
+    max-height: 275px;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}

@@ -10,13 +10,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" [routerLink]="['/Index']" style="padding-top: 0px">
+                <a class="navbar-brand" [routerLink]="['/Peliculas']" style="padding-top: 0px">
                     <img alt="Brand" src="assets/images/TVList_Logo.svg" width="200px" height="50x" class="">
                 </a>
                 </div>
             </div>
             <!-- Items del menu superior -->
             <ul class="nav navbar-right top-nav pro-menu-icon " >
+                <!--
                 <li class="pro-vcenter item hidden-xs " style="padding-right: 10px">
 
                     <form action="" method="" class="pro-input-btn-search">
@@ -24,7 +25,7 @@
                     </form>
 
                 </li>
-
+                -->
                 <li class="pro-vcenter item hidden-lg hidden-sm hidden-md dropdown" style="padding-right: 10px">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -61,18 +62,18 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a [routerLink]="['/Index']" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
+                        <a [routerLink]="['/Peliculas']" class="hvr-bounce-to-right"><i class="fa fa-fw fa-home"></i> Inicio</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="movies" class="collapse">
-                            <li><a [routerLink]="['/Peliculas']" href="#" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
-                            <li><a [routerLink]="['/PeliculasAccion']" href="#" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
-                            <li><a [routerLink]="['/PeliculasAventuras']" href="#" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
-                            <li><a [routerLink]="['/PeliculasComedia']" href="#" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
-                            <li><a [routerLink]="['/PeliculasInfantil']" href="#" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
-                            <li><a [routerLink]="['/PeliculasSuspense']" href="#" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
-                            <li><a [routerLink]="['/PeliculasRomance']" href="#" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
+                            <li><a [routerLink]="['/Peliculas']" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Accion'}]" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Aventuras'}]" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Comedia'}]" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Infantil'}]" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Suspense'}]" class="hvr-underline-from-left"><span class="menu-title">Suspense</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Romance'}]" class="hvr-underline-from-left"><span class="menu-title">Romance</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -106,7 +107,7 @@
 
         <!-- Aqui el cuerpo de la pagina, donde se debe cargar la info -->
 
-        <pro-modal *ngIf="keep" #modal [componenteInterior]="_componenteACargar"></pro-modal>
+        <pro-modal *ngIf="keep" #modal [titulo]="'Usuario'" [componenteInterior]="_componenteACargar"></pro-modal>
 
         <div id="page-wrapper">
 
@@ -120,9 +121,9 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-home"></i> <a  (click)="navigateByUrl('http://localhost:4200/')" >Inicio</a>
+                                <i class="fa fa-home"></i> <a  href="/#/" >Inicio</a>
                             </li>
-                            <li *ngFor="#path of _breadCrumbService.pageBreadCrumb"><a (click)="navigateByUrl(path.acumulativePath)">{{path.path}}</a></li>
+                            <li *ngFor="#path of _breadCrumbService.pageBreadCrumb"><a [href]="path.acumulativePath">{{path.path}}</a></li>
                         </ol>
                     </div>
                 </div>

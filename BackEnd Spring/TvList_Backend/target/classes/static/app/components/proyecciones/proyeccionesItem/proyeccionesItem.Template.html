@@ -1,0 +1,28 @@
+<tr>
+    <td class="col-xs-3 center-block">
+        <img class="portada" [src]="'/assets/images/proyec/'+(peliInfo.image!=''?peliInfo.image:'noPortada.jpg')" alt="" title=""/>
+    </td>
+    <td class="col-xs-9 pro-vcenter">
+        <table>
+            <tr>
+                <td>
+                    <h3>{{peliInfo.title}}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="desc"> {{peliInfo.description}} </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <div class="btn-group">
+                        <a type="button" [routerLink]="['/PeliculasDetail', { id: peliInfo.id}]" class="btn pro-btn" >Detalles</a>
+                        <a type="button" *ngIf="_serUser.userLogged?.isAdmin==true" (click)="eliminarPelicula()" class="btn  btn-danger" >Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>

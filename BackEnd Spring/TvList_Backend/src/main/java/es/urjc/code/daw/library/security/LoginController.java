@@ -67,10 +67,22 @@ public class LoginController {
 		}
 	}
 	
+	
+	@RequestMapping(value = "/check", method = RequestMethod.POST)
+	public Boolean nombreYMailLibres(@RequestBody UserMin usuario) {
+		log.info(usuario.getUsua());
+		log.info(usuario.getMail());
+		User u=userRepository.findByNameOrMail(usuario.getUsua(),usuario.getMail());
+		if (u==null)
+			return true;
+		else
+			return false;
+	}
+	
 	@RequestMapping(value = "/User", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUsuario(@RequestBody User usuario) {
-		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar()==null?"":usuario.getAvatar(),"USER");
+		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar()==null?"":usuario.getAvatar(),"ROLE_USER");
 		userRepository.save(usr);
 		return usr;
 	}

@@ -9,6 +9,8 @@ import {adminComponent} from './components/admin/admin.Component';
 import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.component';
 import {userService} from './components/user/user.service';
 import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
+import {proyeccionesListComponent} from './components/proyecciones/proyeccionesList/proyeccionesList.Component';
+import {proyeccionesDetailComponent} from './components/proyecciones/proyeccionesDetail/proyeccionesDetail.Component';
 import {ActoresListComponent} from "./components/ActorList/ActoresList.component";
 import {SeriesComponent} from "./components/SeriesList/Series.component";
 import {ActorDetalleComponent} from "./components/ActorDetalle/ActorDetalle.component";
@@ -39,8 +41,7 @@ import {ActoresService} from "./components/actores.service";
   {
     path: '/',
     name: 'Index',
-    component: indexComponent,
-    useAsDefault: true
+    redirectTo: ["/Peliculas"]
   },
   {
     path: '/perfil/...',
@@ -51,6 +52,17 @@ import {ActoresService} from "./components/actores.service";
     path: '/admin/...',
     name: 'Admin',
     component: adminComponent
+  },
+  {
+    path: '/peliculas',
+    name: 'Peliculas',
+    component: proyeccionesListComponent,
+    useAsDefault: true
+  },
+  {
+    path: '/peliculas/:id',
+    name: 'PeliculasDetail',
+    component: proyeccionesDetailComponent
   },
     {
         path: '/Actores',
@@ -63,44 +75,9 @@ import {ActoresService} from "./components/actores.service";
     component: SeriesComponent
   },
   {
-    path: '/Peliculas',
-    name: 'Peliculas',
-    component: PeliculasListComponent
-  },
-  {
     path: '/Actores/:id/',
     name: 'Actor',
     component: ActorDetalleComponent
-  },
-  {
-    path: '/Peliculas/Accion',
-    name: 'PeliculasAccion',
-    component: PeliculasListAccionComponent
-  },
-  {
-    path: '/Peliculas/Aventuras',
-    name: 'PeliculasAventuras',
-    component: PeliculasListAventurasComponent
-  },
-  {
-    path: '/Peliculas/Comedia',
-    name: 'PeliculasComedia',
-    component: PeliculasListComediaComponent
-  },
-  {
-    path: '/Peliculas/Infantil',
-    name: 'PeliculasInfantil',
-    component: PeliculasListInfantilComponent
-  },
-  {
-    path: '/Peliculas/Suspense',
-    name: 'PeliculasSuspense',
-    component: PeliculasListSuspenseComponent
-  },
-  {
-    path: '/Peliculas/Romance',
-    name: 'PeliculasRomance',
-    component: PeliculasListRomanceComponent
   },
   {
     path: '/Series/Accion',
@@ -148,7 +125,7 @@ export class MainApp implements OnInit{
 
     _router.subscribe((val) => {
       _router.recognize(val).then(x=>{
-        console.log(x)})
+        })
       let abrir_modal_login=window.location;
       _breadCrumbService.generateBreadCrumb(val);
     });
@@ -202,7 +179,7 @@ export class MainApp implements OnInit{
   }
 
   private _desconectarUsuario(){
-    this._router.navigate(['/Index']);
+    this._router.navigate(['/Peliculas']);
     this._servicioUsuarios.logOut().subscribe();
   }
 

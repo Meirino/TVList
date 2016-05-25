@@ -36,28 +36,48 @@ public class ImagesController {
 	@Autowired
 	private GlobalDataRepository globalRepository;
 
-	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
-	public String handleFileUpload(@RequestParam MultipartFile file) throws IOException {
+	@RequestMapping(value = "/image/upload/{tipo}", method = RequestMethod.POST)
+	public String handleFileUpload(@RequestParam MultipartFile file,@PathVariable String tipo) throws IOException {
 		String name=file.getOriginalFilename();
 		String[] s=name.split("\\.");
 		String type = "."+s[s.length-1];
-		GlobalData gb=globalRepository.findOne((long)1);
-		Long aIndex = gb.getavatarFileIndexAndIncrement();
-		globalRepository.save(gb);
-		if (file.isEmpty()) {
-			throw new RuntimeException("The file is empty");
+		Long aIndex;
+		String fileName="";
+		String carpeta="";
+		GlobalData gb;
+		switch (tipo) {
+		case "usuario":
+			gb=globalRepository.findOne((long)1);
+			aIndex = gb.getavatarFileIndexAndIncrement();
+			globalRepository.save(gb);
+			if (file.isEmpty()) {
+				throw new RuntimeException("The file is empty");
+			}
+			fileName = "avatarU-" + aIndex + type;
+			carpeta="profile";
+			break;
+		case "pelicula":
+			gb=globalRepository.findOne((long)2);
+			aIndex = gb.getavatarFileIndexAndIncrement();
+			globalRepository.save(gb);
+			if (file.isEmpty()) {
+				throw new RuntimeException("The file is empty");
+			}
+			fileName = "portadaU-" + aIndex + type;
+			carpeta="proyec";
+			break;
+		default:
+			break;
 		}
 
-		if (!Files.exists(FILES_FOLDER)) {
-			Files.createDirectories(FILES_FOLDER);
-		}
-
-		String fileName = "avatarU-" + aIndex + type;
+		Path FILES_FOLDER = Paths.get(System.getProperty("user.dir")+"\\target\\classes\\static\\assets\\images", carpeta);
 		File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 		file.transferTo(uploadedFile);
 
 		return fileName;
 	}
+	
+	
 
 	@RequestMapping("/images")
 	public List<Image> getImages() {

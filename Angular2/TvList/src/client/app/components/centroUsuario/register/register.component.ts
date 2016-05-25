@@ -63,8 +63,15 @@ export class registerComponent{
         let userAceptableStream=this.servicioUsuarios.checkIf_UserName_AND_Email_Free(this.userToCreate.user_Name,this.userToCreate.user_Email);
         userAceptableStream.subscribe(
             value => {
-                (<any>$(this.link_Step2.nativeElement)).tab('show');
-                this.currentStep=2;
+                console.log(value);
+                if (value)
+                {
+                    (<any>$(this.link_Step2.nativeElement)).tab('show');
+                    this.currentStep=2;
+                }
+                else{
+                    this.showMessage("Usuario o Mail ya en uso");
+                }
             },
             error => {
                 this.showMessage(error);
@@ -103,22 +110,17 @@ export class registerComponent{
         this.imagenPrev=true;
         var ctx=(<any>document.getElementById('canvas')).getContext('2d');
         var reader  = new FileReader();
-        // load to image to get it's width/height
         var img = new Image();
         img.onload = function() {
-            // scale canvas to image
             ctx.canvas.width = img.width;
             ctx.canvas.height = img.height;
-            // draw image
             ctx.drawImage(img, 0, 0
                 , ctx.canvas.width, ctx.canvas.height
             );
         }
-        // this is to setup loading the image
         reader.onloadend = function () {
             img.src = reader.result;
         }
-        // this is to read the file
         reader.readAsDataURL(this.file);
         }
         else{
@@ -140,9 +142,16 @@ export class registerComponent{
     }
 
 
+    private showMessage(mes){
+        this.errors=[];
+        this.errors.push(mes);
+        setTimeout(() => {
+            this.showmessage=true;
+        }, 0);
+    }
     
     
-
+/*
     private showMessage(mes:string[]){
         this.errors=[];
         if (mes[0].length!=0)
@@ -154,6 +163,7 @@ export class registerComponent{
         }, 0);
     }
 
+*/
     private changePasswordBar(perc:number){
         let redVa=0;
         if (perc>49)

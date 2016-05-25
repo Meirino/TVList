@@ -1,0 +1,36 @@
+
+<pro-modal *ngIf="keep" #modal [titulo]="'Añadir Pelicula'" [componenteInterior]="_componenteACargar"></pro-modal>
+<div *ngIf="succesLabel" class="alert alert-success text-center animated flash">Pelicula agregada con exito</div>
+<div class="row searchMenu">
+    <div class="col-xs-12">
+        <div class="input-group">
+           <input *ngIf="_serUser.userLogged?.isAdmin==true" class="btn btn-success" type="button" (click)="mostrarCrearPelicula()" value="Agregar Pelicula">
+        </div>
+    </div>
+</div>
+<div class="row searchMenu">
+    <div class="col-xs-12">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <!--
+            <input ngControl="busqueda" [ngModel]="title" (ngModelChange)="buscarPorTitulo($event)" type="text" value="" placeholder="Filtrar por título" class="form-control">
+            -->
+            <input [ngFormControl]="busqueda" type="text" value="" placeholder="Filtrar por título" class="form-control">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table">
+                <s-proyeccionesItem *ngFor="#pelicula of peliculas" [peliInfo]="pelicula" [ngClass]="pelicula.id==-1?'animated bounceOutRight':''" (eliminar)="eliminarPelicula($event);"></s-proyeccionesItem>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <nav class="col-xs-12">
+        <ul class="pager">
+            <li class="previous" ><a class="btn" [ngClass]="anterior<0?'disabled':''"  (click)="prev()"><span aria-hidden="true">&larr;</span> Anterior </a></li>
+            <li class="next" ><a class="btn" [ngClass]="siguiente>(maxPage-1)?'disabled':''"  (click)="next()">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
+</div>
