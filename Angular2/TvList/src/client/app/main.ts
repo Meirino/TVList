@@ -22,8 +22,7 @@ import {proyeccionesDetailComponent} from './components/proyecciones/proyeccione
   {
     path: '/',
     name: 'Index',
-    component: indexComponent,
-    useAsDefault: true
+    redirectTo: ["/Peliculas"]
   },
   {
     path: '/perfil/...',
@@ -38,7 +37,8 @@ import {proyeccionesDetailComponent} from './components/proyecciones/proyeccione
   {
     path: '/peliculas',
     name: 'Peliculas',
-    component: proyeccionesListComponent
+    component: proyeccionesListComponent,
+    useAsDefault: true
   },
   {
     path: '/peliculas/:id',
@@ -61,7 +61,7 @@ export class MainApp implements OnInit{
 
     _router.subscribe((val) => {
       _router.recognize(val).then(x=>{
-        console.log(x)})
+        })
       let abrir_modal_login=window.location;
       _breadCrumbService.generateBreadCrumb(val);
     });
@@ -115,7 +115,7 @@ export class MainApp implements OnInit{
   }
 
   private _desconectarUsuario(){
-    this._router.navigate(['/Index']);
+    this._router.navigate(['/Peliculas']);
     this._servicioUsuarios.logOut().subscribe();
   }
 

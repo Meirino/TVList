@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/index/index.component', './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service', './components/proyecciones/proyeccionesList/proyeccionesList.Component', './components/proyecciones/proyeccionesDetail/proyeccionesDetail.Component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', "./components/modal/modal.component", './components/perfil/perfil.Component', './components/admin/admin.Component', './components/centroUsuario/centroUsuario.component', './components/user/user.service', './components/breadCrumb/breadCrumb.service', './components/proyecciones/proyeccionesList/proyeccionesList.Component', './components/proyecciones/proyeccionesDetail/proyeccionesDetail.Component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, modal_component_1, index_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1, proyeccionesList_Component_1, proyeccionesDetail_Component_1;
+    var core_1, router_1, modal_component_1, perfil_Component_1, admin_Component_1, centroUsuario_component_1, user_service_1, breadCrumb_service_1, proyeccionesList_Component_1, proyeccionesDetail_Component_1;
     var MainApp;
     return {
         setters:[
@@ -22,9 +22,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
             },
             function (modal_component_1_1) {
                 modal_component_1 = modal_component_1_1;
-            },
-            function (index_component_1_1) {
-                index_component_1 = index_component_1_1;
             },
             function (perfil_Component_1_1) {
                 perfil_Component_1 = perfil_Component_1_1;
@@ -58,7 +55,6 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                     this._componenteACargar = centroUsuario_component_1.centroUsuarioComponent;
                     _router.subscribe(function (val) {
                         _router.recognize(val).then(function (x) {
-                            console.log(x);
                         });
                         var abrir_modal_login = window.location;
                         _breadCrumbService.generateBreadCrumb(val);
@@ -103,7 +99,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                     }, 0);
                 };
                 MainApp.prototype._desconectarUsuario = function () {
-                    this._router.navigate(['/Index']);
+                    this._router.navigate(['/Peliculas']);
                     this._servicioUsuarios.logOut().subscribe();
                 };
                 __decorate([
@@ -120,8 +116,7 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                         {
                             path: '/',
                             name: 'Index',
-                            component: index_component_1.indexComponent,
-                            useAsDefault: true
+                            redirectTo: ["/Peliculas"]
                         },
                         {
                             path: '/perfil/...',
@@ -136,7 +131,8 @@ System.register(['angular2/core', 'angular2/router', "./components/modal/modal.c
                         {
                             path: '/peliculas',
                             name: 'Peliculas',
-                            component: proyeccionesList_Component_1.proyeccionesListComponent
+                            component: proyeccionesList_Component_1.proyeccionesListComponent,
+                            useAsDefault: true
                         },
                         {
                             path: '/peliculas/:id',

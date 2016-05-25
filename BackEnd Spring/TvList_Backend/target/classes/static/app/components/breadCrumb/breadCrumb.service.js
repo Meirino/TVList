@@ -32,7 +32,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         this.pageBreadCrumb.push({ 'path': paths[c], 'acumulativePath': this.host + "/#/" });
                         for (var ca = 0; ca <= (+c); ca++)
                             this.pageBreadCrumb[c].acumulativePath += paths[ca] + (ca < c ? '/' : '');
-                        console.log(paths[c]);
                     }
                 };
                 breadCrumbService = __decorate([

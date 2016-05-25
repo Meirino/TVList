@@ -84,7 +84,7 @@ export class proyeccionesListComponent implements OnInit{
     peliculas$.subscribe(res =>{
       this.peliculas=this._proServ.convertirAListaPeliculas((<any>res).contenido);
       this.actualizarPagina((<any>res).paginaActual,(<any>res).paginaTotal);
-      console.log(this.peliculas);
+
     },
     err => {
       console.log(err);

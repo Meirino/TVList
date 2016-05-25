@@ -13,7 +13,7 @@ export class breadCrumbService{
             this.pageBreadCrumb.push({'path':paths[c],'acumulativePath':this.host+"/#/"});
             for (let ca=0;ca<=(+c);ca++)
                 this.pageBreadCrumb[c].acumulativePath+=paths[ca]+(ca<c?'/':'');
-            console.log(paths[c]);
+           
         }
 
     }

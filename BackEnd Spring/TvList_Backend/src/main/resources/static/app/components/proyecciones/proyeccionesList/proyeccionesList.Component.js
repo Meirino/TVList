@@ -86,7 +86,6 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     peliculas$.subscribe(function (res) {
                         _this.peliculas = _this._proServ.convertirAListaPeliculas(res.contenido);
                         _this.actualizarPagina(res.paginaActual, res.paginaTotal);
-                        console.log(_this.peliculas);
                     }, function (err) {
                         console.log(err);
                     });

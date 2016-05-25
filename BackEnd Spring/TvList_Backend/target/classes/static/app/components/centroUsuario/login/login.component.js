@@ -30,10 +30,8 @@ System.register(['angular2/core', '../../user/user.service'], function(exports_1
                 loginComponent.prototype.login = function () {
                     var _this = this;
                     this.showmessage = false;
-                    console.log(this.loginForm);
                     var userAceptableStream = this.servicioUsuarios.getUserByUser_And_Pass(this.loginForm.value.userName, this.loginForm.value.userPass);
                     userAceptableStream.subscribe(function (value) {
-                        console.log('Soy el login y el valor es: ' + value);
                     }, function (error) {
                         if (error.status == "401")
                             _this.showMessage("Usuario o contaseña incorrectos");

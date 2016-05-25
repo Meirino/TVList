@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 6b886eef40045824db4bfacbee300abc84755bef
+# sw.version: b5c86c430712d3ec06827d49c254e42503e04bad
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -27,9 +27,9 @@ CACHE MANIFEST
 \app\components\admin\adminIndex\adminIndex.component.js.map
 # sw.file.hash: 6c1583d7e451d9060bd99f3fb2aecb0f6e46af24
 \app\components\admin\adminIndex\adminIndex.template.html
-# sw.file.hash: 70dab46cf1c8b6d2eb571c2deda0a9a637ff091e
+# sw.file.hash: a8c9fd01df2a4c8029033be9ca8a3c58da5c776d
 \app\components\breadCrumb\breadCrumb.service.js
-# sw.file.hash: f9a3ef2a26220bb8b2b4a4cdf8f17f52c8af7b62
+# sw.file.hash: 438caa94083ff08f0e3e86683b42103b3e88e069
 \app\components\breadCrumb\breadCrumb.service.js.map
 # sw.file.hash: 898127b1c43c4432ecb96a8ffe387907db9a1a20
 \app\components\centroUsuario\centroUsuario.component.js
@@ -39,9 +39,9 @@ CACHE MANIFEST
 \app\components\centroUsuario\centroUsuario.style.css
 # sw.file.hash: a59c0a6c88d38331556d9551c1b674b42a575cc0
 \app\components\centroUsuario\centroUsuario.template.html
-# sw.file.hash: f4c76422039f3d35946fc9f904b87e2d11877aeb
+# sw.file.hash: 7786cea73f4d4aa78b72f567fbd868ab5a433e90
 \app\components\centroUsuario\login\login.component.js
-# sw.file.hash: dc277b34de4fd297df5d70142c0b092a3dab2a2b
+# sw.file.hash: 521d468fc7e4e23862097dfd49043a2f6debae13
 \app\components\centroUsuario\login\login.component.js.map
 # sw.file.hash: 2bc8040f3b605b7cdd8e550b54f1842db787e0b9
 \app\components\centroUsuario\login\login.template.html
@@ -153,9 +153,9 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
 # sw.file.hash: 113d2880aa416f885e82af06192470a86743fc24
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
-# sw.file.hash: ce59be73712e4aacf36ca7643d50dbf406a0ecaa
+# sw.file.hash: 63c29f683fcd1ae94f983acd1675dae390922356
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
-# sw.file.hash: 6094dd2b4e6f9460515534ce99dcdd0edd60d638
+# sw.file.hash: c96128ab7ac07d91c0852be4804a3fa0db85b0db
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
 # sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css
@@ -181,11 +181,11 @@ CACHE MANIFEST
 \app\components\user\user.service.js
 # sw.file.hash: a4e6e520958266635d616aba7815b4ce83c2436a
 \app\components\user\user.service.js.map
-# sw.file.hash: 7ed83c20aab24ac1e1fd3d9a5e525c5ce86b0a05
+# sw.file.hash: feec6107ea3b3e01ad3d3551ba78c3658b4757e6
 \app\main.html
-# sw.file.hash: 073bc0aeb685bc08c6f94c8ac2f993ec5f004fac
+# sw.file.hash: 0e213d68771c3e5ec6c06e4b99b0494f694c010f
 \app\main.js
-# sw.file.hash: ec75895783ebdd0efa639d103c825fc26073ed86
+# sw.file.hash: e0039a3b85d80284a60699bb5a3ddfcc6c9f8b0c
 \app\main.js.map
 # sw.file.hash: 49d5a62222a3771363a160fa0e460f0f8c60b1d7
 \app\utilities.js
