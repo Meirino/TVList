@@ -79,7 +79,7 @@ public class ProyeccionController {
 
 	@JsonView(Proyeccion.Basico.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Proyeccion> getAnuncio(@PathVariable long id) {
+	public ResponseEntity<Proyeccion> getPeli(@PathVariable long id) {
 
 		log.info("Get book {}", id);
 
@@ -90,10 +90,11 @@ public class ProyeccionController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
 
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Proyeccion> actulizaAnuncio(@PathVariable long id, @RequestBody Proyeccion updatedBook) {
+	public ResponseEntity<Proyeccion> actulizaPeli(@PathVariable long id, @RequestBody Proyeccion updatedBook) {
 /*
 		Book anuncio = repository.findOne(id);
 		if (anuncio != null) {
@@ -109,18 +110,18 @@ public class ProyeccionController {
 		return null;
 	}
 
+	@JsonView(Proyeccion.Basico.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Proyeccion> borraAnuncio(@PathVariable long id) {
-/*
-		if (repository.exists(id)) {
-			repository.delete(id);
-			return new ResponseEntity<>(null, HttpStatus.OK);
+	public ResponseEntity<Proyeccion> eliminarPeli(@PathVariable long id) {
+
+		Proyeccion pelicula = repositoryProye.findOne(id);
+		if (pelicula != null) {
+			pelicula.getTemas().clear();
+			repositoryProye.delete(id);
+			return new ResponseEntity<>(pelicula, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		*/
-		return null;
-		
 	}
 
 }

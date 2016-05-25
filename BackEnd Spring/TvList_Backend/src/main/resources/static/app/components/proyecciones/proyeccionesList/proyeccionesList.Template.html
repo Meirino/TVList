@@ -4,7 +4,7 @@
 <div class="row searchMenu">
     <div class="col-xs-12">
         <div class="input-group">
-           <input class="btn btn-success" type="button" (click)="mostrarCrearPelicula()" value="Agregar Pelicula">
+           <input *ngIf="_serUser.userLogged?.isAdmin==true" class="btn btn-success" type="button" (click)="mostrarCrearPelicula()" value="Agregar Pelicula">
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-xs-12">
         <table class="table">
-                <s-proyeccionesItem *ngFor="#pelicula of peliculas" [peliInfo]="pelicula"></s-proyeccionesItem>
+                <s-proyeccionesItem *ngFor="#pelicula of peliculas" [peliInfo]="pelicula" [ngClass]="pelicula.id==-1?'animated bounceOutRight':''" (eliminar)="eliminarPelicula($event);"></s-proyeccionesItem>
         </table>
     </div>
 </div>

@@ -7,6 +7,8 @@ import {RouteParams} from 'angular2/router';
 import {proyeccion} from '../proyeccion.data';
 import {Location} from 'angular2/router';
 import {Control} from 'angular2/common';
+import {userService} from '../../user/user.service';
+
 
 
 @Component({
@@ -39,7 +41,7 @@ export class proyeccionesListComponent implements OnInit{
   
   
   
-  constructor(private _proServ:proyeccionService, params: RouteParams,private location:Location){
+  constructor(private _proServ:proyeccionService, params: RouteParams,private location:Location,private _serUser:userService){
     this.succesLabel=false;
     this.type=params.get("genre");
     this.title=params.get("title");
@@ -131,8 +133,34 @@ export class proyeccionesListComponent implements OnInit{
     setTimeout((a)=>{
       this.modal.toggleModal();
     },0)
+  }
 
+  private eliminarPelicula(id){
+    var idAeliminar=id;
+    console.log(idAeliminar);
+    this._proServ.eliminarPeliPorId(id.value).subscribe(g=>{
+      console.log(g);
+      this.eliminarPeliculadeLista(id.value);
+    },
+    e=>{
+      console.log("Error eliminando");
+    });
+  }
 
+  private eliminarPeliculadeLista(id){
+    var posBorrar;
+    for (var cont=0;cont<this.peliculas.length;cont++){
+
+      if (this.peliculas[cont].id==id){
+        posBorrar=cont;
+        break;
+      }
+
+    }
+    this.peliculas[posBorrar].id=-1;
+    setTimeout(x=>{
+      this.peliculas.splice(cont,1);
+    },500);
   }
 
 }

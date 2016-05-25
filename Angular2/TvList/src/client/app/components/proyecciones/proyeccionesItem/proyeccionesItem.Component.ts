@@ -1,5 +1,6 @@
-import {Component,Input} from 'angular2/core';
+import {Component,Input,Output,EventEmitter} from 'angular2/core';
 import {  ROUTER_DIRECTIVES } from 'angular2/router';
+import {userService} from '../../user/user.service';
 
 
 
@@ -12,7 +13,15 @@ import {  ROUTER_DIRECTIVES } from 'angular2/router';
 
 export class proyeccionesItemComponent{
   @Input() peliInfo:any;
-  
-  constructor(){}
+  @Output() eliminar = new EventEmitter();
+
+  constructor(private _serUser:userService){}
+
+  public eliminarPelicula(){
+    this.eliminar.emit(
+    {
+      value: this.peliInfo.id
+    });
+  }
 
 }

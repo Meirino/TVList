@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../../user/user.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, user_service_1;
     var proyeccionesItemComponent;
     return {
         setters:[
@@ -19,15 +19,29 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (user_service_1_1) {
+                user_service_1 = user_service_1_1;
             }],
         execute: function() {
             proyeccionesItemComponent = (function () {
-                function proyeccionesItemComponent() {
+                function proyeccionesItemComponent(_serUser) {
+                    this._serUser = _serUser;
+                    this.eliminar = new core_1.EventEmitter();
                 }
+                proyeccionesItemComponent.prototype.eliminarPelicula = function () {
+                    this.eliminar.emit({
+                        value: this.peliInfo.id
+                    });
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], proyeccionesItemComponent.prototype, "peliInfo", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], proyeccionesItemComponent.prototype, "eliminar", void 0);
                 proyeccionesItemComponent = __decorate([
                     core_1.Component({
                         selector: 's-proyeccionesItem',
@@ -35,7 +49,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                         templateUrl: './app/components/proyecciones/proyeccionesItem/proyeccionesItem.Template.html',
                         styleUrls: ['./app/components/proyecciones/proyeccionesItem/proyeccionesItem.Style.css']
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [user_service_1.userService])
                 ], proyeccionesItemComponent);
                 return proyeccionesItemComponent;
             }());

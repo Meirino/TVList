@@ -75,6 +75,11 @@ System.register(['angular2/core', 'rxjs/Rx', 'angular2/http', './proyeccion.data
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return error; });
                 };
+                proyeccionService.prototype.eliminarPeliPorId = function (id) {
+                    return this._http.delete("/peliculas/" + id)
+                        .map(function (response) { return response.json(); })
+                        .catch(this.handleError);
+                };
                 proyeccionService.prototype.convertirAListaPeliculas = function (lo) {
                     var listaPeliculas = new Array();
                     for (var _i = 0, lo_1 = lo; _i < lo_1.length; _i++) {

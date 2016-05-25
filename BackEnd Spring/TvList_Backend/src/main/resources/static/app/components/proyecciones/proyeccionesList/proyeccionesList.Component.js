@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../../modal/modal.component', '../proyeccionesForm/proyeccionesForm.Component', '../proyeccion.service', 'angular2/router', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../../modal/modal.component', '../proyeccionesForm/proyeccionesForm.Component', '../proyeccion.service', 'angular2/router', 'angular2/common', '../../user/user.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, proyeccionesItem_Component_1, modal_component_1, proyeccionesForm_Component_1, proyeccion_service_1, router_1, router_2, common_1;
+    var core_1, proyeccionesItem_Component_1, modal_component_1, proyeccionesForm_Component_1, proyeccion_service_1, router_1, router_2, common_1, user_service_1;
     var proyeccionesListComponent;
     return {
         setters:[
@@ -35,13 +35,17 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
             },
             function (common_1_1) {
                 common_1 = common_1_1;
+            },
+            function (user_service_1_1) {
+                user_service_1 = user_service_1_1;
             }],
         execute: function() {
             proyeccionesListComponent = (function () {
-                function proyeccionesListComponent(_proServ, params, location) {
+                function proyeccionesListComponent(_proServ, params, location, _serUser) {
                     var _this = this;
                     this._proServ = _proServ;
                     this.location = location;
+                    this._serUser = _serUser;
                     this.busqueda = new common_1.Control();
                     this.succesLabel = false;
                     this.keep = true;
@@ -120,6 +124,31 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                         _this.modal.toggleModal();
                     }, 0);
                 };
+                proyeccionesListComponent.prototype.eliminarPelicula = function (id) {
+                    var _this = this;
+                    var idAeliminar = id;
+                    console.log(idAeliminar);
+                    this._proServ.eliminarPeliPorId(id.value).subscribe(function (g) {
+                        console.log(g);
+                        _this.eliminarPeliculadeLista(id.value);
+                    }, function (e) {
+                        console.log("Error eliminando");
+                    });
+                };
+                proyeccionesListComponent.prototype.eliminarPeliculadeLista = function (id) {
+                    var _this = this;
+                    var posBorrar;
+                    for (var cont = 0; cont < this.peliculas.length; cont++) {
+                        if (this.peliculas[cont].id == id) {
+                            posBorrar = cont;
+                            break;
+                        }
+                    }
+                    this.peliculas[posBorrar].id = -1;
+                    setTimeout(function (x) {
+                        _this.peliculas.splice(cont, 1);
+                    }, 500);
+                };
                 __decorate([
                     core_1.ViewChild('modal'), 
                     __metadata('design:type', modal_component_1.modalComponent)
@@ -130,7 +159,7 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                         styleUrls: ['./app/components/proyecciones/proyeccionesList/proyeccionesList.Style.css'],
                         directives: [proyeccionesItem_Component_1.proyeccionesItemComponent, modal_component_1.modalComponent]
                     }), 
-                    __metadata('design:paramtypes', [proyeccion_service_1.proyeccionService, router_1.RouteParams, router_2.Location])
+                    __metadata('design:paramtypes', [proyeccion_service_1.proyeccionService, router_1.RouteParams, router_2.Location, user_service_1.userService])
                 ], proyeccionesListComponent);
                 return proyeccionesListComponent;
             }());

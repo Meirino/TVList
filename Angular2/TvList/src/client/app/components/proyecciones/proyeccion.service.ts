@@ -59,6 +59,12 @@ export class proyeccionService {
             .catch(error => error);
 
     }
+    
+    public eliminarPeliPorId(id:string){
+        return this._http.delete("/peliculas/"+id)
+            .map(response => response.json())
+            .catch(this.handleError);
+    }
 
 
     public convertirAListaPeliculas(lo:any){
