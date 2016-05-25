@@ -66,8 +66,8 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     _proServ.createSucces$.subscribe(function (suc) {
                         if (suc) {
                             _this.modal.toggleModal();
-                            _this.keep = false;
                             setTimeout(function (a) {
+                                _this.keep = false;
                                 _this.succesLabel = true;
                             }, 0);
                         }

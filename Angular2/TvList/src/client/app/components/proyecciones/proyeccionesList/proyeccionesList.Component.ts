@@ -62,8 +62,9 @@ export class proyeccionesListComponent implements OnInit{
     _proServ.createSucces$.subscribe((suc) =>{
       if (suc){
         this.modal.toggleModal();
-        this.keep=false;
+
         setTimeout((a)=>{
+          this.keep=false;
           this.succesLabel=true;
         },0);
       }

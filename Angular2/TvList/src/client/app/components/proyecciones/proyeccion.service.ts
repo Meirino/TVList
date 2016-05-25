@@ -39,6 +39,13 @@ export class proyeccionService {
             .catch(this.handleError);
     }
 
+    public getPeliculaById(id){
+        return this._http.get("/peliculas/"+id)
+            .map(response => response.json())
+            .catch(this.handleError);
+    }
+    
+
     public createProy(proyec:proyeccion){
         let body = JSON.stringify(proyec);
         let headers = new Headers({

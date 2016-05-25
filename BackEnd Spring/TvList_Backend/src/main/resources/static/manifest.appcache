@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 59ede8ee78130dbb0d66842cea6345ede4463748
+# sw.version: 5599be22dd443eadf001b4e723814779e5789f80
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -65,7 +65,7 @@ CACHE MANIFEST
 \app\components\itemDetail\itemDetail.Component.js
 # sw.file.hash: 982c74b3aab800d36bd942fa1fcffaea4fa9dc70
 \app\components\itemDetail\itemDetail.Component.js.map
-# sw.file.hash: b4c6884ad823f24398cff1eb622de45ba2472d45
+# sw.file.hash: a021fb89003dd9a6f534b3b95af668a4f18893e7
 \app\components\itemDetail\itemDetail.Template.html
 # sw.file.hash: 80039fc298bd5877a74faa3504cc77ff54ed8d5f
 \app\components\messages\message.data.js
@@ -127,15 +127,15 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccion.data.js
 # sw.file.hash: c2e89a6c38d10e08fccbef01ac937c979c2bb33d
 \app\components\proyecciones\proyeccion.data.js.map
-# sw.file.hash: 884489cfa38d80959e42e887a7ee314710ec3993
+# sw.file.hash: e64129212f102d562a8874763871dce7258e2e59
 \app\components\proyecciones\proyeccion.service.js
-# sw.file.hash: ec28b621f1b7fdcf70274d8fcb3207d20bf3c369
+# sw.file.hash: fcd57e9de52e3806ba29b26a8128d4b921e4c405
 \app\components\proyecciones\proyeccion.service.js.map
-# sw.file.hash: bd2331d8609ad67acbe05b803b96160c4d54295e
+# sw.file.hash: 797287a6290385777ba28fedca30510cb604c259
 \app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Component.js
-# sw.file.hash: 5707acd542aa53bb314d95774304466c1613ab7a
+# sw.file.hash: 6b53105cf5bf59a5a85a63f81f4bd3ff8f61f900
 \app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Component.js.map
-# sw.file.hash: b4c6884ad823f24398cff1eb622de45ba2472d45
+# sw.file.hash: 516770c4c9f79fa2a5deb0aad4b186b1ff1d2732
 \app\components\proyecciones\proyeccionesDetail\proyeccionesDetail.Template.html
 # sw.file.hash: c92b26a157019ef8c96c034ffb69dd6d47ff14f9
 \app\components\proyecciones\proyeccionesForm\proyeccionesForm.Component.js
@@ -153,9 +153,9 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
 # sw.file.hash: 7dcf1d4d73b22cc0530e69ede6514649da95251a
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
-# sw.file.hash: a048d58f9c9893c5b739e2454d63f3dade90ca36
+# sw.file.hash: a849d2f9d591f0d4e8eb0273462420b9c2deb4bf
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
-# sw.file.hash: f8fe9e3dabbdbf94b7d096adf364d2da242a5b92
+# sw.file.hash: a1b6fd1c62c14daac967aa8baaef58fed6f56706
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
 # sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css

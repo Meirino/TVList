@@ -77,22 +77,20 @@ public class ProyeccionController {
 		return peli;
 	}
 
-	/*
+	@JsonView(Proyeccion.Basico.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Proyeccion> getAnuncio(@PathVariable long id) {
-/*
+
 		log.info("Get book {}", id);
 
-		Book anuncio = repository.findOne(id);
-		if (anuncio != null) {
-			return new ResponseEntity<>(anuncio, HttpStatus.OK);
+		Proyeccion pelicula = repositoryProye.findOne(id);
+		if (pelicula != null) {
+			return new ResponseEntity<>(pelicula, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		
-		return null;
 	}
-*/
+
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Proyeccion> actulizaAnuncio(@PathVariable long id, @RequestBody Proyeccion updatedBook) {

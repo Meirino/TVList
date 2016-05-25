@@ -59,6 +59,11 @@ System.register(['angular2/core', 'rxjs/Rx', 'angular2/http', './proyeccion.data
                         .map(function (response) { return response.json(); })
                         .catch(this.handleError);
                 };
+                proyeccionService.prototype.getPeliculaById = function (id) {
+                    return this._http.get("/peliculas/" + id)
+                        .map(function (response) { return response.json(); })
+                        .catch(this.handleError);
+                };
                 proyeccionService.prototype.createProy = function (proyec) {
                     var body = JSON.stringify(proyec);
                     var headers = new http_1.Headers({
