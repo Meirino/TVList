@@ -10,6 +10,7 @@ import {centroUsuarioComponent} from './components/centroUsuario/centroUsuario.c
 import {userService} from './components/user/user.service';
 import {breadCrumbService} from './components/breadCrumb/breadCrumb.service';
 import {proyeccionesListComponent} from './components/proyecciones/proyeccionesList/proyeccionesList.Component';
+import {proyeccionesDetailComponent} from './components/proyecciones/proyeccionesDetail/proyeccionesDetail.Component';
 
 
 @Component({
@@ -38,6 +39,11 @@ import {proyeccionesListComponent} from './components/proyecciones/proyeccionesL
     path: '/peliculas',
     name: 'Peliculas',
     component: proyeccionesListComponent
+  },
+  {
+    path: '/peliculas/:id',
+    name: 'PeliculasDetail',
+    component: proyeccionesDetailComponent
   }
 ])
 

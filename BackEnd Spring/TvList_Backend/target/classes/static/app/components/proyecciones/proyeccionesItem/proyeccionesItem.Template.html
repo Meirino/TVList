@@ -18,15 +18,8 @@
                 <td>
 
                     <div class="btn-group">
-                        <button type="button" class="btn btn-block pro-btn dropdown-toggle" data-toggle="dropdown">Añadir como <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Viendo</a></li>
-                            <li><a href="#">Completo</a></li>
-                        </ul>
+                        <a type="button" [routerLink]="['/PeliculasDetail', { id: peliInfo.id}]" class="btn btn-block pro-btn" >Detalles</a>
                     </div>
-                    <a href="itemDetails.html">
-                        <button class="btn pro-btn" href="Libro.html">Más detalles</button>
-                    </a>
                 </td>
             </tr>
         </table>
