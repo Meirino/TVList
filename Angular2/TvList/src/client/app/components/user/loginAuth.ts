@@ -14,7 +14,7 @@ export const isLoggedIn = (next: ComponentInstruction, previous: ComponentInstru
         return true;
     else
     {
-        router.navigate(['/Index']);
+        router.navigate(['/Peliculas']);
         return false;
     }
 
@@ -30,7 +30,7 @@ export const isAdmin = (next: ComponentInstruction, previous: ComponentInstructi
         return true;
     else
     {
-        router.navigate(['/Index']);
+        router.navigate(['/Peliculas']);
 
     }
 
