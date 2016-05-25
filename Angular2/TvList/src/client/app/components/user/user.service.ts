@@ -97,28 +97,23 @@ export class userService{
 
 
     
-    checkIf_UserName_AND_Email_Free(userName:string,userMail:string):Observable<boolean>{
-        var doesThisUserExist = Observable.create((obs) => {
-            let error:string[]=['',''];
-            let numfails:number=0;
-            for (let userOb  of this.listaUsuarios){
-                if (userOb.user_Name==userName){
-                    error[0]='Nombre de usuario: '+userName+' ya existe, por favor elija otro';
-                    numfails++;
-                }
-                if (userOb.user_Email==userMail){
-                    error[1]='E-Mail: '+userMail+' ya existe, por favor elija otro';
-                    numfails++;
-                }
-                if (numfails==2)
-                    break;
-            }
-            if (numfails == 0)
-                obs.next(true);
-            else obs.error(error);
-                
+    checkIf_UserName_AND_Email_Free(userName:string,userMail:string){
+        var user = {
+            'usua' : userName,
+            'mail' : userMail,
+        }
+        let body = JSON.stringify(user);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
         });
-        return doesThisUserExist;
+        let options = new RequestOptions({ headers });
+
+        return this.http.post("/check", body, options)
+            .map(response => response.json())
+            .catch(error => error);
+        
+
     }
     
     

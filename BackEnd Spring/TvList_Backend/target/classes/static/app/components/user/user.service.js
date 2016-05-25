@@ -96,29 +96,19 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http', "./
                     return userAcceptedStream;
                 };
                 userService.prototype.checkIf_UserName_AND_Email_Free = function (userName, userMail) {
-                    var _this = this;
-                    var doesThisUserExist = Rx_1.Observable.create(function (obs) {
-                        var error = ['', ''];
-                        var numfails = 0;
-                        for (var _i = 0, _a = _this.listaUsuarios; _i < _a.length; _i++) {
-                            var userOb = _a[_i];
-                            if (userOb.user_Name == userName) {
-                                error[0] = 'Nombre de usuario: ' + userName + ' ya existe, por favor elija otro';
-                                numfails++;
-                            }
-                            if (userOb.user_Email == userMail) {
-                                error[1] = 'E-Mail: ' + userMail + ' ya existe, por favor elija otro';
-                                numfails++;
-                            }
-                            if (numfails == 2)
-                                break;
-                        }
-                        if (numfails == 0)
-                            obs.next(true);
-                        else
-                            obs.error(error);
+                    var user = {
+                        'usua': userName,
+                        'mail': userMail,
+                    };
+                    var body = JSON.stringify(user);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
-                    return doesThisUserExist;
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.post("/check", body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return error; });
                 };
                 userService.prototype.getUserByID = function (id) {
                     return Rx_1.Observable.fromArray(this.listaUsuarios).filter(function (x) { return x.id == id; });

@@ -67,6 +67,18 @@ public class LoginController {
 		}
 	}
 	
+	
+	@RequestMapping(value = "/check", method = RequestMethod.POST)
+	public Boolean nombreYMailLibres(@RequestBody UserMin usuario) {
+		log.info(usuario.getUsua());
+		log.info(usuario.getMail());
+		User u=userRepository.findByNameOrMail(usuario.getUsua(),usuario.getMail());
+		if (u==null)
+			return true;
+		else
+			return false;
+	}
+	
 	@RequestMapping(value = "/User", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUsuario(@RequestBody User usuario) {
@@ -82,5 +94,8 @@ public class LoginController {
 		userRepository.save(usuarioAModificar);
 		return usuarioAModificar;
 	}
+	
+	
+	
 
 }

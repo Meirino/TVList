@@ -63,8 +63,15 @@ export class registerComponent{
         let userAceptableStream=this.servicioUsuarios.checkIf_UserName_AND_Email_Free(this.userToCreate.user_Name,this.userToCreate.user_Email);
         userAceptableStream.subscribe(
             value => {
-                (<any>$(this.link_Step2.nativeElement)).tab('show');
-                this.currentStep=2;
+                console.log(value);
+                if (value)
+                {
+                    (<any>$(this.link_Step2.nativeElement)).tab('show');
+                    this.currentStep=2;
+                }
+                else{
+                    this.showMessage("Usuario o Mail ya en uso");
+                }
             },
             error => {
                 this.showMessage(error);
@@ -137,9 +144,16 @@ export class registerComponent{
     }
 
 
+    private showMessage(mes){
+        this.errors=[];
+        this.errors.push(mes);
+        setTimeout(() => {
+            this.showmessage=true;
+        }, 0);
+    }
     
     
-
+/*
     private showMessage(mes:string[]){
         this.errors=[];
         if (mes[0].length!=0)
@@ -151,6 +165,7 @@ export class registerComponent{
         }, 0);
     }
 
+*/
     private changePasswordBar(perc:number){
         let redVa=0;
         if (perc>49)
