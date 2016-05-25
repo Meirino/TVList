@@ -82,7 +82,7 @@ public class LoginController {
 	@RequestMapping(value = "/User", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUsuario(@RequestBody User usuario) {
-		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar()==null?"":usuario.getAvatar(),"USER");
+		User usr = new User(usuario.getName(),usuario.getPasswordHash(),usuario.getMail(),false,usuario.getRname(),usuario.getSurname(),usuario.getAvatar()==null?"":usuario.getAvatar(),"ROLE_USER");
 		userRepository.save(usr);
 		return usr;
 	}
@@ -94,8 +94,5 @@ public class LoginController {
 		userRepository.save(usuarioAModificar);
 		return usuarioAModificar;
 	}
-	
-	
-	
 
 }

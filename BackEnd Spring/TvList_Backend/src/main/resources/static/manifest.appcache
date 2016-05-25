@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 3cc9e12739a7bc77bd9e4a2d6c9a1ac63892438a
+# sw.version: 4927614ab628d835cc69cdc88a89ed31b3c3f06d
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -95,11 +95,11 @@ CACHE MANIFEST
 \app\components\modal\modal.template.html
 # sw.file.hash: 6f6cb7ad6bbc821f2ff48dfbaa1b37e647e464e2
 \app\components\multipart-upload\multipart-item.js
-# sw.file.hash: a5de70e119b7e598a5c0bdcf55967acf7f5fffbe
+# sw.file.hash: f5e344539a6ea9a8381d0d03ff62cc02995c3b51
 \app\components\multipart-upload\multipart-item.js.map
 # sw.file.hash: 482f5e3c3280b26c648c56777753bcc28c3d81bf
 \app\components\multipart-upload\multipart-uploader.js
-# sw.file.hash: ef4c14432493e5f9345d8bd6b455c28cec5267f3
+# sw.file.hash: 7e56db38a8c6a7aa6e4de9f2fc4e68a08e0e1a63
 \app\components\multipart-upload\multipart-uploader.js.map
 # sw.file.hash: c9af25ffe3ae62f6680403392d53cb3df7659c68
 \app\components\perfil\misValoraciones\misValoraciones.component.js
@@ -278,7 +278,7 @@ CACHE MANIFEST
 # sw.file.hash: 04926d3b65bcc060e85ffdc55879b06f472e30d3
 \assets\images\profile\noAvatar.png
 # sw.file.hash: 3aa218ce08091c0410a34912160752794ef13383
-\assets\images\proyec\noPortada.jpg
+\assets\images\proyec\noportada.jpg
 # sw.file.hash: 128dc3a2133dd903a6ed50a10841e40096edf875
 \assets\images\proyec\portada1.jpg
 # sw.file.hash: 475980d4614407be40305eb4428525b9a264a4e3
