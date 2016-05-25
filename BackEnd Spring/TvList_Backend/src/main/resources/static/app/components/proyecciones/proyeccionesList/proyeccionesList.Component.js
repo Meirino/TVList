@@ -43,8 +43,10 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     this._proServ = _proServ;
                     this.location = location;
                     this.busqueda = new common_1.Control();
+                    this.succesLabel = false;
                     this.keep = true;
                     this._componenteACargar = proyeccionesForm_Component_1.proyeccionesFormComponent;
+                    this.succesLabel = false;
                     this.type = params.get("genre");
                     this.title = params.get("title");
                     this.page = Number.parseInt(params.get("page"));
@@ -60,6 +62,15 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                         console.log(_this.peliculas);
                     }, function (err) {
                         console.log(err);
+                    });
+                    _proServ.createSucces$.subscribe(function (suc) {
+                        if (suc) {
+                            _this.modal.toggleModal();
+                            _this.keep = false;
+                            setTimeout(function (a) {
+                                _this.succesLabel = true;
+                            }, 0);
+                        }
                     });
                 }
                 proyeccionesListComponent.prototype.ngOnInit = function () {

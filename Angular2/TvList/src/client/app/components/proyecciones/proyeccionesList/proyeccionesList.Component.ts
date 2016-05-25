@@ -30,7 +30,7 @@ export class proyeccionesListComponent implements OnInit{
 
 
 
-
+  private succesLabel:boolean=false;
   private keep:boolean=true;
   private _componenteACargar = proyeccionesFormComponent;
   @ViewChild('modal') private modal:modalComponent;
@@ -40,6 +40,7 @@ export class proyeccionesListComponent implements OnInit{
   
   
   constructor(private _proServ:proyeccionService, params: RouteParams,private location:Location){
+    this.succesLabel=false;
     this.type=params.get("genre");
     this.title=params.get("title");
     this.page=Number.parseInt(params.get("page"));
@@ -58,6 +59,15 @@ export class proyeccionesListComponent implements OnInit{
               console.log(err);
             }
         );
+    _proServ.createSucces$.subscribe((suc) =>{
+      if (suc){
+        this.modal.toggleModal();
+        this.keep=false;
+        setTimeout((a)=>{
+          this.succesLabel=true;
+        },0);
+      }
+    });
 
   }
 

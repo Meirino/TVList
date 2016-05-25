@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 3543c2f9677d6ce1fe85dbd193ca1d4ec71752ab
+# sw.version: 7420e8118bf31990f76323fe04ff26a1f05bf8f6
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -127,13 +127,13 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccion.data.js
 # sw.file.hash: c2e89a6c38d10e08fccbef01ac937c979c2bb33d
 \app\components\proyecciones\proyeccion.data.js.map
-# sw.file.hash: 3e91a4c41f05dec0b257ae57d388c12d69bb411d
+# sw.file.hash: 884489cfa38d80959e42e887a7ee314710ec3993
 \app\components\proyecciones\proyeccion.service.js
-# sw.file.hash: 452792347fb24951e074f87494c66d93df8ebb79
+# sw.file.hash: ec28b621f1b7fdcf70274d8fcb3207d20bf3c369
 \app\components\proyecciones\proyeccion.service.js.map
-# sw.file.hash: b75db2c2cecf8e33de003d841ed3a720d3783991
+# sw.file.hash: c92b26a157019ef8c96c034ffb69dd6d47ff14f9
 \app\components\proyecciones\proyeccionesForm\proyeccionesForm.Component.js
-# sw.file.hash: 3b17c4ccbd3a2897e731181738808e08747588fb
+# sw.file.hash: 0a244b360d42e07d6fe7c06fd3116f7ea75bbbf5
 \app\components\proyecciones\proyeccionesForm\proyeccionesForm.Component.js.map
 # sw.file.hash: 9bdb0970236e3e550a048547615e5518337b8438
 \app\components\proyecciones\proyeccionesForm\proyeccionesForm.Style.css
@@ -147,13 +147,13 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
 # sw.file.hash: cba19ed36426d4c241338e0c25037a18b0216780
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
-# sw.file.hash: 37acf7e78277ad29578964069607c25a32f47346
+# sw.file.hash: a048d58f9c9893c5b739e2454d63f3dade90ca36
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
-# sw.file.hash: 31d343f26b1197b7abb591f0dabec4b87194129b
+# sw.file.hash: f8fe9e3dabbdbf94b7d096adf364d2da242a5b92
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
 # sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css
-# sw.file.hash: cd88267ff5061aa9096033f5382307ec5ac8ef59
+# sw.file.hash: 230698c96d57575f970ba014538f96f85b8539a2
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Template.html
 # sw.file.hash: 8db637bf95f57038edaf96235d7287662761c28c
 \app\components\user\loginAuth.js

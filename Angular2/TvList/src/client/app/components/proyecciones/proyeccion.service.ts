@@ -12,6 +12,9 @@ import {MultipartUploader} from "../multipart-upload/multipart-uploader";
 export class proyeccionService {
 
     private _url:string="/peliculas?";
+    private _createSucces = new Subject<boolean>();
+
+    public createSucces$ = this._createSucces.asObservable();
 
     constructor(private _http:Http) {
     }
@@ -80,6 +83,10 @@ export class proyeccionService {
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
         return Observable.throw(errMsg);
+    }
+    
+    public peliculaCreada(){
+        this._createSucces.next(true);
     }
 
     upload(archivo:File) {

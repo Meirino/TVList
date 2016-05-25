@@ -43,7 +43,7 @@ System.register(['angular2/core', '../proyeccion.data', '../proyeccion.service']
                                 _this.movieToCreate.image = data;
                                 console.debug("File has been uploaded");
                                 _this._serPel.createProy(_this.movieToCreate).subscribe(function (res) {
-                                    console.log(res);
+                                    _this._serPel.peliculaCreada();
                                 }, function (error) {
                                     console.log(error);
                                 });
@@ -56,7 +56,7 @@ System.register(['angular2/core', '../proyeccion.data', '../proyeccion.service']
                     }
                     else
                         this._serPel.createProy(this.movieToCreate).subscribe(function (res) {
-                            console.log(res);
+                            _this._serPel.peliculaCreada();
                         }, function (error) {
                             console.log(error);
                         });

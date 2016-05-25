@@ -37,7 +37,7 @@ export class proyeccionesFormComponent implements OnInit{
           this.movieToCreate.image=data;
           console.debug("File has been uploaded");
           this._serPel.createProy(this.movieToCreate).subscribe(res=>{
-            console.log(res);
+                this._serPel.peliculaCreada();
           },
               error=>{
                 console.log(error);
@@ -50,7 +50,7 @@ export class proyeccionesFormComponent implements OnInit{
     }
     else
       this._serPel.createProy(this.movieToCreate).subscribe(res=>{
-        console.log(res);
+            this._serPel.peliculaCreada();
       },
       error=>{
         console.log(error);

@@ -38,6 +38,8 @@ System.register(['angular2/core', 'rxjs/Rx', 'angular2/http', './proyeccion.data
                 function proyeccionService(_http) {
                     this._http = _http;
                     this._url = "/peliculas?";
+                    this._createSucces = new Rx_1.Subject();
+                    this.createSucces$ = this._createSucces.asObservable();
                 }
                 proyeccionService.prototype.getPeliculasByTypeAndTitleAndPage = function (tipo, titulo, pagina) {
                     if (!pagina)
@@ -94,6 +96,9 @@ System.register(['angular2/core', 'rxjs/Rx', 'angular2/http', './proyeccion.data
                     var errMsg = (error.message) ? error.message :
                         error.status ? error.status + " - " + error.statusText : 'Server error';
                     return Rx_1.Observable.throw(errMsg);
+                };
+                proyeccionService.prototype.peliculaCreada = function () {
+                    this._createSucces.next(true);
                 };
                 proyeccionService.prototype.upload = function (archivo) {
                     if (archivo == null) {
