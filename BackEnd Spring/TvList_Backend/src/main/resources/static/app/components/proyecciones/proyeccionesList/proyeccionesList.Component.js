@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../proyeccion.service', 'angular2/router', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Component', '../../modal/modal.component', '../proyeccionesForm/proyeccionesForm.Component', '../proyeccion.service', 'angular2/router', 'angular2/common'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, proyeccionesItem_Component_1, proyeccion_service_1, router_1, router_2, common_1;
+    var core_1, proyeccionesItem_Component_1, modal_component_1, proyeccionesForm_Component_1, proyeccion_service_1, router_1, router_2, common_1;
     var proyeccionesListComponent;
     return {
         setters:[
@@ -19,6 +19,12 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
             },
             function (proyeccionesItem_Component_1_1) {
                 proyeccionesItem_Component_1 = proyeccionesItem_Component_1_1;
+            },
+            function (modal_component_1_1) {
+                modal_component_1 = modal_component_1_1;
+            },
+            function (proyeccionesForm_Component_1_1) {
+                proyeccionesForm_Component_1 = proyeccionesForm_Component_1_1;
             },
             function (proyeccion_service_1_1) {
                 proyeccion_service_1 = proyeccion_service_1_1;
@@ -37,6 +43,8 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     this._proServ = _proServ;
                     this.location = location;
                     this.busqueda = new common_1.Control();
+                    this.keep = true;
+                    this._componenteACargar = proyeccionesForm_Component_1.proyeccionesFormComponent;
                     this.type = params.get("genre");
                     this.title = params.get("title");
                     this.page = Number.parseInt(params.get("page"));
@@ -94,11 +102,22 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                 proyeccionesListComponent.prototype.buscarPorTitulo = function (val) {
                     var ite = val;
                 };
+                proyeccionesListComponent.prototype.mostrarCrearPelicula = function () {
+                    var _this = this;
+                    this.keep = true;
+                    setTimeout(function (a) {
+                        _this.modal.toggleModal();
+                    }, 0);
+                };
+                __decorate([
+                    core_1.ViewChild('modal'), 
+                    __metadata('design:type', modal_component_1.modalComponent)
+                ], proyeccionesListComponent.prototype, "modal", void 0);
                 proyeccionesListComponent = __decorate([
                     core_1.Component({
                         templateUrl: './app/components/proyecciones/proyeccionesList/proyeccionesList.Template.html',
                         styleUrls: ['./app/components/proyecciones/proyeccionesList/proyeccionesList.Style.css'],
-                        directives: [proyeccionesItem_Component_1.proyeccionesItemComponent]
+                        directives: [proyeccionesItem_Component_1.proyeccionesItemComponent, modal_component_1.modalComponent]
                     }), 
                     __metadata('design:paramtypes', [proyeccion_service_1.proyeccionService, router_1.RouteParams, router_2.Location])
                 ], proyeccionesListComponent);

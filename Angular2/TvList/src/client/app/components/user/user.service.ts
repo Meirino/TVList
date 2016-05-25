@@ -161,7 +161,7 @@ export class userService{
         //formData.append("description", this.description);
         formData.append("file",  archivo);
 
-        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload'}));
+        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload/usuario'}));
 
         multipartItem.formData = formData;
 

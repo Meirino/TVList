@@ -1,3 +1,11 @@
+<pro-modal *ngIf="keep" #modal [titulo]="'Añadir Pelicula'" [componenteInterior]="_componenteACargar"></pro-modal>
+<div class="row searchMenu">
+    <div class="col-xs-12">
+        <div class="input-group">
+           <input class="btn btn-success" type="button" (click)="mostrarCrearPelicula()" value="Agregar Pelicula">
+        </div>
+    </div>
+</div>
 <div class="row searchMenu">
     <div class="col-xs-12">
         <div class="input-group">

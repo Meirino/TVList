@@ -67,7 +67,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#movies" class="hvr-bounce-to-right"><i class="icon-video-camera"></i> Peliculas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="movies" class="collapse">
                             <li><a [routerLink]="['/Peliculas']" class="hvr-underline-from-left"><span class="menu-title">Todas</span></a></li>
-                            <li><a [routerLink]="['/Peliculas', { genre: 'Acción'}]" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
+                            <li><a [routerLink]="['/Peliculas', { genre: 'Accion'}]" class="hvr-underline-from-left"><span class="menu-title">Acción</span></a></li>
                             <li><a [routerLink]="['/Peliculas', { genre: 'Aventuras'}]" class="hvr-underline-from-left"><span class="menu-title">Aventuras</span></a></li>
                             <li><a [routerLink]="['/Peliculas', { genre: 'Comedia'}]" class="hvr-underline-from-left"><span class="menu-title">Comedia</span></a></li>
                             <li><a [routerLink]="['/Peliculas', { genre: 'Infantil'}]" class="hvr-underline-from-left"><span class="menu-title">Infantil</span></a></li>
@@ -106,7 +106,7 @@
 
         <!-- Aqui el cuerpo de la pagina, donde se debe cargar la info -->
 
-        <pro-modal *ngIf="keep" #modal [componenteInterior]="_componenteACargar"></pro-modal>
+        <pro-modal *ngIf="keep" #modal [titulo]="'Usuario'" [componenteInterior]="_componenteACargar"></pro-modal>
 
         <div id="page-wrapper">
 

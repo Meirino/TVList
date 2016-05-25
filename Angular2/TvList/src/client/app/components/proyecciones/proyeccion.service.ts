@@ -4,6 +4,8 @@ import {Observable,ConnectableObservable,Subject } from 'rxjs/Rx';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import {proyeccion} from './proyeccion.data';
 import {tipo} from './proyeccion.data';
+import {MultipartItem} from "../multipart-upload/multipart-item";
+import {MultipartUploader} from "../multipart-upload/multipart-uploader";
 
 
 @Injectable()
@@ -34,6 +36,20 @@ export class proyeccionService {
             .catch(this.handleError);
     }
 
+    public createProy(proyec:proyeccion){
+        let body = JSON.stringify(proyec);
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        });
+        let options = new RequestOptions({ headers });
+
+        return this._http.post("/peliculas", body, options)
+            .map(response => response.json())
+            .catch(error => error);
+
+    }
+
 
     public convertirAListaPeliculas(lo:any){
         let listaPeliculas:proyeccion[]=new Array();
@@ -44,7 +60,7 @@ export class proyeccionService {
     }
 
     public convertirAPelicula(o:any){
-        let pelicula=new proyeccion(o.id,o.title,o.description,o.image )
+        let pelicula=new proyeccion(o.id,o.title,o.description,o.image)
         return pelicula;
     }
 
@@ -65,6 +81,26 @@ export class proyeccionService {
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
         return Observable.throw(errMsg);
     }
-    
+
+    upload(archivo:File) {
+
+
+
+        if (archivo == null){
+            console.error("You have to select a file and set a description.");
+            return;
+        }
+
+        let formData = new FormData();
+
+        //formData.append("description", this.description);
+        formData.append("file",  archivo);
+
+        let multipartItem = new MultipartItem(new MultipartUploader({url: '/image/upload/pelicula'}));
+
+        multipartItem.formData = formData;
+
+        return multipartItem;
+    }
 
 }

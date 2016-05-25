@@ -6,8 +6,8 @@ export class proyeccion{
         public id?:number,
         public title?:string,
         public description?:string,
-        public tipo?:string,
-        public image?:string
+        public image?:string,
+        public tipo?:string
     ){}
 }
 

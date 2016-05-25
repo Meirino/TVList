@@ -126,7 +126,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		temaRepository.delete(accion);
 		*/
 		globalRepository.save(new GlobalData());
-	
+		globalRepository.save(new GlobalData());
 	}
 
 }

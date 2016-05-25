@@ -43,6 +43,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], modalComponent.prototype, "componenteInterior", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], modalComponent.prototype, "titulo", void 0);
                 modalComponent = __decorate([
                     core_1.Component({
                         selector: 'pro-modal',

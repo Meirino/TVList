@@ -1,5 +1,6 @@
 package es.urjc.code.daw.library.proyecciones;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.library.temas.Tema;
 import es.urjc.code.daw.library.temas.TemaRepository;
+import es.urjc.code.daw.library.user.User;
 
 @RestController
 @RequestMapping("/peliculas")
@@ -59,6 +61,21 @@ public class ProyeccionController {
 			return new Pagina(pag.getContent(),pag.getNumber(),pag.getTotalPages());
 		}
 	}
+	
+	@JsonView(Proyeccion.Basico.class)
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public Proyeccion addProyeccion(@RequestBody ProyeccionData pelicula) {
+		String img="";
+		if (pelicula.getImage()!=null)
+			img=pelicula.getImage();
+		Tema t=repositoryTema.findOne(Long.parseLong(pelicula.getTipo()));
+		List <Tema> temas=new ArrayList<>();
+		temas.add(t);
+		Proyeccion peli = new Proyeccion(pelicula.getTitle(),pelicula.getDescription(),img,temas);
+		repositoryProye.save(peli);
+		return peli;
+	}
 
 	/*
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -76,16 +93,6 @@ public class ProyeccionController {
 		return null;
 	}
 */
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
-	public Proyeccion nuevoAnuncio(@RequestBody Proyeccion anuncio) {
-		/*
-		repository.save(anuncio);
-
-		return anuncio;
-		*/	
-		return null;
-	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Proyeccion> actulizaAnuncio(@PathVariable long id, @RequestBody Proyeccion updatedBook) {

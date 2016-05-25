@@ -150,7 +150,7 @@ System.register(['angular2/core', './user.data', 'rxjs/Rx', 'angular2/http', "./
                     var formData = new FormData();
                     //formData.append("description", this.description);
                     formData.append("file", archivo);
-                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/image/upload' }));
+                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/image/upload/usuario' }));
                     multipartItem.formData = formData;
                     return multipartItem;
                 };
