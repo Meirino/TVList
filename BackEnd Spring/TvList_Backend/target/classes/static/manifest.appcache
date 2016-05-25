@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: b5c86c430712d3ec06827d49c254e42503e04bad
+# sw.version: 060d0e7955cd46d2debbd74ebd9ba426deedd690
 # sw.file.hash: 65843fef0fabb92427e2aa5a38d0e00847713e1a
 \app.js
 # sw.file.hash: d3d5516c33d6996a71ed862e81784ccb688f478e
@@ -153,9 +153,9 @@ CACHE MANIFEST
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Style.css
 # sw.file.hash: 113d2880aa416f885e82af06192470a86743fc24
 \app\components\proyecciones\proyeccionesItem\proyeccionesItem.Template.html
-# sw.file.hash: 63c29f683fcd1ae94f983acd1675dae390922356
+# sw.file.hash: 18c9966bdac2a79e246688b590d73c273eccee19
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js
-# sw.file.hash: c96128ab7ac07d91c0852be4804a3fa0db85b0db
+# sw.file.hash: 99849886dd5def96b02032bf4bbd32814023b5ef
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Component.js.map
 # sw.file.hash: 9358cd336ed7d524ec670d0618a0e4c165c984a8
 \app\components\proyecciones\proyeccionesList\proyeccionesList.Style.css
@@ -181,7 +181,7 @@ CACHE MANIFEST
 \app\components\user\user.service.js
 # sw.file.hash: a4e6e520958266635d616aba7815b4ce83c2436a
 \app\components\user\user.service.js.map
-# sw.file.hash: feec6107ea3b3e01ad3d3551ba78c3658b4757e6
+# sw.file.hash: adf8808b5468e1043a8fbfc1cc6b96d82578d6dd
 \app\main.html
 # sw.file.hash: 0e213d68771c3e5ec6c06e4b99b0494f694c010f
 \app\main.js

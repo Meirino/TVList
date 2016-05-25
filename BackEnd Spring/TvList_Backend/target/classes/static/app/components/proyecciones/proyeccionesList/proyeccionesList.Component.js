@@ -57,8 +57,7 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     if (!this.page)
                         this.page = 0;
                     this.busqueda.valueChanges.debounceTime(400)
-                        .distinctUntilChanged()
-                        .switchMap(function (busqueda) { return _this._proServ.getPeliculasByTypeAndTitleAndPage(_this.type, busqueda, "0"); }).subscribe(function (res) {
+                        .distinctUntilChanged().switchMap(function (busqueda) { return _this._proServ.getPeliculasByTypeAndTitleAndPage(_this.type, busqueda, "0"); }).subscribe(function (res) {
                         _this.title = _this.busqueda.value;
                         _this.page = 0;
                         _this.peliculas = _this._proServ.convertirAListaPeliculas(res.contenido);
@@ -70,10 +69,11 @@ System.register(['angular2/core', '../proyeccionesItem/proyeccionesItem.Componen
                     _proServ.createSucces$.subscribe(function (suc) {
                         if (suc) {
                             _this.modal.toggleModal();
+                            _this.succesLabel = false;
                             setTimeout(function (a) {
                                 _this.keep = false;
                                 _this.succesLabel = true;
-                            }, 0);
+                            }, 500);
                         }
                     });
                 }

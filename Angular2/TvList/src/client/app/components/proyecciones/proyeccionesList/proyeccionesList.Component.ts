@@ -49,8 +49,7 @@ export class proyeccionesListComponent implements OnInit{
     if (!this.page)
       this.page=0;
     this.busqueda.valueChanges.debounceTime(400)
-        .distinctUntilChanged()
-        .switchMap(busqueda=>this._proServ.getPeliculasByTypeAndTitleAndPage(this.type,busqueda,"0")).subscribe(res =>{
+        .distinctUntilChanged().switchMap(busqueda=>this._proServ.getPeliculasByTypeAndTitleAndPage(this.type,busqueda,"0")).subscribe(res =>{
               this.title=this.busqueda.value;
               this.page=0;
               this.peliculas=this._proServ.convertirAListaPeliculas((<any>res).contenido);
@@ -64,11 +63,11 @@ export class proyeccionesListComponent implements OnInit{
     _proServ.createSucces$.subscribe((suc) =>{
       if (suc){
         this.modal.toggleModal();
-
+        this.succesLabel=false;
         setTimeout((a)=>{
           this.keep=false;
           this.succesLabel=true;
-        },0);
+        },500);
       }
     });
 
